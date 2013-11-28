@@ -26,7 +26,7 @@ a, p a strong, .link-top, .tt_comment_required {color:#009BC3;}
 /*------------------------------------------------*/
 /* LAYOUT
 /*------------------------------------------------*/
-.home-bnr-jquery {background:#04BAD4 url(../images/skins/secondary-sky-blue/bg-jquery-bnr.jpg) 0 0 no-repeat;color: #FFF;}
+.home-bnr-jquery {color: #FFF;}
 #main .tools {background:url(../images/skins/secondary-sky-blue/bg-tools-c.jpg) repeat-y;color:#fff;}
 #main .tools .holder {background:url(../images/skins/secondary-sky-blue/bg-tools-t.jpg) no-repeat;}
 #main .tools .frame {background:url(../images/skins/secondary-sky-blue/bg-tools-b.jpg) 0 100% no-repeat;height:1%;overflow:hidden;padding:18px 22px 0 20px;}
