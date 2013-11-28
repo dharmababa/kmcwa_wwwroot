@@ -1,0 +1,2019 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Karma Wordpress Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-25 17:59+0700\n"
+"PO-Revision-Date: 2013-04-25 18:01+0700\n"
+"Last-Translator: TrueThemes <themes@truethemes.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: archive.php:45
+#: archive.php:49
+#: archive.php:51
+#: archive.php:53
+msgid "Archive for"
+msgstr ""
+
+#: archive.php:47
+msgid "Posts Tagged"
+msgstr ""
+
+#: archive.php:55
+msgid "Author Archive"
+msgstr ""
+
+#: archive.php:57
+msgid "Blog Archives"
+msgstr ""
+
+#: attachment.php:44
+msgid "&larr; Previous"
+msgstr ""
+
+#: attachment.php:45
+msgid "Next &rarr;"
+msgstr ""
+
+#: attachment.php:94
+msgid "Pages:"
+msgstr ""
+
+#: comments.php:5
+#: page-comments.php:9
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: comments.php:30
+#: page-comments.php:40
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: comments.php:32
+#: page-comments.php:42
+msgid "(reply)"
+msgstr ""
+
+#: comments.php:32
+#: page-comments.php:42
+msgid "(edit)"
+msgstr ""
+
+#: comments.php:47
+#: page-comments.php:57
+msgid "Comments"
+msgstr ""
+
+#: comments.php:47
+#: page-comments.php:57
+msgid "Comment"
+msgstr ""
+
+#: comments.php:48
+#: page-comments.php:58
+msgid "Trackbacks"
+msgstr ""
+
+#: comments.php:48
+#: page-comments.php:58
+msgid "Trackback"
+msgstr ""
+
+#: comments.php:53
+#: page-comments.php:63
+msgid "Discussion"
+msgstr ""
+
+#: comments.php:84
+#: page-comments.php:96
+msgid "Subscribe to Comments"
+msgstr ""
+
+#: comments.php:99
+#: page-comments.php:111
+msgid "Your Comments"
+msgstr ""
+
+#: comments.php:100
+#: page-comments.php:112
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: comments.php:103
+#: page-comments.php:115
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out?</a>"
+msgstr ""
+
+#: comments.php:108
+#: page-comments.php:120
+msgid "Add a Comment"
+msgstr ""
+
+#: comments.php:109
+#: page-comments.php:121
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: comments.php:110
+#: page-comments.php:122
+msgid "click here to cancel reply"
+msgstr ""
+
+#: comments.php:111
+#: page-comments.php:123
+msgid "Add Comment"
+msgstr ""
+
+#: search.php:20
+msgid "Search Results for"
+msgstr ""
+
+#: template-portfolio-1-column-portrait.php:85
+#: template-portfolio-1-column.php:83
+msgid "top"
+msgstr ""
+
+#: theme-template-part-content-blog-single.php:45
+#: theme-template-part-content-blog.php:81
+msgid "Posted by:"
+msgstr ""
+
+#: theme-template-part-content-blog-single.php:117
+#: theme-template-part-content-blog.php:136
+msgid "Categories:"
+msgstr ""
+
+#: theme-template-part-content-blog-single.php:120
+#: theme-template-part-content-blog.php:139
+msgid "Tags:"
+msgstr ""
+
+#: theme-template-part-content-blog-single.php:135
+msgid "About the Author:"
+msgstr ""
+
+#: theme-template-part-content-blog-single.php:157
+#: theme-template-part-content-blog.php:150
+msgid "Nothing Found"
+msgstr ""
+
+#: theme-template-part-content-blog-single.php:158
+#: theme-template-part-content-blog.php:151
+msgid "Sorry, it appears there is no content in this section."
+msgstr ""
+
+#: theme-template-part-inline-editing.php:10
+msgid "+ Edit this post"
+msgstr ""
+
+#: theme-template-part-inline-editing.php:17
+msgid "+ Edit this page"
+msgstr ""
+
+#: truethemes_framework/truethemes_framework_init.php:144
+msgid "SEO Settings"
+msgstr ""
+
+#: truethemes_framework/extended/woocommerce.php:127
+msgid "Products tagged &ldquo;"
+msgstr ""
+
+#: truethemes_framework/extended/woocommerce.php:150
+#: truethemes_framework/extended/woocommerce.php:235
+msgid "Search results for &ldquo;"
+msgstr ""
+
+#: truethemes_framework/extended/woocommerce.php:199
+msgid "Error 404"
+msgstr ""
+
+#: truethemes_framework/extended/woocommerce.php:239
+msgid "Posts tagged &ldquo;"
+msgstr ""
+
+#: truethemes_framework/extended/woocommerce.php:244
+msgid "Author:"
+msgstr ""
+
+#: truethemes_framework/extended/woocommerce.php:250
+msgid "Page"
+msgstr ""
+
+#: truethemes_framework/extended/wp-pagenavi.php:189
+msgid "Page %CURRENT_PAGE% of %TOTAL_PAGES%"
+msgstr ""
+
+#: truethemes_framework/extended/wp-pagenavi.php:192
+#: truethemes_framework/extended/wp-pagenavi.php:195
+msgid "&laquo;"
+msgstr ""
+
+#: truethemes_framework/extended/wp-pagenavi.php:193
+#: truethemes_framework/extended/wp-pagenavi.php:194
+msgid "&raquo;"
+msgstr ""
+
+#: truethemes_framework/extended/wp-pagenavi.php:196
+#: truethemes_framework/extended/wp-pagenavi.php:197
+msgid "..."
+msgstr ""
+
+#: truethemes_framework/extended/3d-tag-cloud/wp-cumulus.php:28
+msgid "Display a 3D tag cloud on your site."
+msgstr ""
+
+#: truethemes_framework/extended/3d-tag-cloud/wp-cumulus.php:29
+msgid "CUSTOM - 3D Tag Cloud"
+msgstr ""
+
+#: truethemes_framework/extended/3d-tag-cloud/wp-cumulus.php:84
+#: truethemes_framework/extended/seo-module/seo_module.php:452
+msgid "Title:"
+msgstr ""
+
+#: truethemes_framework/extended/3d-tag-cloud/wp-cumulus.php:86
+msgid "Speed:"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/admin.php:86
+msgid "From"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/admin.php:87
+#: truethemes_framework/extended/grunion-contact-form/grunion-contact-form.php:832
+msgid "Message"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/admin.php:88
+msgid "Date"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/admin.php:160
+msgid "Restore"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/admin.php:163
+#: truethemes_framework/extended/grunion-contact-form/admin.php:262
+msgid "Delete this item permanently"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/admin.php:165
+#: truethemes_framework/extended/grunion-contact-form/admin.php:264
+msgid "Delete Permanently"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/admin.php:196
+msgid "Mark this message as spam"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/admin.php:205
+#: truethemes_framework/extended/grunion-contact-form/admin.php:497
+msgid "Trash"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/admin.php:256
+msgid "Mark this message as NOT spam"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/admin.php:295
+msgid "Y-m-d @ g:i:s A"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/admin.php:419
+msgid "You are not allowed to manage this item."
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/admin.php:453
+msgid "You are not allowed to move this item out of the Trash."
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/admin.php:456
+msgid "Error in restoring from Trash."
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/admin.php:460
+msgid "You are not allowed to move this item to the Trash."
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/admin.php:463
+msgid "Error in moving to Trash."
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/admin.php:487
+#: truethemes_framework/extended/grunion-contact-form/grunion-contact-form.php:831
+msgid "Messages"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/admin.php:510
+msgid "Spam"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/grunion-contact-form.php:53
+msgid "Name"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/grunion-contact-form.php:54
+msgid "Email Address"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/grunion-contact-form.php:55
+msgid "Website"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/grunion-contact-form.php:58
+msgid "Subject"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/grunion-contact-form.php:129
+msgid "Yes"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/grunion-contact-form.php:171
+#, php-format
+msgid "%s requires a valid email address"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/grunion-contact-form.php:178
+#, php-format
+msgid "%s is required"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/grunion-contact-form.php:375
+msgid "Invalid CAPTCHA"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/grunion-contact-form.php:562
+msgid "l F j, Y \\a\\t g:i a"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/grunion-contact-form.php:833
+msgid "Search Message"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/grunion-contact-form.php:834
+#: truethemes_framework/extended/grunion-contact-form/grunion-contact-form.php:835
+msgid "No message found"
+msgstr ""
+
+#: truethemes_framework/extended/grunion-contact-form/grunion-contact-form.php:874
+msgid "Add a custom form"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module.php:292
+msgid "SEO Title"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module.php:293
+msgid "SEO Keywords"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module.php:294
+msgid "SEO Description"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module.php:438
+msgid "Click here for Support"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module.php:455
+msgid " characters. Most search engines use a maximum of 60 chars for the title."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module.php:460
+msgid "Description:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module.php:465
+msgid " characters. Most search engines use a maximum of 160 chars for the description."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module.php:470
+msgid "Keywords (comma separated):"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module.php:476
+msgid "Title Attribute:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module.php:481
+msgid "Menu Label:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module.php:487
+msgid "Disable on this page/post:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1236
+msgid "SEO Module"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1276
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1283
+msgid "All in One SEO Pack"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1391
+msgid "SEO Settings Reset."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1437
+msgid "SEO Settings Updated."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1534
+msgid "Plugin Status:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1538
+msgid "Enabled"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1539
+msgid "Disabled"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1542
+msgid "All in One SEO Pack must be enabled for use."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1551
+msgid "Home Title:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1558
+msgid "The &lt;title&gt; of your homepage. This is independent of any other option. If not set, the default blog title will get used."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1567
+msgid "Home Description:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1574
+msgid "The &lt;meta&gt; description for your homepage. Independent of any other options, the default is no &lt;meta&gt; description at all if this is not set."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1583
+msgid "Home Keywords (comma separated):"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1590
+msgid "A comma separated list of your most important keywords for your site that will be written as &lt;meta&gt; keywords on your homepage."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1599
+msgid "Canonical URLs:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1606
+msgid "This option will automatically generate Canonical URLS for your entire WordPress installation.  This will help to prevent duplicate content penalties by <a href='http://googlewebmastercentral.blogspot.com/2009/02/specify-your-canonical.html' target='_blank'>Google</a>."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1615
+msgid "Rewrite Titles:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1622
+msgid "This is about the &lt;title&gt; tag within your HTML &lt;head&gt; and not your WordPress Post Title or Page Title. <br/>This is what you see in your browser's window title bar. <br/>This is Not visible on a page, only in the window title bar and in the source. <br/>If set, all page, post, category, search and archive page titles get rewritten. <br/> You can specify the format for most of them."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1631
+msgid "Post Title Format:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1638
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1665
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1690
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1712
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1733
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1754
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1775
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1797
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1821
+msgid "The following macros are supported:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1640
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1667
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1692
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1714
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1735
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1756
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1777
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1799
+msgid "%blog_title% - Your blog title"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1641
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1668
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1693
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1715
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1736
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1757
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1778
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1800
+msgid "%blog_description% - Your blog description"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1642
+msgid "%post_title% - The original title of the post"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1643
+msgid "%category_title% - The (main) category of the post"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1644
+msgid "%category% - Alias for %category_title%"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1645
+msgid "%post_author_login% - This post's author' login"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1646
+msgid "%post_author_nicename% - This post's author' nicename"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1647
+msgid "%post_author_firstname% - This post's author' first name (capitalized)"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1648
+msgid "%post_author_lastname% - This post's author' last name (capitalized)"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1658
+msgid "Page Title Format:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1669
+msgid "%page_title% - The original title of the page"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1670
+msgid "%page_author_login% - This page's author' login"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1671
+msgid "%page_author_nicename% - This page's author' nicename"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1672
+msgid "%page_author_firstname% - This page's author' first name (capitalized)"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1673
+msgid "%page_author_lastname% - This page's author' last name (capitalized)"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1683
+msgid "Category Title Format:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1694
+msgid "%category_title% - The original title of the category"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1695
+msgid "%category_description% - The description of the category"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1705
+msgid "Archive Title Format:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1716
+msgid "%date% - The original archive title given by wordpress, e.g. \"2007\" or \"2007 August\""
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1726
+msgid "Tag Title Format:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1737
+msgid "%tag% - The name of the tag"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1747
+msgid "Search Title Format:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1758
+msgid "%search% - What was searched for"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1768
+msgid "Description Format:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1779
+msgid "%description% - The original description as determined by the plugin, e.g. the excerpt if one is set or an auto-generated one if that option is set"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1780
+msgid "%wp_title% - The original wordpress title, e.g. post_title for posts"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1790
+msgid "404 Title Format:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1801
+msgid "%request_url% - The original URL path, like \"/url-that-does-not-exist/\""
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1802
+msgid "%request_words% - The URL path in human readable form, like \"Url That Does Not Exist\""
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1803
+msgid "%404_title% - Additional 404 title input\""
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1813
+msgid "Paged Format:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1820
+msgid "This string gets appended/prepended to titles when they are for paged index pages (like home or archive pages)."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1823
+msgid "%page% - The page number"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1833
+msgid "SEO for Custom Post Types:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1840
+msgid "Check this if you want your enable AIOSEOP support for Custom Post Types on this site."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1851
+msgid "Custom Post Types for SEO Column Support:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1871
+msgid "Choose which post types you want to have SEO columns on the edit.php screen. You can select as many as you like."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1881
+msgid "Use Categories for META keywords:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1888
+msgid "Check this if you want your categories for a given post used as the META keywords for this post (in addition to any keywords and tags you specify on the post edit page)."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1897
+msgid "Use Tags for META keywords:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1904
+msgid "Check this if you want your tags for a given post used as the META keywords for this post (in addition to any keywords you specify on the post edit page)."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1914
+msgid "Dynamically Generate Keywords for Posts Page:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1921
+msgid "Check this if you want your keywords on a custom posts page (set it in options->reading) to be dynamically generated from the keywords of the posts showing on that page.  If unchecked, it will use the keywords set in the edit page screen for the posts page."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1930
+msgid "Use noindex for Categories:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1937
+msgid "Check this for excluding category pages from being crawled. Useful for avoiding duplicate content."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1946
+msgid "Use noindex for Archives:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1953
+msgid "Check this for excluding archive pages from being crawled. Useful for avoiding duplicate content."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1962
+msgid "Use noindex for Tag Archives:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1969
+msgid "Check this for excluding tag pages from being crawled. Useful for avoiding duplicate content."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1978
+msgid "Autogenerate Descriptions:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1984
+msgid "Check this and your META descriptions will get autogenerated if there's no excerpt."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:1993
+msgid "Capitalize Category Titles:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:2000
+msgid "Check this and Category Titles will have the first letter of each word capitalized."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:2010
+msgid "Exclude Pages:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:2018
+msgid "Enter any comma separated pages here to be excluded by SEO Module.  This is helpful when using plugins which generate their own non-WordPress dynamic pages.  Ex: <em>/forum/,/contact/</em>  For instance, if you want to exclude the virtual pages generated by a forum plugin, all you have to do is give forum or /forum or /forum/ or and any URL with the word \"forum\" in it, such as http://mysite.com/forum or http://mysite.com/forum/someforumpage will be excluded from SEO Module."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:2028
+msgid "Additional Post Headers:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:2035
+msgid "What you enter here will be copied verbatim to your header on post pages. You can enter whatever additional headers you want here, even references to stylesheets."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:2044
+msgid "Additional Page Headers:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:2051
+msgid "What you enter here will be copied verbatim to your header on pages. You can enter whatever additional headers you want here, even references to stylesheets."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:2060
+msgid "Additional Home Headers:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:2067
+msgid "What you enter here will be copied verbatim to your header on the home page. You can enter whatever additional headers you want here, even references to stylesheets."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:2077
+msgid "Click for Help!"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:2078
+msgid "Log important events:"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:2085
+msgid "Check this and SEO pack will create a log of important events (all_in_one_seo_pack.log) in its plugin directory which might help debugging it. Make sure this directory is writable."
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:2101
+msgid "Update Settings"
+msgstr ""
+
+#: truethemes_framework/extended/seo-module/seo_module_class.php:2102
+msgid "Reset Settings to Defaults"
+msgstr ""
+
+#: truethemes_framework/global/basic.php:138
+msgid "Email"
+msgstr ""
+
+#: truethemes_framework/global/shortcodes.php:1498
+#: truethemes_framework/global/shortcodes.php:1549
+msgid "No related posts found"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:11
+msgid "Link to your RSS feed and social media accounts."
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:13
+msgid "Custom Social Networks"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:60
+#: truethemes_framework/global/widgets.php:68
+msgid "RSS"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:152
+msgid "Enter the full URL to each of your social media accounts. Simply leave the field blank if you wish not to display that social media service."
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:170
+msgid "Title link:"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:176
+msgid "None"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:182
+msgid "RSS URL: (leave empty for default feed)"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:188
+msgid "Twitter URL:"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:201
+msgid "Facebook URL:"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:214
+msgid "Email Address:"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:228
+msgid "Flickr URL:"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:241
+msgid "Youtube URL:"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:254
+msgid "LinkedIn URL:"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:267
+msgid "FourSquare URL:"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:280
+msgid "Delicious URL:"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:293
+msgid "Digg URL:"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:306
+msgid "Google + URL:"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:336
+msgid "Show your recent posts."
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:337
+msgid "CUSTOM - Recent Posts"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:403
+msgid "Number of Posts:"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:423
+msgid "A list or dropdown of categories"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:424
+msgid "CUSTOM - Categories"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:430
+msgid "Categories"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:446
+msgid "Select Category"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:499
+msgid "Show as dropdown"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:502
+#: truethemes_framework/global/widgets.php:576
+msgid "Show post counts"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:505
+msgid "Show hierarchy"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:525
+msgid "A monthly archive of your site&#8217;s posts"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:526
+msgid "CUSTOM - Archives"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:533
+msgid "Archives"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:545
+msgid "Select Month"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:578
+msgid "Display as a drop down"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:595
+msgid "Use this widget to add one of your custom menus as a widget."
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:596
+msgid "Custom Menu"
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:639
+#: truethemes_framework/theme_specific/metabox.php:109
+#, php-format
+msgid "No menus have been created yet. <a href=\"%s\">Create some</a>."
+msgstr ""
+
+#: truethemes_framework/global/widgets.php:648
+#: truethemes_framework/theme_specific/metabox.php:114
+msgid "Select Menu:"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:28
+msgid "Please select the post category that will be used to populate the portfolio items. <em style=\"color:#999;\">If this is not a portfolio page you can simply ignore this section.</em></p><br />"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:45
+msgid "Portfolio Category"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:84
+msgid "Custom Sub-menu"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:174
+msgid "Custom Settings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:182
+msgid "Portfolio Full Size URL  <span style=\"font-weight:normal !important;\"><em>(Image, Flash Video, Youtube Video, etc)</em></span>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:183
+msgid ""
+"<b>Samples:</b><br><br><b>Image:</b>&nbsp;&nbsp; http://www.yourdomain.com/wp-content/uploads/project1.jpg<br>\n"
+"<b>YouTube:</b>&nbsp;&nbsp; http://www.youtube.com/watch?v=VKS08be78os<br>\n"
+"<b>Flash:</b>&nbsp;&nbsp; http://www.yourdomain.com/wp-content/uploads/design.swf?width=792&amp;height=294<br>\n"
+"<b>Vimeo:</b>&nbsp;&nbsp; http://vimeo.com/8245346<br>\n"
+"<b>iFrame:</b>&nbsp;&nbsp; http://www.apple.com?iframe=true&amp;width=850&amp;height=500<br>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:194
+msgid "Portfolio Description"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:195
+msgid "<b>Note:</b> This description will be displayed in the JQuery pop-up."
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:201
+msgid "Link This Image"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:202
+msgid "Enter a URL if you wish to link this image.<br><b>Sample:</b> &nbsp;http://www.yourdomain.com/about-us"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:215
+msgid "Featured Video"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:223
+msgid "Video URL"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:238
+msgid "Featured Image (External Source)"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:246
+msgid "Image URL"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:266
+msgid "Sub Navigation"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:274
+msgid "Hide the sub navigation"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:285
+msgid "Page Settings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:293
+msgid "Portfolio Count"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:294
+msgid "Please enter the amount of portfolio items you'd like to display on this page.<br /><em>If this is not a portfolio page you can simply ignore this section.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:308
+msgid "Banner Title"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:309
+msgid "Use this section to override the default page title used in the banner."
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:315
+msgid "Searchbar"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:316
+msgid "Would you like to display a searchbar on this page?"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:327
+msgid "Page Comments"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:328
+msgid "Check this box to enable comments on this page."
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:352
+msgid "Page Styling Options"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:360
+msgid "Primary Color Scheme"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:361
+msgid "Use this section to set a custom primary color scheme for this page only."
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:391
+msgid "Secondary Color Scheme"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:392
+msgid "Use this section to set a custom secondary color scheme for this page only."
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:421
+msgid "Background Color"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:422
+msgid ""
+"Use this section to set a custom background color for this page only.<br />\n"
+"\t\t\t\t(This is only recommended when using the boxed layout design.)"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:429
+msgid "Background Image"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:430
+msgid ""
+"Use this section to set a custom background image for this page only.<br />\n"
+"\t\t\t\t(This is only recommended when using the boxed layout design.)"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:437
+msgid "Background Position"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:438
+msgid ""
+"Use this section to set the background position of your custom background image.<br />\n"
+"\t\t\t\t(This is only required when using a custom background image.)"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:454
+msgid "Background Repeat"
+msgstr ""
+
+#: truethemes_framework/theme_specific/metabox.php:455
+msgid ""
+"Use this section to set the repeat property for your custom background image.<br />\n"
+"\t\t\t\t(This is only required when using a custom background image.)"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:82
+msgid "General Settings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:86
+msgid "Website Logo"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:87
+msgid "Upload a custom logo for your Website."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:92
+msgid "Login Screen Logo"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:93
+msgid "Upload a custom logo for your Wordpress login screen."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:98
+msgid "Favicon"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:99
+msgid "Upload a 16px x 16px image that will represent your website's favicon.<br /><br /><em>To ensure cross-browser compatibility, we recommend converting the favicon into .ico format before uploading. (<a href=\"http://www.favicon.cc/\">www.favicon.cc</a>)</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:104
+msgid "Logo Builder - Select an Icon"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:105
+msgid "Select an icon to be used for your logo.<br><br><em>note: you should only select an icon if you won't be uploading a custom logo.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:121
+msgid "Logo Builder - Text"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:122
+msgid "Enter the text to be used for your logo.<br><br><em>note: you should only enter logo text if you won't be uploading a custom logo.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:127
+msgid "Meta Boxes"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:128
+msgid "This functionality hides meta boxes in the Dashboard to help Wordpress feel more like a CMS. This includes: Comments, Discussion, Trackbacks, Custom Fields, Author, and Slug. <em>Un-check this box to disable this functionality.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:133
+msgid "Inline Editing"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:134
+msgid "This functionality adds an inline-editing button to all pages & posts so that logged-in administrators can quickly and easily edit their website. <em>Un-check this box to disable this functionality.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:140
+msgid "A Search Engine Optimization Module is included. <em>Please check this box to enable this Module. Please remove any SEO plugins before enabling this module, so as to prevent any possible SEO conflicts.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:145
+msgid "Responsive Design"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:146
+msgid "This theme comes with a Responsive Design that will adjust the theme's design when viewed on a mobile device. <em>Please check this box if you prefer to disable the responsive design.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:151
+msgid "Update Notifier"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:152
+msgid "This functionality enables the theme to automatically check with our server, for the latest version available. <em>Please uncheck and disable this setting if you are experiencing slow loading in WordPress Admin</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:157
+msgid "Tracking Code"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:158
+msgid "Paste Google Analytics (or other) tracking code here."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:172
+msgid "Blog Settings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:175
+msgid "Blog Page"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:176
+msgid "Select the page that you'd like to use for the Blog."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:182
+msgid "Banner Text"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:183
+msgid "Enter the text to be displayed in the banner area the Blog page."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:188
+msgid "Featured Images"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:189
+msgid "Select the image frame style for featured images."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:198
+msgid "Button Text"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:199
+msgid "These buttons link to each full length Blog post."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:204
+msgid "Drag-to-Share"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:205
+msgid "Drag-to-share functionality is added to each blog post by default. <em>Un-check this box to disable this functionality.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:210
+msgid "\"Posted by\" Information"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:211
+msgid "<em>Check this box</em> to disable the \"Posted by\" information located under each Blog Post Title.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:216
+msgid "Post Date and Comments"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:217
+msgid "<em>Check this box</em> to disable the Post Date and Comment Count located next to each Blog Post.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:222
+msgid "About-the-Author"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:223
+msgid "The author's bio is displayed at the end of each Single Blog post. <em>Un-check this box to disable this functionality.</em><br /><br />Your Bio can be set within your Wordpress Profile page. <a href=\"profile.php\">Users > Your Profile</a>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:228
+msgid "Related Posts"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:229
+msgid "Related posts are displayed at the end of each blog post by default. <em>Un-check this box to disable this functionality.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:234
+msgid "Related Posts Title"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:235
+msgid "Enter the title that is displayed above the list of related posts.<br /><br /><em>Simply ignore this section if you won't be displaying Recent Posts.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:240
+msgid "Related Posts Count"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:241
+msgid "Enter the amount of related posts you'd like to display.<br /><br /><em>Simply ignore this section if you won't be displaying Recent Posts.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:246
+msgid "Post Comments"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:247
+msgid "Post comments are enabled by default. <em>Un-check this box to completely disable comments on all blog posts.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:252
+msgid "Default Avatar"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:253
+msgid "This theme uses it's own custom avatar when users do not have a Gravatar account. <em>Un-check this box to enable WordPress default avatars instead. </em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:258
+msgid "Exclude Categories"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:259
+msgid "Check off any Categories that you'd like to exclude from the Blog."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:273
+msgid "Styling and CSS"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:276
+msgid "Website Color Scheme"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:277
+msgid "Select the primary color scheme for your website."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:304
+msgid "Select a secondary color scheme only if you wish to override the default secondary color."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:332
+msgid "Custom CSS"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:333
+msgid "Use this area to add custom CSS to your website."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:338
+#: truethemes_framework/theme_specific/site-option.php:446
+msgid "Theme Designer"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:341
+msgid "You can further customize the entire look of your theme by using the built in Theme Designer. The Theme Designer is located right here within Site Options Panel under Appearance > Site Options > Theme Designer"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:353
+msgid "Interface Options"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:356
+msgid "Toolbar"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:357
+msgid "A toolbar is displayed above the main navigation by default. <em>Un-check this box to disable the toolbar.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:362
+msgid "Dropdown Navigation"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:363
+msgid "<em>Check this box</em> to disable the dropdown navigation."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:368
+msgid "Navigation Descriptions"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:369
+msgid "<em>Check this box</em> to disable the navigation descriptions."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:375
+msgid "Utility Panel"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:376
+msgid "The utility panel is displayed above the main content area of all interior pages. This panel holds the page title, breadcrumbs and search bar. <em>Un-check this box to disable the utility panel and all of it's contents.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:382
+#: truethemes_framework/theme_specific/site-option.php:1099
+msgid "Search Bar"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:383
+msgid "A search bar is displayed within the Utility Panel by default. <em>Un-check this box to disable the search bar.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:388
+msgid "Search Bar Text"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:389
+msgid "Customize the text that is displayed in the search bar."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:394
+#: truethemes_framework/theme_specific/site-option.php:1093
+msgid "Breadcrumbs"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:395
+msgid "Breadcrumbs are displayed within the Utility Panel by default. <em>Un-check this box to disable the breadcrumbs.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:401
+msgid "Breadcrumbs - Home Link"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:402
+msgid "Customize the text for the homepage link in the breadcrumbs."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:409
+msgid "Footer Columns"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:410
+msgid "Select the number of columns you would like to display in the footer."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:417
+msgid "Footer Style"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:418
+msgid "Select a footer design style.<br />(full, half, small)"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:428
+msgid "Scroll to Top Link"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:429
+msgid "A scroll-to-top link is added to the footer by default. <em>Un-check this box to disable the link.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:434
+msgid "Scroll to Top Label"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:435
+msgid "Customize the text for the scroll-to-top link."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:449
+msgid "Boxed Layout"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:450
+msgid "This theme's design spans the full width of the web browser by default. <em>Please check this box to switch to a fixed-width boxed layout.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:455
+msgid "Boxed Layout - Drop Shadow"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:456
+msgid "Set the opacity of the Boxed Layout drop shadow.<br /><br /><em>Values from: 0.1 - 1.0</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:461
+msgid "Body - Background Color"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:462
+msgid "Select a custom background color for your website. <em>This setting is only recommended when using the boxed layout.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:467
+msgid "Body - Background Image"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:468
+msgid "Choose a custom background image for your website. <br /><br />You can also upload a custom background image using the setting below.<br /><br /><em>Background images are only recommended when using the boxed layout.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:496
+msgid "Body - Background Image Upload"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:497
+msgid "Upload a custom background image for your website. <br /><br />Free backgrounds can be downloaded from <a href=\"http://www.subtlepatterns.com\" target=\"_blank\">www.subtlepatterns.com</a><br /><br /><em>Background images are only recommended when using the boxed layout.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:503
+msgid "Body - Background Image Position"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:504
+msgid "Use this section to set the background position of your custom background image.<br /><br /><em>Background images are only recommended when using the boxed layout.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:519
+msgid "Body - Background Image Repeat"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:520
+msgid "Use this section to set the repeat property for your custom background image.<br /><br /><em>Background images are only recommended when using the boxed layout.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:531
+msgid "Font Color &rarr; Custom Logo"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:532
+msgid "Select a font color for the custom logo."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:537
+msgid "Font Color &rarr; Main Menu"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:538
+msgid "Select a font color for the main menu items."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:543
+msgid "Font Color &rarr; Main Content"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:544
+msgid "Select a font color for the main content area."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:549
+msgid "Font Color &rarr; Footer Content"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:550
+msgid "Select a font color for the footer content area."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:556
+msgid "Font Color &rarr; Links"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:557
+msgid "Select a font color for links."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:562
+msgid "Font Color &rarr; Link:Hover"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:563
+msgid "Select a font color for links on hover."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:568
+msgid "Font Color &rarr; Side Navigation"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:569
+msgid "Select a font color for the side navigation items."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:574
+msgid "Font Color &rarr; H1 Headings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:575
+msgid "Select a font color for all &lt;h1&gt; headings."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:580
+msgid "Font Color &rarr; H2 Headings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:581
+msgid "Select a font color for all &lt;h2&gt; headings."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:586
+msgid "Font Color &rarr; H3 Headings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:587
+msgid "Select a font color for all &lt;h3&gt; headings."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:592
+msgid "Font Color &rarr; H4 Headings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:593
+msgid "Select a font color for all &lt;h4&gt; headings."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:598
+msgid "Font Color &rarr; H5 Headings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:599
+msgid "Select a font color for all &lt;h5&gt; headings."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:605
+msgid "Font Color &rarr; H6 Headings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:606
+msgid "Select a font color for all &lt;h6&gt; headings."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:626
+msgid "Font Size &rarr; Custom Logo"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:627
+msgid "Select a font size for the custom logo."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:633
+msgid "Font Size &rarr; Main Menu"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:634
+msgid "Select a font size for the main menu items."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:641
+msgid "Font Size &rarr; Main Content"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:642
+msgid "Select a font size for the main content area."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:648
+msgid "Font Size &rarr; Side Navigation"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:649
+msgid "Select a font size for side navigation items. headings."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:655
+msgid "Font Size &rarr; H1 Headings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:656
+msgid "Select a font size for all &lt;h1&gt; headings."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:662
+msgid "Font Size &rarr; H2 Headings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:663
+msgid "Select a font size for all &lt;h2&gt; headings."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:669
+msgid "Font Size &rarr; H3 Headings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:670
+msgid "Select a font size for all &lt;h3&gt; headings."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:676
+msgid "Font Size &rarr; H4 Headings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:677
+msgid "Select a font size for all &lt;h4&gt; headings."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:683
+msgid "Font Size &rarr; H5 Headings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:684
+msgid "Select a font size for all &lt;h5&gt; headings."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:691
+msgid "Font Size &rarr; H6 Headings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:692
+msgid "Select a font size for all &lt;h6&gt; headings."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:698
+msgid "Font Size &rarr; Footer Content"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:699
+msgid "Select a font size for the footer content area. headings."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:734
+msgid "Font Face &rarr; Custom Logo Text"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:735
+msgid "Select a font face for your custom logo text."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:742
+msgid "Font Face &rarr; Main Content"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:743
+msgid "Select a font face for the main content area."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:750
+msgid "Font Face &rarr; Main Nenu"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:751
+msgid "Select a font face for the main menu items."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:757
+msgid "Font Face &rarr; Side Navigation"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:758
+msgid "Select a font face for the side navigation items."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:765
+msgid "Font Face &rarr; H1 Headings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:766
+msgid "Select a font face for all &lt;h1&gt; headings."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:772
+msgid "Font Face &rarr; H2 Headings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:773
+msgid "Select a font face for all &lt;h2&gt; headings."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:780
+msgid "Font Face &rarr; H3 Headings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:781
+msgid "Select a font face for all &lt;h3&gt; headings."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:788
+msgid "Font Face &rarr; H4 Headings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:789
+msgid "Select a font face for all &lt;h4&gt; headings."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:796
+msgid "Font Face &rarr; H5 Headings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:797
+msgid "Select a font face for all &lt;h5&gt; headings."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:805
+msgid "Font Face &rarr; H6 Headings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:806
+msgid "Select a font face for all &lt;h6&gt; headings."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:812
+msgid "Font Face &rarr; Footer Content"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:813
+msgid "Select a font face for the footer content area."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:828
+msgid "Typography"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:831
+msgid "Google Web Fonts"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:832
+msgid "Select a font face to be used for your website's headings.<br><br>Font names (from left to right):<br>- (none)<br>- Droid Sans<br>- Cabin<br>- Cantarell<br>- Cuprum<br>- Oswald<br>- Neuton<br>- Oritron<br>- Arvo<br>- Kreon<br>- Indie Flower<br>- Josefin Sans"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:852
+msgid "Custom Google Web Font"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:853
+msgid "Enter a custom font name If you prefer to use a font that's not listed above.<br><br>Here is the complete list of available <a href=\"http://www.google.com/webfonts\" target=\"_blank\">Google Web Fonts</a>."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:874
+msgid "Forms"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:877
+msgid "Form Builder"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:878
+msgid "A powerful form builder is included in this theme by default. <em>Un-check this box to disable the form builder.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:883
+msgid "\"Required Text\""
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:884
+msgid "Customize the text that will be displayed next to required fields."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:889
+msgid "Success Message"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:890
+msgid "Customize the success message that will be displayed after a user submits the form."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:895
+msgid "Submit Button - Text"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:896
+msgid "Customize the text to be used for the form's Submit Button"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:901
+msgid "reCAPTCHA: Public Key"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:902
+msgid ""
+"Enter your reCAPTCHA Public Key.<br><br>\n"
+"\t\t\tYou can obtain your reCAPTCHA keys at: <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">google.com/recaptcha</a><br><br><em>Simply leave this field blank if you won't be using this functionality.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:908
+msgid "reCAPTCHA: Private Key"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:909
+msgid ""
+"Enter your reCAPTCHA Private Key.<br><br>\n"
+"\t\t\tYou can obtain your reCAPTCHA keys at: <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">google.com/recaptcha</a><br><br><em>Simply leave this field blank if you won't be using this functionality.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:917
+msgid "reCAPTCHA Theme - Select a theme"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:918
+msgid "Select a reCAPTCHA theme.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:931
+msgid "reCAPTCHA Theme - Customization"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:932
+msgid "<strong>(For Advance User Only)</strong><br/><br/>This setting overwrites the above reCAPTCHA theme selection. <br/><br/>You can customize the look and feel of reCAPTCHA, by entering your custom javascript code in the box provided.<br /><br />Please read <a href=\"http://code.google.com/intl/pt-PT/apis/recaptcha/docs/customization.html\" target=\"_blank\">reCAPTCHA developer documentation</a> for details.<br/><br/><u><strong>Important Notes:</strong></u><br/>Please change the javascript codes from google documentation to use <strong>double quotes</strong> rather than single quotes for all javascript variables."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:947
+msgid "Utility Pages"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:950
+msgid "404 Page Banner Text"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:951
+msgid "Set the page title that is displayed in the banner area of the 404 Error Page."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:956
+msgid "404 Message"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:957
+msgid "Set the message that is displayed on the 404 Error Page."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:967
+msgid "Search Results Banner Text"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:968
+msgid "Set the page title that is displayed in the banner area of the Search Results Page."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:973
+msgid "Search Results Fallback Message"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:974
+msgid "Set the message that is displayed when a search comes back with no results."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:979
+msgid "Sitemap: Column one title"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:980
+msgid "This title gets displayed in the first column above the list of Pages.<br /><br /><em>Simply disregard this section if you won't be using the \"Sitemap 2\" Page template.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:985
+msgid "Sitemap: Column two title"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:986
+msgid "This title gets displayed in the second column above the list of Posts.<br /><br /><em>Simply disregard this section if you won't be using the \"Sitemap 2\" Page template.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:992
+msgid "Sitemap: Column three text"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:993
+msgid "This text gets displayed in the third column on the Sitemap page.<br /><br /><em>Simply disregard this section if you won't be using the \"Sitemap 2\" Page template.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:1012
+msgid "Homepage Settings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:1016
+msgid "jQuery Slider Post Category"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:1017
+msgid "Select the category that will be used for generating the jQuery slides."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:1023
+msgid "JQuery Slider Pause Settings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:1024
+msgid "Check this box if you would like the jQuery slider to pause when the user hovers over a slide."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:1029
+msgid "jQuery Homepage Slider Time"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:1030
+msgid "Enter the desired amount of time you would like to display each slide. (milliseconds)"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:1036
+msgid "3D CU3ER - Slider ID Number"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:1037
+msgid "Enter the ID number of the 3D slider you would like to embed on the \"Homepage :: 3D\" page template.<br><br><em>Not sure where to find the slider ID number? <a href=\"http://themes.5-squared.com/support/cu3er-instructions.html\" target=\"_blank\">View these visual instructions.</a></em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:1053
+msgid "Javascript Settings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:1056
+msgid "Enable Testimonial Slider"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:1057
+msgid "Check this box to enable the testimonial slider."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:1062
+msgid "Testimonial Slider Pause Settings"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:1063
+msgid "Check this box if you would like the testimonial slider to pause when the user hovers over a slide."
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:1068
+msgid "Testimonial Slider Time"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:1069
+msgid "Enter the desired amount of time you would like to display each testimonial. (milliseconds)"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:1090
+msgid "WooCommerce"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:1094
+msgid "Breadcrumbs are displayed on the WooCommerce pages by default. <em>Un-check this box to disable this functionality.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:1100
+msgid "A Search bar is displayed on the WooCommerce pages by default. <em>Un-check this box to disable this functionality.</em>"
+msgstr ""
+
+#: truethemes_framework/theme_specific/site-option.php:1106
+msgid "Set the page title that is displayed in the banner area of the WooCommerce Pages."
+msgstr ""
+
+#: truethemes_framework/truethemes/wysiwyg/interface.php:2
+msgid "You are not allowed to be here"
+msgstr ""
+
