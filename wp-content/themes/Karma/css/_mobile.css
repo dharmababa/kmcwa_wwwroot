@@ -1205,7 +1205,7 @@ margin:0 auto;
 .home-bnr-jquery .home-banner-sub-full{
 width:420px;
 height:251px;
-margin-bottom: 180px;
+/* margin-bottom: 180px; */
 }
 
 .home-banner-wrap {
@@ -1525,14 +1525,14 @@ padding: 0 5px;
 
 
 /* ------------------------------------------ */
-/* iPhone (portrait) ------------------------ */
+/* Phone (portrait) ------------------------ */
 /* ------------------------------------------ */
 @media only screen and (max-width:479px) {
 #wrapper #header {overflow: hidden;}
 #main .home-bnr-jquery,
 .home-bnr-jquery .home-banner-sub-full{
 width: 260px;
-margin-bottom: 250px;
+/* margin-bottom: 250px; */
 }
 .uds-pricing-table{
 display:block;
@@ -1579,7 +1579,7 @@ height:179px !important;
 #main .home-bnr-jquery ul,
 #main .home-bnr-jquery ul li{
 height: 159px !important; width: 100% !important;
-margin-bottom: 250px;
+/* margin-bottom: 250px; */ 
 }
 .home-bnr-jquery .home-banner-video-sub-alt{
 width: 250px;
