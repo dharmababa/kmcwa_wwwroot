@@ -50,26 +50,7 @@ if (!empty($title)) {echo $after_title;}
 ?>
 		
 
-<ul class="social_icons">
-<?php
-      if (empty($networks['RSS'])):
-?>
-<li><a href="<?php
-         bloginfo('rss2_url');
-?>" class="rss"><?php
-         _e('RSS', 'truethemes_localize');
-?></a></li>
-<?php
-      else:
-?>
-<li><a href="<?php
-         echo $networks['RSS'];
-?>" class="rss"><?php
-         _e('RSS', 'truethemes_localize');
-?></a></li>
-<?php
-      endif;
-?>	
+<ul class="social_icons">	
 <?php
       foreach (array(
          "Twitter",

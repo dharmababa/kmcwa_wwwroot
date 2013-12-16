@@ -5,6 +5,8 @@
 <!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
 <!--[if !IE]><!--><html <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
+<meta name="application-name" content="KMC Washington"/>
+<link rel="apple-touch-icon" href="/nkt-logo.png"/>
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
 <?php truethemes_meta_hook();// action hook, see truethemes_framework/global/hooks.php ?>

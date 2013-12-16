@@ -1618,7 +1618,7 @@ margin-bottom:-17px;
 /*----------------------------*/
 /* 5. Callouts
 /*----------------------------*/
-.callout-wrap {float: left;width: 100%;padding-top: 20px;background:url(images/_global/separator3.gif) 0 0 repeat-x;margin: 10px 0 30px 0;}
+.callout-wrap {float: left;width: 100%;padding-top: 20px;background:url(images/_global/separator3.gif) 0 0 repeat-x;margin: 10px 0 30px 0;text-align: center; vertical-align:middle}
 .callout-wrap span {padding-bottom: 25px;background:url(images/_global/separator3.gif) left bottom repeat-x;color: #222;font-size:1.5em;line-height: 28px;display: block;}
 .callout2 {color: #222;font-size:1.5em;line-height: 28px;}
 
