@@ -11,7 +11,7 @@ Template Name: Homepage :: jQuery
 
 <?php truethemes_before_main_hook();// action hook, see truethemes_framework/global/hooks.php ?>
 
-<div id="main">
+<div id="main" style="display:inline">
 
 <div class="main-area home-main-area">
 <div class="main-holder home-holder">
