@@ -1,0 +1,12 @@
+
+.rhcalendar.upcoming-widget {
+	margin-top:0px;
+}
+
+.upcoming-widget .fc-edit-tools, 
+.upcoming-widget .fc-header, 
+.upcoming-widget .fc-lower-head-tools, 
+.upcoming-widget .fc-head-control, 
+.upcoming-widget .fc-footer {
+	display:none;
+}
