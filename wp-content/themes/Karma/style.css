@@ -2311,7 +2311,7 @@ blockquote.right {margin-left: 20px;text-align: left;margin-right: 0;width: 33%;
 /* 1. Default Styles
 /*----------------------------*/
 #sidebar h3 {color: #222;font-size:1.8em;}
-.sidebar-widget {margin-bottom: 34px;padding-bottom: 34px;background: url(images/_global/separator3.gif) 0 100% repeat-x;width:100%;float:left;}
+.sidebar-widget {margin-bottom: 34px;background: url(images/_global/separator3.gif) 0 100% repeat-x;width:100%;float:left;}
 .sidebar-widget p:last-child {margin: 0;}
 #sidebar ul {margin:-7px 0 0 0;padding:0;list-style: none;}
 #sidebar a {text-decoration: none;}
