@@ -112,7 +112,7 @@ class shortcode_venues {
 
 		$all_empty = true;
 		foreach(array('address','glat','glon') as $field){
-			if(''!=trim($atts[$field])){
+			if(isset($atts[$field]) && ''!=trim($atts[$field])){
 				$all_empty=false;
 				break;
 			}

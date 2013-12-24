@@ -4,12 +4,12 @@
 Plugin Name: Calendarize It! for WordPress
 Plugin URI: http://plugins.righthere.com/calendarize-it/
 Description: Calendarize It! for WordPress is a powerful calendar and event plugin. 
-Version: 2.5.2 rev41962
+Version: 2.6.1 rev43760
 Author: Alberto Lau (RightHere LLC)
 Author URI: http://plugins.righthere.com
  **/
 
-define('RHC_VERSION','2.5.2'); 
+define('RHC_VERSION','2.6.1'); 
 define('RHC_PATH', plugin_dir_path(__FILE__) ); 
 define("RHC_URL", plugin_dir_url(__FILE__) ); 
 define("RHC_SLUG", plugin_basename( __FILE__ ) );
@@ -48,6 +48,7 @@ $settings = array(
 	'license_capability'	=> 'rhc_license'
 );
 //$settings['debug_menu']=true;//provides a debug menu with debugging information
+$settings['debugging_js_css']=true;//loads non minified css
 
 global $rhc_plugin; 
 $rhc_plugin = new plugin_righthere_calendar($settings);

@@ -26,6 +26,9 @@ class rhc_calendar_metabox {
 		add_action('save_post', array(&$this,'save_post'), 20, 2 );//20 after meta data updated by post_meta_boxes
 		//----
 		add_filter('generate_calendarize_meta', array(&$this,'generate_calendarize_meta'), 10, 2);
+		add_action( 'delete_post', array(&$this,'delete_post'), 10, 1 );
+		add_action( 'wp_trash_post', array(&$this,'delete_post'), 10, 1 );
+		add_action( 'untrash_post', array(&$this,'delete_post'), 10, 1 );
 	}
 	
 	function save_post($post_id, $post){
@@ -56,7 +59,14 @@ class rhc_calendar_metabox {
 		return apply_filters('generate_calendarize_meta', $post_id, $post);
 	}
 
-	function generate_calendarize_meta($post_id, $post){
+	function delete_post($post_id){
+		global $post_type; 
+		if(isset($post_type) && $this->post_type==$post_type){
+			$this->handle_delete_events_cache();
+		}
+	}
+	
+	function handle_delete_events_cache(){
 		global $rhc_plugin,$wpdb;		
 		if('1'!=$rhc_plugin->get_option('disable_rhc_cache','',true)){
 			//clear cache.
@@ -70,6 +80,11 @@ class rhc_calendar_metabox {
 				}
 			}
 		}
+	}
+	
+	function generate_calendarize_meta($post_id, $post=null){
+		global $rhc_plugin,$wpdb;		
+		$this->handle_delete_events_cache();
 
 		$fc_range_start = '';
 		$fc_range_end = '';
@@ -294,6 +309,8 @@ class rhc_calendar_metabox {
 	
 	
 	function metaboxes($t=array()){
+		global $rhc_plugin;
+		
 		$i = count($t);
 		//------------------------------
 		$i++;
@@ -334,7 +351,7 @@ class rhc_calendar_metabox {
 			(object)array(
 				'id'			=> 'enable_featuredimage',
 				'type'			=> 'onoff',
-				'default'		=> '1',
+				'default'		=> $rhc_plugin->get_option('enable_featuredimage','1',true),
 				'label'			=>  __('Event Page Top Image','rhc'),
 				'save_option'	=> true,
 				'load_option'	=> true
@@ -342,7 +359,7 @@ class rhc_calendar_metabox {
 			(object)array(
 				'id'			=> 'enable_postinfo',
 				'type'			=> 'onoff',
-				'default'		=> '1',
+				'default'		=> $rhc_plugin->get_option('enable_postinfo','1',true),
 				'label'			=>  __('Event Details Box','rhc'),
 				'save_option'	=> true,
 				'load_option'	=> true
@@ -350,7 +367,7 @@ class rhc_calendar_metabox {
 			(object)array(
 				'id'			=> 'enable_postinfo_image',
 				'type'			=> 'onoff',
-				'default'		=> '1',
+				'default'		=> $rhc_plugin->get_option('enable_postinfo_image','1',true),
 				'label'			=>  __('Event Details Box Image','rhc'),
 				'save_option'	=> true,
 				'load_option'	=> true
@@ -358,7 +375,7 @@ class rhc_calendar_metabox {
 			(object)array(
 				'id'			=> 'enable_venuebox',
 				'type'			=> 'onoff',
-				'default'		=> '1',
+				'default'		=> $rhc_plugin->get_option('enable_venuebox','1',true),
 				'label'			=>  __('Venue Details Box','rhc'),
 				'save_option'	=> true,
 				'load_option'	=> true
@@ -366,7 +383,7 @@ class rhc_calendar_metabox {
 			(object)array(
 				'id'			=> 'enable_venuebox_gmap',
 				'type'			=> 'onoff',
-				'default'		=> '1',
+				'default'		=> $rhc_plugin->get_option('enable_venuebox_gmap','1',true),
 				'label'			=>  __('Venue Details Box Map','rhc'),
 				'save_option'	=> true,
 				'load_option'	=> true

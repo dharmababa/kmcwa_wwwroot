@@ -283,7 +283,27 @@ class rhc_post_info_field {
 		$taxonomy_links = $rhc_plugin->get_option('taxonomy_links',false,true);
 		$taxonomy_links = $taxonomy_links=='1'?true:false;
 		
-		foreach(array('id'=>'','type'=> '','label'=>'','custom'=>'','value'=>'','taxonomy'=>'','postmeta'=>'','taxonomymeta'=>'','taxonomymeta_field'=>'','post_ID'=>false,'date_format'=>false,'render_cb'=>false,'taxonomy_links'=>$taxonomy_links,'column'=>false,'span'=>12,'offset'=>0,'index'=>'') as $field => $default){
+		foreach(array(
+			'id'=>'',
+			'type'=> '',
+			'label'=>'',
+			'custom'=>'',
+			'value'=>'',
+			'taxonomy'=>'',
+			'postmeta'=>'',
+			'taxonomymeta'=>'',
+			'taxonomymeta_field'=>'',
+			'post_ID'=>false,
+			'date_format'=>false,
+			'render_cb'=>false,
+			'taxonomy_links'=>$taxonomy_links,
+			'column'=>false,
+			'span'=>12,
+			'offset'=>0,
+			'index'=>'',
+			'format'=>''
+			) as $field => $default){
+			
 			if($field=='label'){
 				$v = isset($args[$field])? translate($args[$field],'rhc') : translate($default,'rhc');	
 			}else{
@@ -307,6 +327,7 @@ class rhc_post_info_field {
 		}		
 		
 	}
+	
 	function get_template($frontend=false){
 		if($frontend)return $this->get_template_frontend();
 		ob_start();
@@ -355,6 +376,7 @@ class rhc_post_info_field {
 		if(method_exists($this,$method)){
 			$output = $this->$method($template);
 		}
+		
 		$output = apply_filters('rhc_post_info_field_render',$output,$this,$template);	
 		
 		return $output;
@@ -471,6 +493,7 @@ class rhc_post_info_field {
 		if(intval($this->post_ID)>0){
 			$value = get_post_meta($this->post_ID,$this->postmeta,true);
 			if(is_string($value)){
+				$this->value = $value;
 				return $this->inject_values_to_template( array(
 					'label'	=> $this->label,
 					'class'	=> 'fe-cell-postmeta',
@@ -486,7 +509,7 @@ class rhc_post_info_field {
 	}
 	
 	function filter_value($value,$for_filter=array()){
-		if(!in_array(trim($this->date_format),array('',false))){
+		if(!in_array(trim($this->date_format),array('','false',false))){
 			$value = $this->filter_handle_repeat($value);
 			$value = date_i18n($this->date_format,strtotime($value));
 		}
@@ -494,7 +517,14 @@ class rhc_post_info_field {
 		if(false!==$this->render_cb && is_callable($this->render_cb)){
 			$value = call_user_func( $this->render_cb, $value, $this );
 		}	
-		return apply_filters('rhc_post_info_value',$value,$this,$for_filter);
+		
+		$value = apply_filters('rhc_post_info_value',$value,$this,$for_filter);
+		
+		if(!empty($this->format)){
+			$value = str_replace('{value}',$value,$this->format);
+		}
+		
+		return $value;
 	}
 	
 	function filter_handle_repeat($value){

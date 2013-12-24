@@ -321,6 +321,9 @@
 					}else{					
 						$(_this).find('.fc-view-loading').stop().fadeOut('fast',function(){
 							$(_this).find().remove('.fc-view-loading');
+							if(view.name=='rhc_event'){
+								$(_this).find('.fc-view-rhc_event').css('min-height','');
+							}						
 						});
 					}
 				}					
@@ -656,7 +659,7 @@
 							
 							if(color && textColor){
 								e.color = color;
-								e.textcolor = textColor;
+								e.textColor = textColor;
 								break;
 							}
 						}
@@ -1090,7 +1093,9 @@
 		if(!calendar){
 			calendar = $(view.element).parents('.fullCalendar');
 		}
-
+		
+		set_fc_small(calendar);
+		
 		var _view = $(calendar).fullCalendar('getView');		
 		if(_view.name=='rhc_gmap'){//hardcoded. for now only map view needs this filtering.
 			$(calendar).find('.fc-head-control').addClass('show-control');
@@ -1102,6 +1107,26 @@
 		$(calendar).find('.tax_filter_field').each(function(i,el){
 			$(el).val('');
 		});		
+		
+		var now = new Date();
+		if( view.visStart <= now && view.visEnd >= now ){
+			$(element).parents('.rhc_holder').addClass('has-current-date');
+		}else{
+			$(element).parents('.rhc_holder').removeClass('has-current-date');		
+		}
+		
+		if( $(element).parents('.rhc_holder').is('.flat-ui-cal') ){			
+			if( $(element).parents('.rhc_holder').is('.has-current-date') ){
+				var data = $(calendar).parents('.rhc_holder').data('Calendarize');
+				var fc_options = data.modes[data.mode].options;			
+				var _format = "'<span class=''fuiw-dayname''>'dddd'</span><span class=''fuiw-month''>'MMMM'</span><span class=''fuiw-year''>'yyyy'</span><span class=''fuiw-day''>'d'</span>'";
+				$(calendar).find('.fc-header-title h2').html( $.fullCalendar.formatDate(now, _format) );
+			}
+			
+			$(calendar).find('.fc-day-header').each(function(i,el){
+				$(el).html( $(el).html().substring(0,1) );
+			});
+		}
 	}
 	
 	function cb_sort_tax_filter( o, p ){
@@ -1184,6 +1209,10 @@ function fc_event_details(calEvent, jsEvent, view){
 	}
 	jQuery(document).ready(function($){
 		var tooltip_target = view.calendar.options.tooltip.target||'_self';
+		if(!calEvent.local_feed && calEvent.fc_click_target){
+			tooltip_target = calEvent.fc_click_target
+		}
+	
 		view.calendar.rhc_search(view.calendar,jsEvent,true);	
 		var id = 'fct-'+calEvent.id;
 		if( $('BODY').find('#'+id).length>0 ){
@@ -1220,7 +1249,9 @@ function fc_event_details(calEvent, jsEvent, view){
 				.css('opacity',0)
 				.show()
 			;
-			
+			if(calEvent.color){
+				tooltip.css('border-left-color', calEvent.color);
+			}
 			if(calEvent.url){
 				var url = calEvent.url;
 				if(calEvent.fc_rrule && ''!=calEvent.fc_rrule){			
@@ -1568,6 +1599,14 @@ jQuery(document).ready(function($){
 	},function(){
 		$(this).removeClass('fc-state-hover');
 	});
+	
+
+	$( window ).resize(function() {
+		$('.rhcalendar.not-widget .fullCalendar ').each(function(i,calendar){
+			set_fc_small(calendar);
+		});
+	});
+	
 });
 
 function init_sc_ical_feed(){
@@ -1702,4 +1741,16 @@ function get_event_ocurrences(e){
 	}
 															
 	occurrences = scheduler.occurrences_between(start, end);
+}
+
+function set_fc_small(calendar){
+	if( jQuery(calendar).parent().hasClass('not-widget') ){
+		var cw = parseInt( jQuery(calendar).width() ) ;
+		mobile_width = RHC.mobile_width || 480 ;
+		if( cw > 0 && cw <= mobile_width ){		
+			jQuery(calendar).parent().addClass('fc-small');
+		} else {
+			jQuery(calendar).parent().removeClass('fc-small');
+		}		
+	}	
 }

@@ -79,9 +79,8 @@ jQuery(document).ready(function($){
 	$('.pop-onoff-control button').on('click',function(e){
 		$(this)
 			.parent().find('button').removeClass('checked');
-		$(this).addClass('checked');
-		
-		$(this).parent().parent().find('input[type=hidden]').val( $(this).attr('value') );
+		$(this).addClass('checked');			
+		$(this).parent().parent().find('input[type=hidden]').val( $(this).attr('value') ).trigger('change');
 	});
 	
 	$('.pop-onoff-control input[type=hidden]').each(function(i,inp){

@@ -659,7 +659,7 @@ class rhc_settings {
 			$post_ids = $wpdb->get_col($sql,0);
 			if(is_array($post_ids) && $post_ids>0){
 				foreach($post_ids as $post_ID){
-					$notused=apply_filters('generate_calendarize_meta',$post_ID);
+					$notused=apply_filters('generate_calendarize_meta',$post_ID,null);
 				}
 			}
 		}

@@ -25,7 +25,7 @@ class rhc_event_image_metaboxes {
 			'metabox_meta_fields' =>  'image_meta_fields',
 			'pluginpath'=>RHC_PATH
 		));
-		$this->post_meta_boxes->save_fields = array('rhc_top_image','rhc_dbox_image','rhc_tooltip_image');
+		$this->post_meta_boxes->save_fields = apply_filters( 'rhc_images', array('rhc_top_image','rhc_dbox_image','rhc_tooltip_image') );
 	}
 	
 	function metaboxes($t=array()){
@@ -104,7 +104,9 @@ class rhc_event_image_metaboxes {
 			(object)array(
 				'type'=>'clear'
 			)
-		);			
+		);		
+		
+		$t = apply_filters('rhc_images_metaboxes', $t);	
 		//----- 
 		return $t;
 	}	

@@ -646,3 +646,6 @@ tbody.popex-list.pop-processing {
   background-color: #bd362f;	 	
 }
  
+.pt-option-rolemanager table.widefat{
+clear:none;
+}

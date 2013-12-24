@@ -314,7 +314,7 @@ function EventView(element, calendar) {
 						if(e.event_rdate){
 							args.event_rdate = e.event_rdate;
 						}
-						return _rhc_widget_link_click(args);	
+						return _rhc_widget_link_click(args,this);	
 					});
 					//--terms
 					item=str;
@@ -749,12 +749,19 @@ function DetailView(element, calendar) {
 
 })(jQuery);
 
-function _rhc_widget_link_click(calEvent){
+function _rhc_widget_link_click(calEvent,el){
+	var event = jQuery(el).data('rhc_event')||false;
+	if(event && event.fc_click_target){
+		var target = event.fc_click_target;
+	}else{
+		var target = '_self';
+	}
 	if(calEvent.event_rdate || calEvent.gotodate){
 		jQuery('form#calendarizeit_repeat_instance').remove();
 		var form = '<form id="calendarizeit_repeat_instance" method="post"></form>';
 		jQuery(form)
 			.attr('action',calEvent.url)
+			.attr('target',target)
 			.appendTo('BODY')	
 		;
 		if(calEvent.gotodate){
@@ -769,7 +776,11 @@ function _rhc_widget_link_click(calEvent){
 		}
 		jQuery('form#calendarizeit_repeat_instance').submit();	
 	}else{
-		window.open(calEvent.url);
+		if(target=='_blank'){
+			window.open(calEvent.url);
+		}else{
+			location.href = calEvent.url;
+		}
 	}
 	return false;
 }

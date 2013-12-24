@@ -3,10 +3,64 @@ Author: Alberto Lau (RightHere LLC)
 Author URL: http://plugins.righthere.com/calendarize-it/
 Tags: WordPress, Calendar, Event, Recurring Events, Arbitrary Recurring Events, Venues, Organizers, jQuery
 Requires at least: 3.1
-Tested up to: 3.7.1
-Stable tag: 2.5.2 rev41962
+Tested up to: 3.8
+Stable tag: 2.6.1 rev43717
 
 == CHANGELOG ==
+Version 2.6.1 rev43717 - December 23, 2013
+* Update: Change Calendarize it! event default color
+* Bug Fixed: Title alignment off
+* Bug Fixed: Rename the pre-loader icon font to avoid conflicts with other plugins and themes that have not namespaced icomoon.
+* New Feature: New and improved layout for Month View on mobile devices
+* New Feature: Adding a mobile .fc-small class and code for handling calendar rendering on mobile (Setting in Options Panel)
+* Bug Fixed: Make multi day events span correctly in mobile view
+
+Version 2.6.0 rev43685 - December 21, 2013
+* New Feature: Allow External Event Sources add-on to define its own tooltip link target.
+
+Version 2.5.9 rev43680 - December 19, 2013
+* Update: Changed styling of tooltip to better support mobile devices
+* Update: Tooltip will pick up the color from the event in the Month View
+
+Version 2.5.8 rev43502 - December 17, 2013
+* Compatibility Fix: Renamed the spinner (pre-loader) font-face (icomoon) to avoid conflict with other plugins and themes.
+* Bug Fixed: CSS Styling issues fixed in wp-admin (WordPress 3.8 compatibility)
+* Update: Added name-spacing to font-face icon (icomoon) to avoid conflict with other plugins and themes. 
+* Update: Optimization reduce the size of the plugin on memory per page load
+
+Version 2.5.7 rev43111 - December 11, 2013
+* Update: Improved layout for Social Network icons on iPad and Tablets. 
+
+Version 2.5.6 rev43031 - December 10, 2013
+* Bug Fixed: Moved misplaced tip html that breaks the styles with Twitter Boostrap 3
+* Bug Fixed: php warning in troubleshooting tab
+* Bug Fixed: Upcoming Events Widget targeting _blank on some events
+* Update: Increase the Options Panel version (support for callback on Social Login Options)
+* New Feature: Added support for Social Media login (Facebook, Twitter, Google+, LinkedIn and Microsoft Live)
+
+Version 2.5.5 rev42214 - November 22, 2013
+* Bug Fixed: Alignment of text in bubble on Google Map (Venue Details)
+* Bug Fixed: Using a custom postmeta in post info fields returns a strange format in the wp-admin.
+* Update: Allow pop option esc_attr for escaping html in options fields.
+* Update: Redundant check, do not can get image scr if attachment id is not valid
+* New Feature: Added a filter to add postmeta options to post info metabox form
+* New Feature: Modify post info so that button add-on can be applied to a postmeta type (used for Community Events add-on)
+* New Feature: Added option to set a default set of values for the Layout Options Metabox (applicable to new events)
+
+Version 2.5.4 rev42165 - November 15, 2013
+* Bug Fixed: Type error in textColor breaks the Event Color by Calendar add-on
+* New Feature: Added new Role Manager field type for setting plugin capabilities per User Role
+
+Version 2.5.3 rev42049 - November 12, 2013
+* Bug Fixed: Incorrect localization fixed
+* Bug Fixed: Font size of the Event Details Box title can not be edited with the CSS Editor
+* Bug Fixed: When loading ends, remove min-height from view, as it sometimes creates unwanted space.
+* New Feature: New FLAT UI Calendar Widget
+* New Feature: Added support for customizing the FLAT UI Calendar Widget with the CSS Editor
+* Update: Clear Event Cache on post (event) delete
+* Update: Removing embed of Google font Lato in CSS
+* Update: Embedding Google Lato font (The default Lato font can be changed with the CSS Editor. 600+ Google Fonts available)
+
 Version 2.5.2 rev41962 - November 8, 2013
 * Bug Fixed: Allow php on Widget Templates
 * Bug Fixed: A space about 5px is added between the top view and the start of the lists of events. 

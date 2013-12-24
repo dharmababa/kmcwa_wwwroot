@@ -326,7 +326,16 @@ class pop_input {
 	
 	function _callback($tab,$i,$o,&$save_fields){
 		if(is_callable($o->callback)){
-			return call_user_func($o->callback,$tab,$i,$o,$save_fields);
+			if( is_array($o->callback) && count($o->callback)==2 ){
+				$co = $o->callback[0];
+				$method = $o->callback[1];
+				return $co->$method($tab, $i, $o, $save_fields);
+			}else if( is_string($o->callback) ){
+				$fn = $o->callback;
+				return $fn( $tab,$i,$o,$save_fields );
+			}else{
+				return call_user_func($o->callback,$tab,$i,$o,$save_fields);
+			}
 		}
 		return '';
 	}	
@@ -365,7 +374,14 @@ class pop_input {
 			'1'=>__('On','pop'),
 			'0'=>__('Off','pop')
 		);
-		
+		if(property_exists($o,'hidegroup')){
+			$hide_values = property_exists($o,'hidevalues')&&is_array($o->hidevalues)?$o->hidevalues:array('1');
+			$fn = sprintf(';pop_groupcontrol(this,\'%s\',%s);', $o->hidegroup, str_replace('"',"'",json_encode($hide_values)) );
+			$o->el_properties = property_exists($o,'el_properties')&&is_array($o->el_properties)?$o->el_properties:array();
+			$o->el_properties['OnChange'] = isset($o->el_properties['OnChange'])?$o->el_properties['OnChange'].' '.$fn:'javascript:'.$fn;			
+			$o->el_properties['class'] = isset($o->el_properties['class'])?$o->el_properties['class'].' pop_groupcontrol':'pop_groupcontrol';	
+		}
+				
 		//foreach($o->options)
 		$str = "";
 		$str .= "<div class=\"pop-onoff-control\">";
@@ -423,6 +439,43 @@ class pop_input {
 		);			
 		//$out.=print_r($o,true);
 		return $out;		
+	}
+	
+	function _rolemanager($tab,$i,$o,&$save_fields){
+		$id = $this->get_el_id($tab,$i,$o);
+		$html = '';
+		$roles = get_editable_roles();
+		$excluded_roles	= property_exists($o,'excluded_roles') ? $o->excluded_roles : array();
+		if(count($roles)>0){
+			foreach($roles as $role => $r){
+				if( in_array($role,$excluded_roles) ) continue;
+				$html .= sprintf('<h3 class="option-panel-subtitle">%s</h3>',$r['name']);
+				$html .= '<table class="widefat">';
+				foreach( $o->capabilities as $cap => $label ){
+					$name = sprintf('rolemanager[%s][%s][%s]',$id,$role,$cap);
+					$html.='<tr class="pop-roleman-item">';
+					$html.='<td><span class="pt-label">'.$label.'</span></td>';
+					$t = (object)array(
+						'id'			=> $id.'_'.$role.'_'.$cap,
+						'name'			=> $name,
+						'value'			=> isset( $roles[$role]['capabilities'][$cap] ) ? $roles[$role]['capabilities'][$cap] : 0,
+						'save_option'	=> false,
+						'load_option'	=> false
+					);
+					
+					$html.= '<td>';
+					$html.= $this->_yesno($tab,$i,$t,$save_fields);
+					$html.= '</td>';
+					
+					$html.='</tr>';
+				}
+				$html .= "</table>";
+			}
+		}else{
+			return __('You are not allowed to edit user roles.','pop');
+		}
+				
+		return $html;
 	}
 }
 ?>

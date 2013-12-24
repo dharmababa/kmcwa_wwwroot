@@ -109,7 +109,7 @@ echo "</pre>";
 			}		
 		}else{
 			$attachment_id = get_post_meta( $post->ID, $custom, true);
-			if( $image=wp_get_attachment_image( $attachment_id, $size, 0, array('class'=>$class) ) ){
+			if( intval($attachment_id)>0 && $image=wp_get_attachment_image( $attachment_id, $size, 0, array('class'=>$class) ) ){
 				return $image;
 			}
 		}

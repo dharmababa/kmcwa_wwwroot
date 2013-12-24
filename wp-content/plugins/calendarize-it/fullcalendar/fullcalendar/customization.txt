@@ -30,3 +30,6 @@ function removeEventSources() {
 #4 modified the view change method, trigger tooltip closing, and sliding animation
 
 #5 the header sections where modified to use div instead of table.
+
+Nov 13, 2013.
+#6 Added an option to Header so that a custom callback can be passed to the header items

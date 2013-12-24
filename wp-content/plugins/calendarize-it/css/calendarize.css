@@ -27,7 +27,7 @@
 }
 
 .fc-header-center .fc-header-title {
-	display: block;3
+	display: block;
 	position: absolute;
 	top: -41px;
 	margin:0 auto;
@@ -175,11 +175,19 @@ clear:both;
 .wp-admin .rhc-extra-info-cell {
 	margin-top:5px;
 	margin-bottom:5px;
+	margin-left: 5px;
+	margin-right: 5px;
 }
 
 .pinfo_quick_icon {
 	
 }
+
+/* ADMIN download area for calendarize-it */
+.wp-admin .rhpop .dlc-controls .btn {
+	padding: 4px 11px;
+}
+
 /* frontend extra info */
 .fe-extrainfo-holder {
 margin:0;
@@ -495,12 +503,16 @@ border: 1px solid #ebebeb;
 /* wp-admin icons on the dragable custom fields */
 .wp-admin .rhc-extra-info-cell .widget-title-action {
 	text-align:right;
-	padding-top: 4px;
+	padding-top: 9px;
 	padding-right: 5px;	
 }
 .wp-admin .rhc-extra-info-cell .widget-title-action a {
 	display:inline-block;
 	position:relative;
+}
+
+.wp-admin .rhc-extra-info-cell .widget-title {
+	padding: 8px 14px;
 }
 /* wp-admin custom fields widget content form*/
 .wp-admin .rhc .row-fluid .post_extrainfo_span {
@@ -517,17 +529,42 @@ border: 1px solid #ebebeb;
 	z-index:1;
 }
 
+.wp-admin .rhc-extra-info-label {
+	font-size: 14px;
+	padding: 0;
+	margin: 0;
+	line-height: 1.4;
+}
+
 .wp-admin .wcell label {
 	display:inline-block;
 	min-width:100px;
+	font-size:13px;
 }
 
 .wp-admin .rhc-extra-info-cell .widget-control-actions {
 	text-align:right;
 }
 
+.wp-admin .rhc-extra-info-cell.rhcalendar .widget-content {
+	padding: 10px;
+}
+
+.wp-admin .wcell .pinfo_input {
+	font-size: 13px;
+}
+
+.wp-admin .rhc-extra-info-cell.rhcalendar .pinfo-save.button-primary {
+	margin: 0 10px 10px 0;
+}
+
+.rhc-extra-info-value.fe-is-empty-0 {
+	font-size: 13px;
+}
+
 .rhc .row-fluid .wcell .pinfo_input {
 	margin-left:0;
+	width:100%;
 }
 
 .post_extrainfo_holder a {
@@ -558,8 +595,8 @@ text-decoration:none;
 }
 
 .wp-admin .post_extrainfo_holder .widget-title .rhcalendar {
-margin:0 40px 0 0;
-display:inline-block;
+	margin:0 40px 1px 0;
+	display:inline-flex;
 }
 
 .fc-head-control {

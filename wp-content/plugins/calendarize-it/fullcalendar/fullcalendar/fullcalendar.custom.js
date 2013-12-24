@@ -951,6 +951,13 @@ function Header(calendar, options) {
 								calendar.changeView(buttonName);
 							};
 						}
+//---RHC MOD: allow passing a callback through options
+						else if( options[buttonName] ){
+							buttonClick = function() {
+								buttonClick = options[buttonName]; // callback
+							};
+						}	
+//--- END RHC MOD;																		
 						if (buttonClick) {
 							var icon = options.theme ? smartProperty(options.buttonIcons, buttonName) : null; // why are we using smartProperty here?
 							var text = smartProperty(options.buttonText, buttonName); // why are we using smartProperty here?
@@ -5179,7 +5186,6 @@ function View(element, calendar, viewName) {
 		};
 	}
 
-
 	//
 	// Converts a date range into an array of segment objects.
 	// "Segments" are horizontal stretches of time, sliced up by row.
@@ -5193,7 +5199,6 @@ function View(element, calendar, viewName) {
 		var rowCnt = t.getRowCnt();
 		var colCnt = t.getColCnt();
 		var segments = []; // array of segments to return
-
 		// day offset for given date range
 		var rangeDayOffsetStart = dateToDayOffset(startDate);
 		var rangeDayOffsetEnd = dateToDayOffset(endDate); // exclusive
@@ -5240,7 +5245,26 @@ function View(element, calendar, viewName) {
 				});
 			}
 		}
-
+		/* RHC START */
+		if( $(t.element).parents('.rhcalendar.not-widget').hasClass('fc-small') ){
+			new_segments = [];
+			$.each(segments,function(i,row){
+				leftCol = row.leftCol;
+				rightCol = row.rightCol;
+				if(leftCol<rightCol){
+					for(a=leftCol; a<=rightCol; a++){
+						var new_row = jQuery.extend({}, row);
+						new_row.leftCol = a;
+						new_row.rightCol = a;				
+						new_segments.push(new_row);
+					}
+				}else{
+					new_segments.push(row);
+				}
+			});
+			return new_segments;
+		}
+		/* RHC END */   
 		return segments;
 	}
 	
@@ -5437,6 +5461,7 @@ function DayEventRenderer() {
 		for (var i=0; i<segments.length; i++) {
 			segments[i].event = event;
 		}
+
 		return segments;
 	}
 
@@ -5602,30 +5627,88 @@ function DayEventRenderer() {
 		var rowContentHeights = calculateVerticals(segments); // also sets segment.top
 		var rowContentElements = getRowContentElements(); // returns 1 inner div per row
 		var rowContentTops = [];
-
-		// Set each row's height by setting height of first inner div
-		if (doRowHeights) {
-			for (var i=0; i<rowContentElements.length; i++) {
-				rowContentElements[i].height(rowContentHeights[i]);
+		if( false ) { /* RHC */
+			// Set each row's height by setting height of first inner div
+			if (doRowHeights) {
+				for (var i=0; i<rowContentElements.length; i++) {
+					rowContentElements[i].height(rowContentHeights[i]);
+				}
 			}
-		}
+	
+			// Get each row's top, relative to the views's origin.
+			// Important to do this after setting each row's height.
+			for (var i=0; i<rowContentElements.length; i++) {
+				rowContentTops.push(
+					rowContentElements[i].position().top
+				);
+			}
+	
+			// Set each segment element's CSS "top" property.
+			// Each segment object has a "top" property, which is relative to the row's top, but...
+			segmentElementEach(segments, function(segment, element) {
+				element.css(
+					'top',
+					rowContentTops[segment.row] + segment.top // ...now, relative to views's origin
+				);
+			});
+		}/* RHC dddd*/
+		else{	
 
-		// Get each row's top, relative to the views's origin.
-		// Important to do this after setting each row's height.
-		for (var i=0; i<rowContentElements.length; i++) {
-			rowContentTops.push(
-				rowContentElements[i].position().top
-			);
+			/* RHC START */
+			var rowCnt = getRowCnt();
+			var colCnt = getColCnt();
+			var holderHeights=[];
+			for(row=0;row<rowCnt;row++){
+				holderHeights[row]=[];
+				segmentElementEach(segments, function(segment, element) {
+		  			if(segment.row!=row)return;
+					if(segment.leftCol>segment.rightcol)return;
+					for(col=segment.leftCol; col<=segment.rightCol; col++){
+						holderHeights[ row ][ col ] = holderHeights[ row ][ col ] || 0;
+						holderHeights[ row ][ col ] += segment.outerHeight; 
+					}
+				});
+			}		
+			//set the content of each cell just enough tall to hold overlaid events. (fluid design)
+			if (doRowHeights) {
+				for (var i=0; i<rowContentElements.length; i++) {
+					if( rowContentElements[i].length >= holderHeights[i].length ){
+						for (var j=0; j<rowContentElements[i].length; j++){
+							h = holderHeights[i] && holderHeights[i][j] ? holderHeights[i][j] : false ;
+							if(false===h){
+								rowContentElements[i].eq(j).addClass('fc-day-no-events');
+							}else{
+								rowContentElements[i].eq(j).height( h );
+							}
+						}					
+					}else{
+						//this applies to agenda views
+						new_h = 0;
+						$.each(holderHeights[i],function(k,h){
+							new_h = h>new_h?h:new_h;
+						});
+						rowContentElements[i].height( new_h );
+					}  
+				}
+			}		
+	
+			for (var i=0; i<rowContentElements.length; i++) {
+				for (var j=0; j<rowContentElements[i].length; j++){	
+					rowContentTops[i] = rowContentTops[i]||[];
+					rowContentTops[i][j] = rowContentElements[i].eq(j).position().top;
+				}
+			}
+			// Set each segment element's CSS "top" property.
+			// Each segment object has a "top" property, which is relative to the row's top, but...		
+			segmentElementEach(segments, function(segment, element) {
+				contentTop = rowContentTops[segment.row][segment.leftCol] || rowContentTops[segment.row][0] ; 
+				element.css(
+					'top',
+					contentTop + segment.top // ...now, relative to views's origin
+				);
+			});		
 		}
-
-		// Set each segment element's CSS "top" property.
-		// Each segment object has a "top" property, which is relative to the row's top, but...
-		segmentElementEach(segments, function(segment, element) {
-			element.css(
-				'top',
-				rowContentTops[segment.row] + segment.top // ...now, relative to views's origin
-			);
-		});
+		/* RHC END */	
 	}
 
 

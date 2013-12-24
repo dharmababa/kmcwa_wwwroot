@@ -30,7 +30,7 @@ margin: 0px;
 }
 
 .fc-header-cell {
-	display:inline-block;
+	display:block;
 	position:relative;
 }
 
@@ -162,7 +162,7 @@ width: 97%;
 		text-align: center;
 		border-radius: 0px;
 		-webkit-border-radius: 0px;
-		-mox-border-radius: 0x;
+		-moz-border-radius: 0x;
 		padding: 10px 0;
 	}
 	 /* Filter Box */

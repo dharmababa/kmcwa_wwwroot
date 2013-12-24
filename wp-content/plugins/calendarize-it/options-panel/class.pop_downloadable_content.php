@@ -287,7 +287,7 @@ class pop_downloadable_content {
 		
 		$current = get_option($this->options_varname, array());
 		$current = is_array($current) ? $current : array();
-		$addons = is_array($current['addons']) ? $current['addons'] : array() ;		
+		$addons = isset($current['addons']) && is_array($current['addons']) ? $current['addons'] : array() ;		
 		if(count($addons)>0){
 			$tmp = array();
 			foreach($addons as $a){

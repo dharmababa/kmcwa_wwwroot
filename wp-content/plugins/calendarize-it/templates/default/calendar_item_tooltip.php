@@ -18,11 +18,11 @@
 			<div class="fc-start"><label class="tooltip-fc-start"><?php _e('Start','rhc')?></label></div>
 			<div class="fc-end"><label class="tooltip-fc-end"><?php _e('End','rhc')?></label></div>
 			<div class="fc-hide fc-tax-<?php echo RHC_VENUE?>"><label class="tax-label"></label></div>
-			<div class="fc-image"></div>
 			<div class="fc-description"></div>
 		</div>
 		<div class="fct-footer">
 			<div class="fc-social"></div>
+           <div class="fc-image"></div>
 		</div>	
 	</div>
 </div>

@@ -63,6 +63,7 @@ class rhc_styles_and_scripts {
 	}
 	
 	function admin_and_frontend_scripts(){
+		global $rhc_plugin;
 		wp_register_script( 'rhc-jquery-ui-1-9-0', RHC_URL.'js/jquery-ui-1.9.0.custom.min.js', array('jquery'),'1.9.0');
 		wp_register_script( 'rhc-jquery-ui-1-8-22', RHC_URL.'js/jquery-ui-1.8.22.custom.min.js', array('jquery'),'1.8.22');
 		wp_register_script( 'rhc-jquery-ui-1-10-3', RHC_URL.'js/jquery-ui-1.10.3.custom.min.js', array('jquery'),'1.10.3');
@@ -84,9 +85,9 @@ class rhc_styles_and_scripts {
 		wp_register_script( 'jquery-easing', RHC_URL.'js/jquery.easing.1.3.js', array('jquery'),'1.3.0',$this->in_footer);
 		
 		wp_register_script( 'rrecur-parser', RHC_URL.'js/rrecur-parser.js', array('jquery'),'1.1.0.2',$this->in_footer);	
-		wp_register_script( 'fullcalendar', RHC_URL.'fullcalendar/fullcalendar/fullcalendar.custom.js', array('jquery','rrecur-parser'),'1.6.1.1',$this->in_footer);	
+		wp_register_script( 'fullcalendar', RHC_URL.'fullcalendar/fullcalendar/fullcalendar.custom.js', array('jquery','rrecur-parser'),'1.6.1.2',$this->in_footer);	
 		wp_register_script( 'fullcalendar-gcal', RHC_URL.'fullcalendar/fullcalendar/gcal.js', array('fullcalendar'),'1.6.1.1',$this->in_footer);	
-		wp_register_script( 'calendarize-fcviews', RHC_URL.'js/fullcalendar_custom_views.js', array('fullcalendar-gcal'),'1.1.3.7',$this->in_footer);	
+		wp_register_script( 'calendarize-fcviews', RHC_URL.'js/fullcalendar_custom_views.js', array('fullcalendar-gcal'),'1.1.3.8',$this->in_footer);	
 				
 		wp_register_script( 'fechahora', RHC_URL.'js/fechahora.js', array('jquery'),'1.0.0',$this->in_footer);//are this used?
 		wp_register_script( 'fc_dateformat_helper', RHC_URL.'js/fc_dateformat_helper.js', array('fullcalendar'),'1.0.0',$this->in_footer);//are this used?
@@ -96,8 +97,11 @@ class rhc_styles_and_scripts {
 			$dependency[]=$this->jquery_ui;
 		}
 	
-		wp_register_script( 'calendarize', RHC_URL.'js/calendarize.js', $dependency,'2.4.7.1',$this->in_footer);
-		wp_localize_script( 'calendarize', 'RHC', array( 'ajaxurl' => site_url('/') ) );
+		wp_register_script( 'calendarize', RHC_URL.'js/calendarize.js', $dependency,'2.5.0.2',$this->in_footer);
+		wp_localize_script( 'calendarize', 'RHC', array( 
+			'ajaxurl' => site_url('/'),
+			'mobile_width' => $rhc_plugin->get_option('mobile_width','480',true)
+		) );
 		//-------
 		if('1'==$this->get_option('disable_google_map_api_load','',true)){
 			//it seems that now if map lib is loaded twice, a js error is producted. we register an empty js anyway to avoid dependency issues with other libs that may be loaded by addon.
@@ -136,7 +140,7 @@ class rhc_styles_and_scripts {
 			wp_enqueue_style( 'calendarize', RHC_URL.'style.css', array(),'2.4.4.1');			
 			wp_enqueue_style( 'rhc-frontend', RHC_URL.'frontend.css', array(),'2.0.0.7');				
 		}else{
-			wp_enqueue_style( 'calendarizeit', RHC_URL.'css/frontend.min.css', array(),'2.5.0.1');
+			wp_enqueue_style( 'calendarizeit', RHC_URL.'css/frontend.min.css', array(),'2.5.4.1');
 		}	
 		wp_enqueue_style( 'rhc-last-minue', RHC_URL.'css/last_minute_fixes.css', array(),'1.0.0');		
 		wp_enqueue_script('calendarize');

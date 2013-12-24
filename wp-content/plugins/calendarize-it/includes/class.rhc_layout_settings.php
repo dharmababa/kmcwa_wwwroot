@@ -301,17 +301,95 @@ class rhc_layout_settings {
 				'el_properties'	=> array(),
 				'save_option'=>true,
 				'load_option'=>true
-			),
-			(object)array(
+			)
+		);		
+		
+		$t[$i]->options[]=(object)array(
 				'type'=>'clear'
-			),
-			(object)array(
+			);						
+		//$t[$i]->options[]=;
+		$t[$i]->options[]=(object)array(
+				'type'			=> 'subtitle',
+				'label'			=> __('Default layout options'),
+				'description'	=> __('Default layout options values to use when adding events.')
+			);
+			
+		$t[$i]->options[]=(object)array(
+				'id'			=> 'enable_featuredimage',
+				'type'			=> 'onoff',
+				'default'		=> '1',
+				'label'			=>  __('Event Page Top Image','rhc'),
+				'save_option'	=> true,
+				'load_option'	=> true
+			);
+			
+		$t[$i]->options[]=(object)array(
+				'id'			=> 'enable_postinfo',
+				'type'			=> 'onoff',
+				'default'		=> '1',
+				'label'			=>  __('Event Details Box','rhc'),
+				'save_option'	=> true,
+				'load_option'	=> true
+			);
+			
+		$t[$i]->options[]=(object)array(
+				'id'			=> 'enable_postinfo_image',
+				'type'			=> 'onoff',
+				'default'		=> '1',
+				'label'			=>  __('Event Details Box Image','rhc'),
+				'save_option'	=> true,
+				'load_option'	=> true
+			);
+			
+		$t[$i]->options[]=(object)array(
+				'id'			=> 'enable_venuebox',
+				'type'			=> 'onoff',
+				'default'		=> '1',
+				'label'			=>  __('Venue Details Box','rhc'),
+				'save_option'	=> true,
+				'load_option'	=> true
+			);
+			
+		$t[$i]->options[]=(object)array(
+				'id'			=> 'enable_venuebox_gmap',
+				'type'			=> 'onoff',
+				'default'		=> '1',
+				'label'			=>  __('Venue Details Box Map','rhc'),
+				'save_option'	=> true,
+				'load_option'	=> true
+			);
+
+		$t[$i]->options[]=(object)array(
+				'type'=>'clear'
+			);	
+
+		$t[$i]->options[]=(object)array(
+				'type'=>'subtitle',
+				'label'=>__('Mobile','rhc'),
+				'description'=>__('When the calendar object is smaller than the value set, mobile layout will be displayed instead of the regular calendar layout.  This does not apply to calendar widgets.','rhc')
+			);	
+			
+		$t[$i]->options[]=(object)array(
+				'id'	=> 'mobile_width',
+				'type'	=> 'range',
+				'label'	=> __('Mobile width trigger size','rhc'),
+				'min'	=> 0,
+				'max'	=> 600,
+				'step'	=> 1,
+				'default'=> 480,
+				'save_option'=>true,
+				'load_option'=>true
+			);		
+				
+		$t[$i]->options[]=(object)array(
+				'type'=>'clear'
+			);	
+			
+		$t[$i]->options[]=(object)array(
 				'type'	=> 'submit',
 				'label'	=> __('Save','rhc'),
 				'class' => 'button-primary'
-			)
-		);					
-					
+			);			
 		//-- default shortcode values --------------------------
 		global $rhc_plugin; 
 

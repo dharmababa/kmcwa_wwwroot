@@ -22,10 +22,11 @@ class plugin_righthere_calendar {
 			'options_capability'=> 'manage_options',
 			'license_capability'=> 'manage_options',
 			'resources_path'	=> 'calendarize-it',
-			'options_panel_version'	=> '2.4.0',
+			'options_panel_version'	=> '2.5.3',
 			'post_info_shortcode'=> 'post_info',
 			'debug_menu'		=> false,
-			'autoupdate'		=> true
+			'autoupdate'		=> true,
+			'debugging_js_css'	=> false
 		);
 		foreach($defaults as $property => $default){
 			$this->$property = isset($args[$property])?$args[$property]:$default;
@@ -152,132 +153,8 @@ class plugin_righthere_calendar {
 		require_once RHC_PATH.'includes/class.rhc_custom_field_filters.php';
 		new rhc_custom_field_filters();
 		
-		if(is_admin()){								
-			require_once RHC_PATH.'includes/class.rhc_layout_settings.php';
-			new rhc_layout_settings($this->id);	
-
-			require_once RHC_PATH.'includes/class.rhc_post_info_settings.php';
-			new rhc_post_info_settings($this->id);	
-			
-			require_once RHC_PATH.'includes/class.rhc_settings.php';
-			new rhc_settings($this->id);	
-			
-			require_once RHC_PATH.'includes/class.rhc_tax_settings.php';
-			new rhc_tax_settings($this->id);		
-			
-			$license_keys = $this->get_option('license_keys',array());
-			$license_keys = is_array($license_keys)?$license_keys:array();
-			
-			$api_url = 'secondary'==$this->get_option('righthere_api_url','',true) ? 'http://plugins.albertolau.com/' : 'http://plugins.righthere.com/';
-			
-			$dc_options = array(
-				'id'			=> $this->id.'-dc',
-				'plugin_id'		=> $this->id,
-				'capability'	=> $this->options_capability,
-				'resources_path'=> $this->resources_path,
-				'parent_id'		=> 'edit.php?post_type='.RHC_EVENTS,
-				'menu_text'		=> __('Downloads','rhc'),
-				'page_title'	=> __('Downloadable content - Calendarize it! for WordPress','rhc'),
-				'license_keys'	=> $license_keys,
-				'plugin_code'	=> $this->plugin_code,
-				'api_url'		=> $api_url,
-				'product_name'	=> __('Calendarize-it','rhc'),
-				'options_varname' => $this->options_varname,
-				'tdom'			=> 'rhc'
-			);
-			
-			$ad_options = array(
-				'id'			=> $this->id.'-addons',
-				'plugin_id'		=> $this->id,
-				'capability'	=> $this->options_capability,
-				'resources_path'=> $this->resources_path,
-				'parent_id'		=> 'edit.php?post_type='.RHC_EVENTS,
-				'menu_text'		=> __('Add-ons','rhc'),
-				'page_title'	=> __('Calendarize it! add-ons','rhc'),
-				'options_varname' => $this->options_varname
-			);
-			
-			$settings = array(				
-				'id'					=> $this->id,
-				'plugin_id'				=> $this->id,
-				'capability'			=> $this->options_capability,
-				'capability_license'	=> $this->license_capability,
-				'options_varname'		=> $this->options_varname,
-				'menu_id'				=> 'rhc-options',
-				'page_title'			=> __('Options','rhc'),
-				'menu_text'				=> __('Options','rhc'),
-				'option_menu_parent'	=> 'edit.php?post_type='.RHC_EVENTS,
-				//'option_menu_parent'	=> $this->id,
-				'notification'			=> (object)array(
-					'plugin_version'=> RHC_VERSION,
-					'plugin_code' 	=> 'RHC',
-					'message'		=> __('Calendar plugin update %s is available! <a href="%s">Please update now</a>','rhc')
-				),
-				'ad_options'			=> $ad_options,
-				//'addons'				=> is_array($license_keys)&&count($license_keys)>0?true:false,
-				'addons'				=> $this->debug_menu,
-				'dc_options'			=> $dc_options,
-				'fileuploader'			=> true,
-				'theme'					=> false,
-				'stylesheet'			=> 'rhc-options',
-				'option_show_in_metabox'=> true,
-				'path'			=> RHC_PATH.'options-panel/',
-				'url'			=> RHC_URL.'options-panel/',
-				'pluginslug'	=> RHC_SLUG,
-				'api_url' 		=> $api_url//affects registration api
-			);
-			
-			do_action('rh-php-commons');	
-			
-			$settings['id'] 		= $this->id;
-			$settings['menu_id'] 	= $this->id;
-			$settings['menu_text'] 	= __('Options','rhc');
-			$settings['import_export'] = false;
-			$settings['import_export_options'] =false;
-			$settings['registration'] = true;
-			$settings['downloadables'] = true;
-			
-			if(class_exists('PluginOptionsPanelModule'))new PluginOptionsPanelModule($settings);
-
-			//--------
-			//require_once RHC_PATH.'includes/class.rhc_calendar_metabox.php';
-			require_once RHC_PATH.'includes/class.rhc_calendar_metabox_rrule.php';
-			new rhc_calendar_metabox(RHC_EVENTS,$this->debug_menu);
-			$post_types = $this->get_option('post_types',array());
-			$post_types = is_array($post_types)?$post_types:array();
-			$post_types = apply_filters('rhc_calendar_metabox_post_types',$post_types);
-			if(is_array($post_types)&&count($post_types)>0){
-				foreach($post_types as $post_type){
-					new rhc_calendar_metabox($post_type,$this->debug_menu);
-				}
-			}
-			//---	
-			require_once RHC_PATH.'includes/class.rhc_post_info_metabox.php';
-			new rhc_post_info_metabox(RHC_EVENTS,'edit_'.RHC_CAPABILITY_TYPE);	
-			//--- enable post info for other post types.
-			$post_types = $this->get_option('dbox_post_types',array());
-			$post_types = is_array($post_types)?$post_types:array();
-			$post_types = apply_filters('rhc_dbox_metabox_post_types',$post_types);
-			if(is_array($post_types)&&count($post_types)>0){
-				foreach($post_types as $post_type){
-					$pt = get_post_type_object( $post_type );
-					new rhc_post_info_metabox( $post_type, $pt->cap->edit_post );
-				}
-			}			
-			//--
-
-			
-			if($this->debug_menu){
-				require_once RHC_PATH.'includes/class.debug_calendarize.php';
-				new debug_calendarize('edit.php?post_type='.RHC_EVENTS);
-			}
-			
-			//--adds metabox for choosing template. not supported yet.
-			//require_once RHC_PATH.'includes/class.rhc_event_template_metabox.php';
-			//new rhc_event_template_metabox(RHC_EVENTS,$this->debug_menu);
-	
-			require_once RHC_PATH.'includes/class.rhc_event_image_metaboxes.php';
-			new rhc_event_image_metaboxes();
+		if(is_admin()){		
+			require 'class.plugin_righthere_calendar.plugins_loaded.admin.php';
 		}
 		
 		require_once RHC_PATH.'includes/class.righthere_calendar.php';
@@ -289,6 +166,17 @@ class plugin_righthere_calendar {
 		if('1'==$this->get_option('enable_theme_thumb','0',true)){
 			add_action('init',array(&$this,'add_events_featured_image'));	
 		}
+		
+		require_once RHC_PATH.'includes/class.rhc_calendar_metabox_rrule.php';
+		new rhc_calendar_metabox(RHC_EVENTS,$this->debug_menu);
+		$post_types = $this->get_option('post_types',array());
+		$post_types = is_array($post_types)?$post_types:array();
+		$post_types = apply_filters('rhc_calendar_metabox_post_types',$post_types);
+		if(is_array($post_types)&&count($post_types)>0){
+			foreach($post_types as $post_type){
+				new rhc_calendar_metabox($post_type,$this->debug_menu);
+			}
+		}	
 	}
 	
 	function add_events_featured_image(){

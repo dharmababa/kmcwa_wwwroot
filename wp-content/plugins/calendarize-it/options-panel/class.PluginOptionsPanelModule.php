@@ -17,7 +17,7 @@ class PluginOptionsPanelModule {
 	var $option_menu_parent;
 	var $notification;
 	var $description_rowspan=0;
-	var $version = '2.4.0';
+	var $version = '2.5.3';
 	var $rangeinput;
 	var $colorpicker;
 	var $registration = true;
@@ -207,9 +207,9 @@ class PluginOptionsPanelModule {
 			$version = substr($wp_version,0,3);
 			if($version>=3.5){
 				wp_register_style( $this->stylesheet, $this->url.'style.css', array(),'1.0.1');
-				wp_register_script( 'pop', $this->url.'js/pop.js', array(),'1.1.0');
+				wp_register_script( 'pop', $this->url.'js/pop.js', array(),'2.5.1.1');
 			}else{
-				wp_register_style( $this->stylesheet, $this->url.'style.css', array('thickbox'),'1.0.1');
+				wp_register_style( $this->stylesheet, $this->url.'style.css', array('thickbox'),'1.0.2');
 				wp_register_script( 'pop', $this->url.'js/pop.prewp35.js', array('media-upload','thickbox'),'1.0.2');
 			}
 			//--
@@ -260,6 +260,8 @@ class PluginOptionsPanelModule {
 			update_option($this->options_varname, $existing_options);
 		}
 
+		$this->handle_role_manage_save();
+		
 		do_action('pop_handle_save',$this);
 		//------------------------------
 		$goback = add_query_arg( 'updated', 'true', wp_get_referer() );
@@ -270,6 +272,31 @@ class PluginOptionsPanelModule {
 		wp_redirect( $goback );
 	}
 
+	function handle_role_manage_save(){
+		if(isset($_POST['rolemanager']) && is_array($_POST['rolemanager']) && count($_POST['rolemanager'])>0){
+			global $wp_roles;
+			if( 'WP_Roles' != get_class($wp_roles) )return;
+			$all_roles = $wp_roles->roles;
+			$editable_roles = apply_filters('editable_roles', $all_roles);
+			
+			$allowed_roles = array_keys($editable_roles);
+
+			foreach($_POST['rolemanager'] as $id => $roles_to_update){
+				if(count($roles_to_update)==0)continue;
+				foreach($roles_to_update as $role => $capabilities){
+					if(count($capabilities)==0)continue;
+					if(!in_array($role,$allowed_roles))continue;
+					foreach($capabilities as $cap => $value){					
+						if($value==1){
+							$wp_roles->add_cap( $role, $cap );
+						}else{
+							$wp_roles->remove_cap( $role, $cap );
+						}
+					}
+				}
+			}			
+		}
+	}
 
 	function admin_menu(){
 		$page_id = add_submenu_page( $this->option_menu_parent,$this->page_title ,$this->menu_text,$this->capability,$this->menu_id,array(&$this,'body'));
@@ -277,6 +304,7 @@ class PluginOptionsPanelModule {
 	}
 	//admin_enqueue_scripts
 	function head(){
+		do_action('pop_head_'.$this->id);
 		wp_print_styles( $this->stylesheet );
 		wp_print_scripts( 'pop' );
 		if(false!==$this->extracss)wp_print_styles($this->extracss);
@@ -575,7 +603,11 @@ class PluginOptionsPanelModule {
 							$option_varname = $pop_input->get_option_name($tab,$i,$o);
 							$o->value = isset($existing_options[$option_varname])?$existing_options[$option_varname]:(property_exists($o,'default')?$o->default:'');
 						}
-
+						
+						if(property_exists($o,'esc_attr') && $o->esc_attr){
+							$o->value = esc_attr($o->value);
+						}
+						
 						echo $pop_input->translucent_description(@$o->description);
 						if(in_array($o->type,array('description',))){
 

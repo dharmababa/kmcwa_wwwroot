@@ -265,8 +265,13 @@ class rhc_post_info_metabox {
 				<option value="postmeta"><?php _e('Post meta data','rhc') ?></option>
 			</select>
 		</div>	
-		<div class="post_extrainfo_cell">
-			<input class="pinfo_input" id="post_extrainfo_custom" type="hidden" name="post_extrainfo_custom" value="" />
+		<div class="post_extrainfo_cell" style="<?php echo $this->debug?'':'display:none;'?>">
+			<label><?php _e('Format:','rhc') ?></label>
+			<input class="pinfo_input" id="post_extrainfo_format" type="text" name="post_extrainfo_format" value="" />	
+		</div>		
+		<div class="post_extrainfo_cell" style="<?php echo $this->debug?'':'display:none;'?>">
+			<label><?php _e('Custom:','rhc') ?></label>
+			<input class="pinfo_input" id="post_extrainfo_custom" type="text" name="post_extrainfo_custom" value="" />
 		</div>
 		<div class="post_extrainfo_cell post_extrainfo_type-cell post_extrainfo_type-custom">		
 			<label><?php _e('Value:','rhc') ?></label>
@@ -409,6 +414,8 @@ class rhc_post_info_metabox {
 				$options[$field]=$label;
 			}
 		}
+		
+		$options = apply_filters('postinfo_postmeta_include', $options);
 		
 		return $options;
 	}

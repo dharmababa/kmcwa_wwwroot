@@ -1231,7 +1231,7 @@ width: 98%;
 
 .fc-event-list-content h5 label,
 .fc-event-list-content h5 span {
-	font-size: 14px !important;;
+	font-size: 14px;
 	display:inline-block;
 }
 
@@ -2101,7 +2101,7 @@ Upcoming Events Widget B
 }
 
 .rhc.fe-extrainfo-container {
-	margin-bottom: 35px !important;
+	margin-bottom: 35px;
 }
 
 div.rhc.fe-extrainfo-container + br {
@@ -2129,13 +2129,13 @@ div.rhc.fe-extrainfo-container + br {
 }
 
 .rhc-info-cell.fe-cell-label .fe-extrainfo-label {
-	font-size:21px !important;
+	font-size:21px;
 }
 
 .rhc-info-row .fe-cell-label {
 	font-size: 18px;
 	vertical-align: top;
-	margin-bottom: 11px !important;
+	margin-bottom: 11px;
 }
 
 .rhc-info-row {
@@ -2168,16 +2168,16 @@ div.rhc.fe-extrainfo-container + br {
 	display: inline-block;
 }
 
-.fe-have-image-1 .fe-image-holder {
+.rhc .fe-have-image-1 .fe-image-holder {
 	display: inline-block;
 	width: 50%;
 	vertical-align: top;
 	text-align: right;
-	margin-left: 0% !important;
+	margin-left: 0%;
 	margin-top: 1.2%;
 	margin-bottom: 0.5%;
 	margin-right:1.8%;
-	float:right !important;
+	float:right;
 }
 
 .fe-extrainfo-container .fe-image-holder img {
@@ -2218,12 +2218,12 @@ div.rhc.fe-extrainfo-container + br {
 }
 
 /* Venue Box */
-.fe-map-holder {
-	margin-left: 0% !important;
+.rhc .row-fluid .fe-map-holder[class*="span"]  {
+	margin-left: 0%;
 	margin-top: 1.2%;
 	margin-bottom: 0.5%;
 	margin-right:1.8%;
-	float:right !important;
+	float:right;
 }
 
 .fe-have-image-1 .fe-map-holder {
@@ -2243,8 +2243,8 @@ div.rhc.fe-extrainfo-container + br {
 
 /*  iCal Dialog box  */
 .rhcalendar .ui-dialog.rhc-icalendar-holder {
-	width: 50% !important;
-	left: 0 !important;
+	width: 50%;
+	left: 0;
 	margin: auto;
 	line-height: 130%;
 	z-index:99999;
@@ -2286,7 +2286,7 @@ div.rhc.fe-extrainfo-container + br {
 @media only screen and (max-width: 767px) {
 	.fe-image-holder,
 	.fe-map-holder {
-		width:98% !important;
+		width:98%;
 	}
 }
 
@@ -2365,6 +2365,7 @@ elist-dbox,
 .se-vbox {
 line-height: 1.625;
 }
+/* end single_event.css */
 
 /* calendar_widget.css */
 .fc-state-highlight.fc-have-event,
@@ -3997,8 +3998,8 @@ html .fc,
 ------------------------------------------------------------------------*/
 	 
 .fc-event {
-	border: 1px solid #3a87ad; /* default BORDER color */
-	background-color: #3a87ad; /* default BACKGROUND color */
+	border: 1px solid #1abc9c; /* default BORDER color */
+	background-color: #1abc9c; /* default BACKGROUND color */
 	color: #fff;               /* default TEXT color */
 	font-size: .85em;
 	cursor: default;
@@ -4670,7 +4671,7 @@ display:none;
 	
 /*  spinner.css */
 @font-face {
-	font-family: 'icomoon';
+	font-family: 'rhcicons';
 	src:url('f.eot');
 	src:url('f.eot?#iefix') format('embedded-opentype'),
 		url('f.woff') format('woff'),
@@ -4681,7 +4682,7 @@ display:none;
 }
 
 .icon-xspinner:before, .icon-xspinner-2:before, .icon-xspinner-3:before, .icon-xspinner-4:before, .icon-xspinner-5:before, .icon-xspinner-6, .icon-xspinner-7:before {
-	font-family: 'icomoon';
+	font-family: 'rhcicons';
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -11637,8 +11638,7 @@ display:none;
   }
 }
 
-/* start flat-ui.namespaced.css */
-
+/* flat-ui.namespaced.css */
 .rhcalendar .rh-flat-ui {
   /* Use the following CSS code if you want to use data attributes for inserting your icons */
   /* Use the following CSS code if you want to have a class per icon */
@@ -11655,48 +11655,8 @@ you can use the generic selector below, but it's slower:
  * http://www.apache.org/licenses/LICENSE-2.0
  * ============================================================ */
 }
-@font-face {
-  font-family: 'Lato';
-  src: url('../fonts/lato/lato-black-webfont.eot');
-  src: url('../fonts/lato/lato-black-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato/lato-black-webfont.woff') format('woff'), url('../fonts/lato/lato-black-webfont.ttf') format('truetype'), url('../fonts/lato/lato-black-webfont.svg#latoblack') format('svg');
-  font-weight: 900;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Lato';
-  src: url('../fonts/lato/lato-bold-webfont.eot');
-  src: url('../fonts/lato/lato-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato/lato-bold-webfont.woff') format('woff'), url('../fonts/lato/lato-bold-webfont.ttf') format('truetype'), url('../fonts/lato/lato-bold-webfont.svg#latobold') format('svg');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Lato';
-  src: url('../fonts/lato/lato-bolditalic-webfont.eot');
-  src: url('../fonts/lato/lato-bolditalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato/lato-bolditalic-webfont.woff') format('woff'), url('../fonts/lato/lato-bolditalic-webfont.ttf') format('truetype'), url('../fonts/lato/lato-bolditalic-webfont.svg#latobold_italic') format('svg');
-  font-weight: bold;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Lato';
-  src: url('../fonts/lato/lato-italic-webfont.eot');
-  src: url('../fonts/lato/lato-italic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato/lato-italic-webfont.woff') format('woff'), url('../fonts/lato/lato-italic-webfont.ttf') format('truetype'), url('../fonts/lato/lato-italic-webfont.svg#latoitalic') format('svg');
-  font-weight: normal;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Lato';
-  src: url('../fonts/lato/lato-light-webfont.eot');
-  src: url('../fonts/lato/lato-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato/lato-light-webfont.woff') format('woff'), url('../fonts/lato/lato-light-webfont.ttf') format('truetype'), url('../fonts/lato/lato-light-webfont.svg#latolight') format('svg');
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Lato';
-  src: url('../fonts/lato/lato-regular-webfont.eot');
-  src: url('../fonts/lato/lato-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato/lato-regular-webfont.woff') format('woff'), url('../fonts/lato/lato-regular-webfont.ttf') format('truetype'), url('../fonts/lato/lato-regular-webfont.svg#latoregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
 @font-face {
   font-family: "Flat-UI-Icons";
   src: url("../fonts/Flat-UI-Icons.eot");
@@ -11704,6 +11664,7 @@ you can use the generic selector below, but it's slower:
   font-weight: normal;
   font-style: normal;
 }
+
 .rhcalendar .rh-flat-ui [data-icon]:before {
   font-family: 'Flat-UI-Icons';
   content: attr(data-icon);
@@ -16980,8 +16941,8 @@ you can use the generic selector below, but it's slower:
 .rhcalendar .rh-flat-ui .mal {
   margin-left: 20px;
 }
+/* end flat-ui.namespaced.css */
 
-/* end flat-ui.namespaced.css*/
 body .rhcalendar .rh-flat-ui .open > ul.dropdown-menu {
   list-style: none;
 }
