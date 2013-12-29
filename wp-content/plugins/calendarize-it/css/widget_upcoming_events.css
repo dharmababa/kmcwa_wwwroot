@@ -30,12 +30,11 @@ h3 + .rhc-widget-upcoming-item {
 }
 
 .rhc-widget-upcoming {
-	float: right;
 	width: 65%;
 	display: block;
-	top: 12px;
-	right: 0;
-	line-height: 120%;
+    padding-left: 15px;
+    height: 38px;
+    line-height: 38px;
 }
 
 .featured-0 .rhc-widget-upcoming {

@@ -13,15 +13,17 @@ Template Type: widget_upcoming_events
 	</div>
 	<div class="rhc-widget-event-hold">
 		<!--featured-->
-		<div class="rhc-widget-upcoming-featured-image"></div>
+		<!-- <div class="rhc-widget-upcoming-featured-image"></div> -->
 		<!--featured-->
 		<div class="rhc-widget-upcoming">
 			<div class="rhc-widget-upcoming-title">
 				<a class='rhc-title-link' href="[URL]">[TITLE]</a>
-				<div class="rhc-widget-date-time [NODATETIME]"><span class="rhc-widget-time">[TIME]</span><!-- uncomment for ending time &#8211;<span class="rhc-widget-end-time"></span>--></div>
+				<!-- 
+                <div class="rhc-widget-date-time [NODATETIME]"><span class="rhc-widget-time">[TIME]</span>
+                    uncomment for ending time &#8211;<span class="rhc-widget-end-time"></span></div> -->
 				
 			</div>
-			<div class="rhc-description">[DESCRIPTION]</div>
+			<!-- <div class="rhc-description">[DESCRIPTION]</div> -->
 		</div>
 	</div>
 	<div class="rhc-clear"></div>
