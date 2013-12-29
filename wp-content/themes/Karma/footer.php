@@ -68,5 +68,9 @@ if(has_nav_menu('Footer Navigation')): ?>
 //codes to load scripts has been moved to truethemes_framework/global/javascript.php
 wp_footer();
 ?>
+<script type="text/javascript">
+    jQuery(".menu-item").has("ul").attr("aria-haspopup", "true");
+    jQuery(".menu-item").not(":has(ul)").attr("aria-haspopup", "false");
+</script>
 </body>
 </html>
