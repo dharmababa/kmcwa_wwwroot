@@ -88,6 +88,42 @@ display:inline-block;
 width: 97%;
 }
 
+/* KMCWA CUSTOM: Calendar category colors legend */
+#event-legend-outerwrap {
+    width: 90%;
+    margin: 10px auto 0px;
+    border: 1px solid lightgray;
+    padding: 5px;
+    display: table;
+}
+
+.event-legend-innerwrap {
+    display: table-row;
+}
+
+.event-legend {
+    display: table-cell;
+}
+
+.event-legend-category-wrap {
+    display: table;
+}
+
+.event-legend-category {
+    display: table-row;
+}
+
+.event-legend-category-color {
+    display: table-cell;
+    min-width: 40px;
+}
+
+.event-legend-category-text {
+    padding-left: 10px;
+    padding-right: 30px;
+    display: table-cell;
+}
+
 @media only screen and (max-width: 640px) {
 	.fc-header-center {
 		display: block;
@@ -194,6 +230,23 @@ width: 97%;
 		padding: 15px 0;
 		font-size: 14px;
 	}
+
+    /* KMCWA CUSTOM: Calendar category colors legend (mobile) */
+    #event-legend-outerwrap {
+        padding: 0px 5px 5px 5px;
+    }
+            
+    .event-legend-innerwrap {
+        display: block;
+    }
+
+    .event-legend {
+        display: table-row;                
+    }
+
+    .event-legend-category-wrap {
+        margin-top: 5px;
+    }
 }
 
 /* bug fix: some themes give this elements a position:relative that break event positioning within the calendar views. */
