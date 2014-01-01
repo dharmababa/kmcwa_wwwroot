@@ -116,6 +116,7 @@ width: 97%;
 .event-legend-category-color {
     display: table-cell;
     min-width: 40px;
+    min-height: 40px;
 }
 
 .event-legend-category-text {
