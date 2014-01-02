@@ -30,7 +30,7 @@ $jcycle_category_id = get_cat_id($jcycle_category);
 //start WordPress Loop to retrieve post from selected category,
 //if no category is set, all posts will be returned.
 
-$query_string ="posts_per_page=100&cat=$jcycle_category_id";
+$query_string ="posts_per_page=100&cat=$jcycle_category_id&order=ASC&orderby=title";
 query_posts($query_string);
 
 if (have_posts()) : while (have_posts()) : the_post();
