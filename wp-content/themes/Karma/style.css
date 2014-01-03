@@ -982,6 +982,7 @@ position:absolute;
 .nav_right_sub_nav ul li ul li a,
 .nav_right_sub_nav ul li ul li a:hover{padding-left: 4px !important;margin: 0px !important;}
 .nav_right_sub_nav li.current_page_item a {color:#666 !important;}
+.nav_right_sub_nav li.menu-item-has-children a:hover {color:#444 !important;background:url(images/_global/separator3.gif) 0 100% repeat-x !important;}
 .nav_right_sub_nav li.menu-item-has-children li a {color:#009bc3 !important;}
 .nav_right_sub_nav ul li.current-menu-parent ul li.current_page_item a,
 #sub_nav li.current-menu-parent ul li.current_page_item a {font-weight: bold;}
@@ -1528,7 +1529,7 @@ margin-bottom:-17px;
 .message_yellow a{font-weight:bold;color:#A58100;}
 
 .colored_box {color:#FFF;padding: 0;margin: 0 0 20px 0;font-size:13px;width:100%;}
-.colored_box p {padding: 30px;line-height:23px;color: #FFF;}
+.colored_box p {padding: 15px;color: #FFF;}
 
 
 /* FIRE */
