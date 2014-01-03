@@ -8,12 +8,12 @@ a, p a strong, .link-top, .tt_comment_required {color:#009BC3;}
 .nav_right_sub_nav ul li.current_page_item a {background:url(../images/skins/secondary-sky-blue/sprite.png) 0px -39px no-repeat !important;}
 #sub_nav ul a:hover,
 #sub_nav ul li.current_page_item a {background:url(../images/skins/secondary-sky-blue/sprite.png) 0px 0px no-repeat;}
-#sub_nav ul ul a,
-#sub_nav ul ul a:hover,
-.list li,
+.list li {background:url(../images/skins/secondary-sky-blue/bullet1.png) 0 9px no-repeat !important;color:#009BC3 !important;}
 #sidebar ul li,
 #sub_nav ul li.current_page_item ul li a,
-#sub_nav ul li.current_page_parent ul li.current_page_item a {background:url(../images/skins/secondary-sky-blue/bullet1.png) 0 9px no-repeat !important;color:#009BC3 !important;}
+#sub_nav ul li.current_page_parent ul li.current_page_item a,
+#sub_nav ul ul a:hover,
+#sub_nav ul ul a {background:url(../images/_global/none) no-repeat !important; }
 #sub_nav ul li.current_page_item .children a {background:url(../images/skins/secondary-sky-blue/bullet1.png) 0 9px no-repeat;padding:4px 0 1px 14px;color:#666;}
 #sub_nav ul li.current_page_item .children a:hover {text-decoration:underline;background:url(../images/skins/secondary-sky-blue/bullet1.png) 0 9px no-repeat;color:#666;}
 #sub_nav ul .children .current_page_item a, #sub_nav ul .children .current_page_item a:hover {background:url(../images/skins/secondary-sky-blue/bullet1.png) 0 9px no-repeat;padding:4px 0 1px 14px;color:#0099C2;font-weight:bold;}

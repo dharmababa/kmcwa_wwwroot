@@ -621,7 +621,8 @@ color:#444;
     margin-left: 13px;
     padding-left: 20px;
     font-family: "Cantarell", Arial, sans-serif;
-    font-size: 20px;
+    font-size: 19px;
+    min-height: 62px;
 }
 
 /*----------------------------*/
@@ -976,7 +977,9 @@ position:absolute;
 .nav_right_sub_nav ul li.current-menu-parent ul li.current_page_item a,
 .nav_right_sub_nav ul li.current-menu-parent ul li.current_page_item a:hover,
 .nav_right_sub_nav ul li ul li a,
-.nav_right_sub_nav ul li ul li a:hover{padding-left: 15px !important;margin: 0 0 0 13px !important;}
+.nav_right_sub_nav ul li ul li a:hover{padding-left: 4px !important;margin: 0px !important;}
+.nav_right_sub_nav li.current_page_item a {color:#666 !important;}
+.nav_right_sub_nav li.menu-item-has-children li a {color:#009bc3 !important;}
 .nav_right_sub_nav ul li.current-menu-parent ul li.current_page_item a,
 #sub_nav li.current-menu-parent ul li.current_page_item a {font-weight: bold;}
 .nav_right_sub_nav ul li.current_page_item ul li.current_page_item ul li a {font-weight: normal !important;}
@@ -984,8 +987,7 @@ position:absolute;
 .nav_right_sub_nav ul a {margin:0 0 0 13px !important;}
 .nav_right_sub_nav ul li.current_page_item a, .nav_right_sub_nav ul a:hover {margin-left:0 !important;padding-left: 33px !important;}
 #sub_nav ul li ul li.current_page_item ul li a {font-weight: normal !important;}
-
-
+.nav_right_sub_nav li.current-page-parent > a { font-size: 19px; font-family: "Cantarell", Arial, sans-serif;}
 
 /*----------------------------*/
 /* 3. Horizontal Sub Navigation
