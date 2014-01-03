@@ -108,7 +108,7 @@ text-decoration:none;
 body {
 line-height:1;
 background:#f4f4f2;
-font:1.2em/20px "helvetica neue",Helvetica,Arial,Verdana,sans-serif;
+font:1.2em/20px 'Open Sans',sans-serif;
 color:#666;
 min-width:1003px;
 margin:0;
@@ -620,9 +620,13 @@ color:#444;
 .kmcwa_share_buttons {
     margin-left: 13px;
     padding-left: 20px;
-    font-family: "Cantarell", Arial, sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     font-size: 19px;
     min-height: 62px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #444;
+    font-weight: 600;
 }
 
 /*----------------------------*/
@@ -917,14 +921,13 @@ position:absolute;
 /* 1. Main Navigation
 /*----------------------------*/
 #menu-main-nav {list-style:none;margin:0;margin-top:40px;padding:0;list-style:none;float:right;}
-#menu-main-nav a {outline: none;}
+#menu-main-nav a {outline: none;display:block;}
 #menu-main-nav li {float:left;padding:5px 31px 12px 13px;position:relative;vertical-align:top;height:1%;margin-right: 2px;}
 #menu-main-nav ul li {background: none !important;}
 #menu-main-nav li.parent:hover {position:relative;}
 #menu-main-nav li.parent li.parent:hover {background:none !important;}
 #menu-main-nav li.parent li.parent li.parent:hover {background:none !important;}
-#menu-main-nav li strong {text-transform:uppercase;display:block;font-size:13px;letter-spacing: 0.6px;font-weight:800;}
-#menu-main-nav a {display:block;}
+#menu-main-nav li strong {text-transform:uppercase;display:block;font-size:13px;letter-spacing: 1px;font-weight:600;}
 #menu-main-nav a:hover {background-position:0 0;text-decoration:none;}
 #menu-main-nav .drop {width:236px;padding:0 1px 0 1px;position:absolute;left:-1px;top:32px;display:none;z-index:999;}
 #menu-main-nav .sub-menu {display: none;}
@@ -987,7 +990,7 @@ position:absolute;
 .nav_right_sub_nav ul a {margin:0 0 0 13px !important;}
 .nav_right_sub_nav ul li.current_page_item a, .nav_right_sub_nav ul a:hover {margin-left:0 !important;padding-left: 33px !important;}
 #sub_nav ul li ul li.current_page_item ul li a {font-weight: normal !important;}
-.nav_right_sub_nav li.current-page-parent > a { font-size: 19px; font-family: "Cantarell", Arial, sans-serif;}
+.nav_right_sub_nav li.current-page-parent > a { font-size: 19px; text-transform: uppercase; letter-spacing: 1px; color: #444; font-weight: 600;}
 
 /*----------------------------*/
 /* 3. Horizontal Sub Navigation
@@ -1379,9 +1382,9 @@ text-shadow:0 1px 0 rgba(255, 255, 255, 0.8);
 /*----------------------------*/
 /* 1. General Typography
 /*----------------------------*/
-h1, h2, h3, h4, h5, h6, p, ul, ol {margin: 0 0 20px 0;font-weight: normal;color: #222;}
+h1, h2, h3, h4, h5, h6, p, ul, ol {margin: 0 0 20px 0;font-weight: normal;color: #444;}
 p, ul, ol {color: #666;}
-p strong {color: #555;}
+p strong {color: #444;}
 .colored_box p strong {color: #FFF;}
 p {margin-bottom: 15px;}
 h1 {font-size:2.1em;}
@@ -1628,7 +1631,7 @@ margin-bottom:-17px;
 /* 5. Callouts
 /*----------------------------*/
 .callout-wrap {float: left;width: 100%;padding-top: 20px;background:url(images/_global/separator3.gif) 0 0 repeat-x;margin: 10px 0 30px 0;text-align: center; vertical-align:middle}
-.callout-wrap span {padding-bottom: 25px;background:url(images/_global/separator3.gif) left bottom repeat-x;color: #222;font-size:1.5em;line-height: 28px;display: block;}
+.callout-wrap span {padding-bottom: 25px;background:url(images/_global/separator3.gif) left bottom repeat-x;color: #444;font-size:1.5em;line-height: 28px;display: block;letter-spacing:1px;}
 .callout2 {color: #222;font-size:1.5em;line-height: 28px;}
 
 
@@ -2560,8 +2563,6 @@ border-top-right-radius: 5px;
 -webkit-border-top-left-radius: 5px;
 -webkit-border-top-right-radius: 5px;
 }
-h1,h2,h3,h4,h5,h6{text-shadow:1px 1px 1px #FFF;}
-#footer h1,#footer h2,#footer h3,#footer h4,#footer h5,#footer h6,.frame h1{text-shadow:none;}
 .home-bnr-jquery .home-banner-main h2, .logo-text{text-shadow:1px 1px 1px #222;}
 
 
