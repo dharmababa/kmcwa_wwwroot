@@ -1529,7 +1529,7 @@ margin-bottom:-17px;
 .message_yellow a{font-weight:bold;color:#A58100;}
 
 .colored_box {color:#FFF;padding: 0;margin: 0 0 20px 0;font-size:13px;width:100%;}
-.colored_box p {padding: 15px;color: #FFF;}
+.colored_box p {padding: 15px 20px 15px 20px;line-height:23px;color: #FFF;}
 
 
 /* FIRE */
