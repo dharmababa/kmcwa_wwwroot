@@ -274,7 +274,11 @@ function EventView(element, calendar) {
 					}
 					
 					if(e.allDay){
-						str.find('.rhc-widget-date-time').hide();
+					    str.find('.rhc-widget-date-time').hide();
+					    str.find('.rhc-oneday-block').hide();
+					}
+					else {
+					    str.find('.rhc-allday-block').hide();
 					}
 					
 					//--- date parts

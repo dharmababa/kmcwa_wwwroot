@@ -9,11 +9,18 @@ h3 + .rhc-widget-upcoming-item {
 .rhc-widget-upcoming-item {
 	display: block;
 	clear: both;
-	width: 100%;
+	width: 90%;
 	min-height: 44px;
 	position: relative;
-	/*border-bottom: 1px solid #DDD;*/
-	padding: 7px 0 0 0;
+	border: 1px solid #DDD;
+	padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #e7e9e6;
+}
+
+.rhc-description {
+    margin-top: 10px;
 }
 
 .rhc-widget-upcoming-featured-image {
@@ -54,10 +61,6 @@ h3 + .rhc-widget-upcoming-item {
 	clear:both;
 }
 
-.rhc-widget-upcoming-item .rhc-description {
-	padding-bottom:5px;
-}
-
 /** RTL **/
 body.rtl .rhc-widget-upcoming {
 	float: left;
@@ -79,4 +82,15 @@ body.rtl .rhc-widget-upcoming {
 
 .widget_upcoming_events_widget .widget-title {
 
+}
+
+.rhc-widget-upcoming-title {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.rhc-date-block {
+    color: #444;
+    text-transform: uppercase;
+    font-weight: 600;
 }
