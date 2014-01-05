@@ -629,6 +629,11 @@ color:#444;
     font-weight: 600;
 }
 
+.sidebar-widget-indented {
+    margin-left: 13px;
+    padding-left: 20px;
+}
+
 /*----------------------------*/
 /* 7. Homepage
 /*----------------------------*/
