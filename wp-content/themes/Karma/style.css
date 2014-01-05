@@ -2089,7 +2089,8 @@ form, fieldset {margin:0;padding:0;border-style:none;}
 .textwidget input[type='text'], .textwidget textarea { width: 100% !important; }
 .contact-form {padding-top:15px;}
 .contact-form .clear-form { clear: both; }
-.contact-form input[type='text'] { width: 300px; margin-bottom: 13px; }
+.contact-form input[type='text'],
+.contact-form input[type='email'] { width: 300px; margin-bottom: 13px; }
 .contact-form select { margin-bottom: 13px; }
 .contact-form textarea {width: 430px;height: 150px;float: none; margin-bottom: 13px; }
 .contact-form input[type='radio'], .contact-form input[type='checkbox'] { float: none; margin-bottom: 13px; }

@@ -1,6 +1,7 @@
 .textwidget input[type='text'], .textwidget textarea { width: 100% !important; }
 .contact-form .clear-form { clear: both; }
-.contact-form input[type='text'] { width: 300px; margin-bottom: 13px; }
+.contact-form input[type='text'],
+.contact-form input[type='email'] { width: 300px; margin-bottom: 13px; }
 .contact-form select { margin-bottom: 13px; }
 .contact-form textarea { height: 200px; width: 80%; float: none; margin-bottom: 13px; }
 .contact-form input[type='radio'], .contact-form input[type='checkbox'] { float: none; margin-bottom: 13px; }
