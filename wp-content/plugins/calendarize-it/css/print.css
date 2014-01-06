@@ -5,9 +5,21 @@ body *{
 	background-image: none;
 }
 
+.edit-page-button,
 .site-header,
+#header,
+.tools,
+.fc-header-left,
+.fc-header-right,
+#footer,
+#footer_bottom,
+#event-legend-outerwrap,
 footer[role="contentinfo"] {
-	display:none;
+	display:none!important;
+}
+
+.fc-header-title h2 {
+    line-height: normal!important;
 }
 
 td.fc-header-left,
