@@ -40,7 +40,7 @@ class SocialMediaWidget extends WP_Widget
       if (empty($title)) {
          echo $title_page->post_title;
       } else {
-         echo $title;
+          echo $title;
       }
       if (!empty($title_link)) {
          echo "</a>";
@@ -48,9 +48,7 @@ class SocialMediaWidget extends WP_Widget
 
 if (!empty($title)) {echo $after_title;}
 ?>
-		
-
-<ul class="social_icons">	
+<ul class="social_icons">
 <?php
       foreach (array(
          "Twitter",
