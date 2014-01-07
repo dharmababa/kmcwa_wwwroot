@@ -1546,6 +1546,10 @@ padding: 0 5px;
 #home-socialspacer-right {
     display: none;
 }
+
+.kmcwa_share_buttons {
+    margin-top: 20px;
+}
 }
 
 
