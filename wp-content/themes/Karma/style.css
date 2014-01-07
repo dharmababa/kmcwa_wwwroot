@@ -994,6 +994,7 @@ position:absolute;
 .nav_right_sub_nav ul li.current_page_item ul li.current_page_item ul li a {font-weight: normal !important;}
 .nav_right_sub_nav {float: right !important;background:url(images/_global/bg-sidebar.gif) 12px 0 repeat-y !important;}
 .nav_right_sub_nav ul a {margin:0 0 0 13px !important;}
+.nav_right_sub_nav .sidebar-widget h4 {margin-left:13px;padding-left:20px;font-size: 19px; text-transform: uppercase; letter-spacing: 1px; color: #444; font-weight: 600;}
 .nav_right_sub_nav ul li.current_page_item a, .nav_right_sub_nav ul a:hover {margin-left:0 !important;padding-left: 33px !important;}
 #sub_nav ul li ul li.current_page_item ul li a {font-weight: normal !important;}
 .nav_right_sub_nav li.current-page-parent > a { font-size: 19px; text-transform: uppercase; letter-spacing: 1px; color: #444; font-weight: 600;}
