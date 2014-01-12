@@ -129,7 +129,9 @@ content:"";
 #menu-main-nav li{
 float:none;
 display:inline-block;
+padding:5px 25px 12px 10px;
 }
+
 #menu-main-nav li:first-child{background:none !important;}
 .top-block .top-holder{
 width:auto;
@@ -220,6 +222,11 @@ background-image:url(../images/_global/mobile-bg-jquery2-banner.png);
 .home-bnr-jquery ul li{
 width:738px !important;
 height:336px !important;
+}
+
+.home-sub-image {
+    max-height:150px;
+    max-width:150px;
 }
 
 #content .home-banner-wrap,
@@ -562,7 +569,7 @@ background-size:300px 30px !important;
 height:10px;
 margin:15px auto 20px;
 }
-.callout-wrap{float:none;}
+.callout-wrap{float:none;margin:10px 0 10px 0;}
 .uds-pricing-table td,
 .uds-pricing-table th{padding:3px 0;}
 .uds-pricing-table .small_button{
@@ -1207,6 +1214,12 @@ float:none;
 max-width:100%;
 margin:0 auto;
 }
+.home-social{
+    display:block;
+    padding:10px;
+    margin-left:auto;
+    margin-right:auto;
+}
 #main .home-bnr-jquery,
 .home-bnr-jquery .home-banner-sub-full{
 width:420px;
@@ -1537,14 +1550,6 @@ padding: 0 5px;
 
 .callout-wrap span {
     line-height: 38px;
-}
-
-#home-socialspacer-left {
-    display: none;
-}
-
-#home-socialspacer-right {
-    display: none;
 }
 
 .kmcwa_share_buttons {

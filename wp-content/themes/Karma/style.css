@@ -817,6 +817,17 @@ margin:14px 0 0 14px;
     /* box-shadow:3px 3px 20px rgba(50, 50, 50, 0.75); */
 }
 
+#home-social-wrap {
+    margin:0 15px 0 15px;
+}
+
+.home-social {
+    display:inline-block;
+    vertical-align:middle;
+    width:140px;
+    padding:10px 10px 0 10px;
+}
+
 .home-sub-image {
     display:block;
     margin:-20px auto 6px auto;
