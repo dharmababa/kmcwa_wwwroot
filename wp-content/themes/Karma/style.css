@@ -273,6 +273,11 @@ width:980px !important;
 }
 
 
+#wp-admin-bar-wpseo-menu {
+    width:65px;
+}
+
+
 /*----------------------------*/
 /* 3. Portfolio Pages
 /*----------------------------*/

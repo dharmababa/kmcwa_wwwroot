@@ -7,12 +7,10 @@
 <head>
 <meta name="application-name" content="KMC Washington"/>
 <link rel="apple-touch-icon" href="/nkt-logo.png"/>
-<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
 <?php truethemes_meta_hook();// action hook, see truethemes_framework/global/hooks.php ?>
 <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?>" href="<?php bloginfo('rss2_url'); ?>" />
 <?php wp_head(); ?>
 <!--[if lte IE 8]>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/truethemes_framework/js/respond.js"></script>
@@ -77,7 +75,7 @@ if ($ka_toolbar == "true"):
 <?php // Website Logo
 if ($ka_logo_text == ''){
 ?>
-<a href="<?php echo home_url(); ?>" class="logo"><img src="<?php echo $ka_sitelogo; ?>" alt="<?php bloginfo('name'); ?>" /></a>
+<a href="<?php echo home_url(); ?>" class="logo"><img src="<?php echo $ka_sitelogo; ?>" alt="Meditation and Modern Buddhism in Seattle - KMC Washington" /></a>
 <?php }else{?>
 <a href="<?php echo home_url(); ?>" class="custom-logo"><img src="<?php echo get_template_directory_uri(); ?>/images/_global/<?php echo $ka_logo_icon; ?>" alt="<?php bloginfo('name'); ?>" /><span class="logo-text"><?php echo $ka_logo_text; echo '</span></a>';}?>
 
