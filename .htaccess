@@ -1,0 +1,35 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /~nktkmc5/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /~nktkmc5/index.php [L]
+</IfModule>
+
+# END WordPress
+
+ExpiresActive On
+ExpiresByType image/gif A2592000
+ExpiresByType image/png A2592000
+ExpiresByType image/jpg A2592000
+ExpiresByType application/javascript A604800
+ExpiresByType text/css A604800
+
+### Expire everything else 1 day from when it's last modified
+### (this uses the Alternative syntax)
+ExpiresDefault "modification plus 1 day"
+
+# Cache txt, html, and htm pages for 1 week, require revalidation
+<FilesMatch "\.(txt|html?)$">
+ExpiresDefault A604800
+Header set Cache-Control: "public, must-revalidate"
+</FilesMatch>
+
+#
+# disable caching for dynamic files
+<FilesMatch "\.(pl|php|[sf]?cgi|spl)$">
+Header set Cache-Control: "max-age=0, no-store"
+</FilesMatch>
