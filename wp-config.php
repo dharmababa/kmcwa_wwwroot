@@ -16,9 +16,10 @@
 
 define('WP_HOME','http://biz123.inmotionhosting.com/~nktkmc5'); 
 define('WP_SITEURL','http://biz123.inmotionhosting.com/~nktkmc5');
+define('WP_AUTO_UPDATE_CORE', false);
 
 // ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
+/** The name of the database for WordPress */http://localhost:47208/favicon.ico
 define('DB_NAME', 'nktkmc5_kmcwawp');
 
 /** MySQL database username */
