@@ -14,8 +14,8 @@
  * @package WordPress
  */
 
-define('WP_HOME','http://biz123.inmotionhosting.com/~nktkmc5'); 
-define('WP_SITEURL','http://biz123.inmotionhosting.com/~nktkmc5');
+define('WP_HOME','http://meditateinseattle.org'); 
+define('WP_SITEURL','http://meditateinseattle.org');
 define('WP_AUTO_UPDATE_CORE', false);
 
 // ** MySQL settings - You can get this info from your web host ** //
