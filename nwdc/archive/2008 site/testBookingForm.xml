@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<forms>
+ <BookingForm>
+   <Options>
+   <option0>
+    <detailType>0</detailType>
+    <detailValue>0</detailValue>
+   </option0>
+  </Options>
+  <FirstName>
+   <description>First Name</description>
+   <inputType>InputText1</inputType>
+   <name>firstName</name>
+   <size>20</size>
+   <maxlength>64</maxlength>
+   <id>elFirstName</id>
+   <checkFor>isEmptyString</checkFor>
+   <checkMsg>Please enter your first name.</checkMsg>
+   <checkDescription>Enter the first name of the attendee here, e.g. John. If ordained, enter Kelsang here.</checkDescription>
+  </FirstName>
+  <LastName>
+   <description>Last Name</description>
+   <inputType>InputText1</inputType>
+   <name>lastName</name>
+   <size>20</size>
+   <maxlength>64</maxlength>
+   <id>elLastName</id>
+   <checkFor>isEmptyString</checkFor>
+   <checkMsg>Please enter your last name.</checkMsg>
+   <checkDescription>Enter the last name of the attendee here, e.g. Smith.</checkDescription>
+  </LastName>
+  <Street>
+   <description>Street</description>
+   <inputType>InputText1</inputType>
+   <name>street</name>
+   <size>20</size>
+   <maxlength>128</maxlength>
+   <id>elStreet</id>
+   <checkFor>isEmptyString</checkFor>
+   <checkMsg>Please enter street address.</checkMsg>
+   <checkDescription>Enter the street address of the attendee.</checkDescription>
+  </Street>
+  <PostCode>
+   <description>Zip Code</description>
+   <inputType>InputText1</inputType>
+   <name>postCode</name>
+   <size>20</size>
+   <maxlength>16</maxlength>
+   <id>elPostCode</id>
+   <checkFor>isEmptyString</checkFor>
+   <checkMsg>Please enter postal code (zip code).</checkMsg>
+   <checkDescription>Enter your zip code.</checkDescription>
+  </PostCode>
+  <City>
+   <description>City</description>
+   <inputType>InputText1</inputType>
+   <name>city</name>
+   <size>20</size>
+   <maxlength>64</maxlength>
+   <id>elCity</id>
+   <checkFor>isEmptyString</checkFor>
+   <checkMsg>Please enter your city.</checkMsg>
+   <checkDescription>Enter your city.</checkDescription>
+  </City>
+  <State>
+   <description>State</description>
+   <inputType>InputText1</inputType>
+   <name>state</name>
+   <size>20</size>
+   <maxlength>64</maxlength>
+   <id>elState</id>
+   <checkFor>isEmptyString</checkFor>
+   <checkMsg>Please enter your state.</checkMsg>
+   <checkDescription>Enter your state as 2 letter code - e.g. WA for Washington.</checkDescription>
+  </State>
+  <Country>
+   <description>Country</description>
+   <inputType>InputText1</inputType>
+   <name>country</name>
+   <size>20</size>
+   <maxlength>64</maxlength>
+   <id>elCountry</id>
+  </Country>
+  <Centre>
+   <description>Center</description>
+   <inputType>InputText1</inputType>
+   <name>centre</name>
+   <size>20</size>
+   <maxlength>128</maxlength>
+   <id>elCentre</id>
+  </Centre>
+  <Phone>
+   <description>Phone</description>
+   <inputType>InputText1</inputType>
+   <name>phone</name>
+   <size>20</size>
+   <maxlength>32</maxlength>
+   <id>elPhone</id>
+   <checkFor>isEmptyString</checkFor>
+   <checkMsg>Please enter your phone number.</checkMsg>
+   <checkDescription>Enter your phone number.</checkDescription>
+  </Phone>
+    <Email>
+   <description>Email</description>
+   <inputType>InputText1</inputType>
+   <name>email</name>
+   <size>20</size>
+   <maxlength>128</maxlength>
+   <id>elEmail</id>
+   <checkFor>isEmptyString</checkFor>
+   <checkMsg>Please enter your email address.</checkMsg>
+   <checkDescription>Enter your email address.  Please double check that it is correct as we will send you confirmation by email.</checkDescription>
+  </Email>
+  <DateAll>
+   <description>Entire Celebration</description>
+   <inputType>Checkbox1</inputType>
+   <action>allDates</action>
+  </DateAll>
+  <Date0>
+   <description>Friday, August 31</description>
+   <inputType>Checkbox1</inputType>
+   <id>elDate0</id>
+   <action>date</action>
+  </Date0>
+  <Date1>
+   <description>Saturday, September 1</description>
+   <inputType>Checkbox1</inputType>
+   <id>elDate1</id>
+   <action>date</action>
+  </Date1>
+  <Date2>
+   <description>Sunday, September 2</description>
+   <inputType>Checkbox1</inputType>
+   <id>elDate2</id>
+   <action>date</action>
+  </Date2>
+  <Date3>
+   <description>Monday, September 3</description>
+   <inputType>Checkbox1</inputType>
+   <id>elDate3</id>
+   <action>date</action>
+  </Date3>
+  <DateIndicator>
+   <id>elDateIndicator</id>
+   <checkMsg>You must select Entire Celebration or at least one day to register.</checkMsg>
+  </DateIndicator>
+  <Submit>
+   <description>Register and Pay Now</description>
+   <inputType>Submit</inputType>
+  </Submit>
+ </BookingForm>
+</forms>

@@ -1,0 +1,146 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body,
+html {
+    margin:0;
+    padding:0;
+    background:#FFF;
+    color:#000;
+}
+
+body {
+    min-width:750px;
+	text-family: Geneva, Arial, Helvetica;
+    }
+#center {
+	position:relative;
+	width:1000px;
+	top:20px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#FFFFFF;
+	border: 1px solid #c0c3c3;
+
+}
+#wrap {
+    background:#FED61B;
+    margin:0 auto;
+    width:750px;
+    }
+#header {
+    background:#FED61B;
+    }
+#nav ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+    }
+#nav li{
+    display:inline;
+    margin:0;
+    padding:0;
+    }
+#sidebar {
+    background-color:#F7B32C;
+    float:left;
+    width:140px;
+	margin: 10px 10px 0 10px;
+    }
+#sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+#sidebar li {
+    border-bottom: 0px solid #90bade;
+    margin: 0;
+	font-family: Geneva, Arial, Helvetica;
+}
+#sidebar li a {
+    display: block;
+    padding: 5px 5px 5px 0.5em;
+    color: #8C4023;
+    text-decoration: none;
+    width: 100%;
+}
+html>body #sidebar li a {
+    width: auto;
+}
+#sidebar li a:hover {
+    border-left: 0px solid #1c64d1;
+    border-right: 0px solid #5ba3e0;
+    background-color: #FED61B;
+    color: #8C4023;
+}
+#main {
+    background:#FED61B;
+    float:right;
+    width:550px;
+    background-image: url(../images/background-2.jpg);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	font-family: Geneva, Arial, Helvetica;
+	color: #993300;
+	padding-right: 5px;
+    }
+	
+#main a:link {
+    color: #093473;
+	text-decoration: underline;
+}
+
+#main a:hover {
+    text-decoration: none;
+}
+
+#main a:visited {
+   color: #093473;
+}
+
+#footer {
+    background-color:#093473;
+    clear:both;
+	marging: 0;
+	padding: 0;
+    }
+	
+#footer p {
+    padding: 0.5em 0 0.5em 2em;
+	color: #FFFFFF;
+	text-align: center;
+	font-family: Arial, Helvetica;
+}
+
+.title {
+  color: #093473;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.title_left {
+  color: #093473;
+  font-size: 20px;
+  text-align: left;
+  border-bottom: 0px solid #000;
+  font-weight: bold;
+  
+}
+
+.blue_bold {
+   color: #093473;
+   font-weight: bold;
+}
+
+img.bdr {
+   border: 2px solid #fff;
+   margin: 0 5px 0 5px;
+}
+
+.mid {
+  text-align: center;
+}
+
+

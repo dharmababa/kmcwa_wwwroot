@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<forms>
+ <BookingForm>
+  <FirstName>
+   <description></description>
+   <displaySize>20</displaySize>
+   <checkFor>isEmptyString</checkFor>
+   <checkMsg>Please enter your first name.</checkMsg>
+   <checkDescription></checkDescription>
+  </FirstName>
+  <LastName>
+   <description></description>
+   <displaySize>20</displaySize>
+   <checkFor>isEmptyString</checkFor>
+   <checkMsg>Please enter your last name.</checkMsg>
+   <checkDescription></checkDescription>
+  </LastName>
+  <Gender>
+   <description></description>
+   <checkFor>isSelectDefault</checkFor>
+   <checkMsg>Please select your gender</checkMsg>
+   <checkDescription></checkDescription>
+  </Gender>
+  <Centre>
+   <description></description>
+   <displaySize>20</displaySize>
+   <checkDescription></checkDescription>
+  </Centre>
+  <Street>
+   <description></description>
+   <displaySize>20</displaySize>
+   <checkDescription></checkDescription>
+  </Street>
+  <City>
+   <description></description>
+   <displaySize>20</displaySize>
+   <checkDescription></checkDescription>
+  </City>
+  <State>
+   <description></description>
+   <displaySize>20</displaySize>
+   <checkDescription></checkDescription>
+  </State>
+  <PostCode>
+   <description></description>
+   <displaySize>20</displaySize>
+   <checkDescription></checkDescription>
+  </PostCode>
+  <Country>
+   <description></description>
+   <displaySize>20</displaySize>
+   <checkDescription></checkDescription>
+  </Country>
+  <Phone>
+   <description></description>
+   <displaySize>20</displaySize>
+   <checkFor>isNoPhoneNumber</checkFor>
+   <checkMsg>Please enter a valid phone number.</checkMsg>
+   <checkDescription></checkDescription>
+  </Phone>
+  <Email>
+   <description></description>
+   <displaySize>20</displaySize>
+   <checkFor>isNoEmailAddress</checkFor>
+   <checkMsg>Please enter a valid email address.</checkMsg>
+   <checkDescription></checkDescription>
+  </Email>
+  <DateAll>
+   <description>Full Event - $135 </description>
+  </DateAll>
+  <DateIndicator>
+   <checkMsg>Please check the course dates.</checkMsg>
+   <checkDescription></checkDescription>
+  </DateIndicator>
+  <Dates>
+   <description>%b %e</description>
+   <inputType>Checkbox2</inputType>
+  </Dates>
+  <Date0>
+   <description>Friday, September 24 - Introductory Talk - $10</description>
+   <id>elDate0</id>
+   <date>2010-09-24</date>
+   <action>date</action>
+  </Date0>
+  <Date1>
+   <description>Saturday, September 25 - Empowmerment - $85 (includes lunch and supper)</description>
+   <id>elDate1</id>
+   <date>2010-09-25</date>
+   <action>date</action>
+  </Date1>
+  <Date2>
+   <description>Saturday, September 26 - Commentary - $45 (includes lunch and supper)</description>
+   <id>elDate2</id>
+   <date>2010-09-26</date>
+   <action>date</action>
+  </Date2>
+ <Prayers>
+   <description>Prayers for World Peace on Sunday only - $10 (do not check if September 26 is selected)</description>
+   <action>dates</action>
+</Prayers>
+  <Dinner>
+   <description>Optional Dinner on Friday, September 24 - $5</description>
+   <action>dates</action>
+  </Dinner>
+  <SpecialNeeds>
+   <description>Special Needs</description>
+   <cols>60</cols>
+   <rows>1</rows>
+  </SpecialNeeds>
+  <AmountPayNow>
+   <description>Deposit: US$ </description>
+   <displaySize>6</displaySize>
+   <checkFor>isInvalidDeposit</checkFor>
+   <checkMsg>Please pay at least a 25% deposit.</checkMsg>
+   <checkDescription></checkDescription>
+  </AmountPayNow>
+  <Submit>
+   <description>Register Now</description>
+   <inputType>Submit</inputType>
+  </Submit>
+  <Options>
+   <option0>
+    <detailType>0</detailType>
+    <detailValue>0</detailValue>
+   </option0>
+   <option1>
+    <detailType>0</detailType>
+    <detailValue>2</detailValue>
+    <dates>Student</dates>
+   </option1>
+   <option2>
+    <detailType>0</detailType>
+    <detailValue>1</detailValue>
+    <dates>Prayers</dates>
+   </option2>
+   <option3>
+    <detailType>1</detailType>
+    <detailValue>1</detailValue>
+    <dates>Dinner</dates>
+   </option3>
+  </Options>
+ </BookingForm>
+</forms>

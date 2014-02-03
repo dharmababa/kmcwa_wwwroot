@@ -1,0 +1,49 @@
+/* forms */
+
+input, select {
+	display: inline;
+	float: left;
+	width: 200px;
+	margin: .2em;
+}
+
+label {
+	display: inline;
+	float: left;
+	width: 400px;
+	margin: .2em;
+}
+
+form br {
+	clear: left;
+}
+
+input#submit {
+	float: none;
+	width: auto;
+}
+
+label {
+	text-align: left;
+	padding-right: 1em;
+	font-weight: bold;
+}
+
+form {
+	margin: 2em 0;
+	background: #eee;
+	padding: 2em 6em;
+	border: 1px solid #bbb;
+}
+
+fieldset {
+	padding: 0 30px 30px;
+	border: 0px;
+	margin-bottom: 2.5em;
+}
+
+legend {
+	font-weight: bold;
+	padding: .2em 1.6em;
+	color: #336699;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<style type="text/css">
+<!--
+.style1 {font-size: 1px}
+-->
+</style>
+<link href="../nwdc_09.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="894" border="0" align="center" bgcolor="#FCFCFC"
+>
+  <tr bgcolor="#FCFCFC">
+    <td colspan="4" bgcolor="#FCFCFC"><img src="../images_09/header.jpg" width="900" height="314" /></td>
+  </tr>
+  <tr bgcolor="#715B10">
+    <td height="11" colspan="4"id="side_links"><p align="right" id="side_links"><a href="http://www.meditateinskagitvalley.org" target="_blank" id="side_links">Bellingham, WA</a> • <a href="http://www.meditateinolympia.org" target="_blank" id="side_links">Olympia, WA</a> • <a href="http://www.meditationinoregon.org" target="_blank" id="side_links">Portland, or</a> • <a href="http://www.meditateinseattle.org/" target="_blank" id="side_links"> Seattle, WA</a></p>    </td>
+  </tr>
+  <tr bordercolor="#C7D5EC" bgcolor="#C7D5EC">
+    <td width="179" valign="top" bordercolor="#C7D5EC1" bgcolor="#C7D5EC"><table width="175" border="0">
+      <tr>
+        <td width="169" id="nav_bar2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td id="nav_bar"><a href="../welcome.html">Welcome</a></td>
+      </tr>
+      <tr>
+        <td id="nav_bar"><a href="../program.html">Program</a></td>
+      </tr>
+      <tr>
+        <td id="nav_bar"><a href="../teachers.html">Teachers</a></td>
+      </tr>
+      <tr>
+        <td id="nav_bar"><a href="../venue.html">Venue</a></td>
+      </tr>
+      <tr>
+        <td id="nav_bar"><a href="../registration.html">Registration</a></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+    <td width="3" valign="top" bordercolor="#FCFCFC" bgcolor="#FCFCFC">&nbsp;</td>
+    <td width="694" valign="top" bordercolor="#FCFCFC" bgcolor="#FCFCFC"><!-- TemplateBeginEditable name="EditRegion3" -->EditRegion3<!-- TemplateEndEditable --></td>
+    <td width="12" valign="top" bordercolor="#FCFCFC" bgcolor="#FCFCFC">&nbsp;</td>
+  </tr>
+  <tr bordercolor="#FCFCFC" bgcolor="#FCFCFC">
+    <td colspan="4" bgcolor="#C7D5EC"><div align="center">
+      <p>&nbsp;</p>
+    </div>      <span class="style1"></span><span class="style1"></span></td>
+  </tr>
+  <tr bordercolor="#C7D5EC1" bgcolor="#2D66B5">
+    <td height="1" colspan="4" nowrap="nowrap">&nbsp;</td>
+  </tr>
+  <tr bordercolor="#C7D5EC" bgcolor="#C7D5EC">
+    <td colspan="4" bgcolor="#C4D5EE"><div align="center" class="subHeader">
+      <p>2009 NORTHWEST DHARMA CELEBRATION </p>
+      <p>A member of the New Kadampa Tradition - International Kadampa Buddhist Union<br />
+        © 2009 Kadampa Meditation Center Washington, All rights reserved</p>
+    </div></td>
+  </tr>
+</table>
+<div align="center"></div>
+</body>
+</html>

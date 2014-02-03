@@ -1,0 +1,148 @@
+<?
+require_once ('/home/kadampa/public_html/nktevents/0.9.3.1/bookingForm.php');
+new EventOptions (20, 427, 'ubyjyw', '/home/seattle/public_html/celebration/bookingForm.xml');
+?>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<title>2008 NW Dharma Celebration</title>
+
+
+
+<meta name="title" content="default meta title" />
+<meta name="description" content="default meta description" />
+
+
+<link href="../2005.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" media="screen" href="/css/default.css" />
+
+<!--[if lt IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/css/ie.css" /><![endif]-->
+<script type="text/javascript">
+function prepareCalculateFee () {
+ var elDate2 = document.getElementById ('elDate2');
+ var elDatePrayers2 = document.getElementById ('elDatePrayers2');
+ if (elDatePrayers2.checked) {
+  datesTicked = true;
+ }
+}
+
+
+</script>
+
+
+<? new JavaScriptFile (); ?>
+</head>
+
+<div id="wrap">
+    <div id="#header"><img src="images/nwdc%20masthead.jpg" alt="Northwest Dharma Celebration" width="1000" /> </div>
+
+<!-- OM TARE TUTARE TURE SHA -->
+<div id="container">
+
+<!-- branding -->
+<div id="branding">
+
+
+<!-- content -->
+<div id="content">
+ <div id="content_primary">
+
+
+      <h2>
+        <? new FormTitle (); ?>
+        Registration Form</h2>
+      <p class="content">If you must cancel your registration, please help 
+        us by notifying us via email at the earliest opportunity. Cancellations 
+        prior to and including August 23 will be refunded in full. From August 
+        24 on, your 25% deposit is non-refundable.<br />
+      </p>
+<? new FormHeader (); ?>
+
+<fieldset id="kem_p_details">
+
+<?
+new FormLayout (3);
+echo ('<p style="text-align:left">'); new FormElement ('FirstName'); echo ('</p>');
+echo ('<p style="text-align:left">'); new FormElement ('LastName'); echo ('</p>');
+echo ('<p style="text-align:left">'); new FormElement ('Gender'); echo ('</p>');
+echo ('<p style="text-align:left">'); new FormElement ('Centre'); echo ('</p>');
+echo ('<p style="text-align:left">'); new FormElement ('Street'); echo ('</p>');
+echo ('<p style="text-align:left">'); new FormElement ('City'); echo ('</p>');
+echo ('<p style="text-align:left">'); new FormElement ('State'); echo ('</p>');
+echo ('<p style="text-align:left">'); new FormElement ('PostCode'); echo ('</p>');
+echo ('<p style="text-align:left">'); new FormElement ('Phone'); echo ('</p>');
+echo ('<p style="text-align:left">'); new FormElement ('Email'); echo ('</p>');
+?>
+
+</fieldset>
+
+<fieldset id="kem_dates">
+<p style="text-align:left">
+<?
+new FormLayout (2);
+new FormElement ('DateAll');
+echo ("<br />Individual Days:<br />");
+new FormDates ();
+echo ("&nbsp;&nbsp;&nbsp;&nbsp;");
+new FormElement ('Prayers2');
+?>
+</p>
+</fieldset>
+
+<!-- course details -->
+<fieldset id="kem_course_details">
+<p style="text-align:left">
+
+<?
+ new FormLayout (3);
+ new FormElement ('SpecialNeeds');
+?>
+</fieldset>
+
+<fieldset id="kem_cost">
+
+<?
+new FormLayout (2);
+echo ('<label>Total Fee: US$ '); new FormElement ('Fee'); echo ('</label><br />');
+new FormElement ('AmountPayNow');
+echo ('<label>Balance: US$ '); new FormElement ('Balance'); echo ('</label><br />');
+?>
+
+
+</fieldset>
+
+<? new FormElement ('Submit'); ?>
+
+
+</form>
+
+
+
+
+
+</div>
+</div><!-- / #content -->
+
+
+  <div align="center">
+    <hr width="70%" noshade="noshade" />
+    <span class="footer"><font color="#666666"><br />
+    2008 NORTHWEST DHARMA CELEBRATION MT OR WA</font></span><br>
+          <span class="footer"><font color="#666666">A member of the New Kadampa 
+          Tradition - International Kadampa Buddhist Union </font></span> </div>
+        <p align="center" class="footer"><font color="#666666">&copy; 2008 Kadampa 
+          Meditation Center Washington, All rights reserved<br>
+          <br>
+          </font></p>
+
+
+
+
+</div><!-- / #container -->
+
+</body>
+</html>
