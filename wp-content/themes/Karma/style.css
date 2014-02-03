@@ -1641,7 +1641,7 @@ margin-bottom:-17px;
 /* 4. Footer
 /*----------------------------*/
 #footer p, #footer_bottom p {margin:0;}
-#footer, #footer_bottom {color: #575C60;}
+#footer, #footer_bottom {color: #eee;}
 #footer h3 {text-transform:uppercase;color:#fff;display:block;font-size:13px;letter-spacing: 0.5px;border-bottom: 1px solid #3E4055;padding-bottom: 7px;margin-bottom: 16px;font-weight: bold;}
 #footer .footer_post h4, #footer .footer_post h4 a{text-transform:uppercase;color:#fff;display:block;font-size:11px;letter-spacing: 0.5px;}
 #footer .footer_post h4{padding-bottom: 3px;margin: 0;}
