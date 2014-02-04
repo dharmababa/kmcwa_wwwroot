@@ -15,6 +15,12 @@ Template Name: Right Nav
 <?php get_template_part('theme-template-part-tools','childtheme'); ?>
 
 <div class="main-holder">
+<div id="content" class="content-right-nav">
+<?php if(have_posts()) : while(have_posts()) : the_post(); the_content(); truethemes_link_pages(); endwhile; endif; 
+comments_template('/page-comments.php', true);
+get_template_part('theme-template-part-inline-editing','childtheme'); ?>
+</div><!-- end content -->
+
 <?php  
 //retrieve value for sub-nav checkbox
 global $post;
@@ -30,12 +36,6 @@ get_template_part('theme-template-part-subnav-right','childtheme');
 </div><!-- end sub_nav -->
 <?php } ?>
 
-
-<div id="content" class="content-right-nav">
-<?php if(have_posts()) : while(have_posts()) : the_post(); the_content(); truethemes_link_pages(); endwhile; endif; 
-comments_template('/page-comments.php', true);
-get_template_part('theme-template-part-inline-editing','childtheme'); ?>
-</div><!-- end content -->
 </div><!-- end main-holder -->
 </div><!-- main-area -->
 
