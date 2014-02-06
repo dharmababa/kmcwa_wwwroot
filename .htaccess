@@ -1,16 +1,3 @@
-
-# BEGIN WordPress
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /~nktkmc5/
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /~nktkmc5/index.php [L]
-</IfModule>
-
-# END WordPress
-
 ExpiresActive On
 ExpiresByType image/gif A2592000
 ExpiresByType image/png A2592000
@@ -33,3 +20,121 @@ Header set Cache-Control: "public, must-revalidate"
 <FilesMatch "\.(pl|php|[sf]?cgi|spl)$">
 Header set Cache-Control: "max-age=0, no-store"
 </FilesMatch>
+
+RewriteCond %{HTTP_HOST} ^meditateinbellevue\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.meditateinbellevue\.org$
+RewriteRule ^/?$ "http\:\/\/meditateinseattle\.org\/weekly\-classes\/branch\-classes\-in\-your\-area\/bellevue" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^meditateinalaska\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.meditateinalaska\.org$
+RewriteRule ^/?$ "http\:\/\/meditateinseattle\.org\/weekly\-classes\/branch\-classes\-in\-your\-area\/anchorage\-ak" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^meditateonwhidbey\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.meditateonwhidbey\.org$
+RewriteRule ^/?$ "http\:\/\/meditateinseattle\.org\/weekly\-classes\/branch\-classes\-in\-your\-area\/whidbey\-island" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^meditateinbellingham\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.meditateinbellingham\.org$
+RewriteRule ^/?$ "http\:\/\/meditateinseattle\.org\/weekly\-classes\/branch\-classes\-in\-your\-area\/mount\-vernon" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^meditateinskagitvalley\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.meditateinskagitvalley\.org$
+RewriteRule ^/?$ "http\:\/\/meditateinseattle\.org\/weekly\-classes\/branch\-classes\-in\-your\-area\/mount\-vernon" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^meditateeastside\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.meditateeastside\.org$
+RewriteRule ^/?$ "http\:\/\/meditateinseattle\.org\/weekly\-classes\/branch\-classes\-in\-your\-area\/bellevue" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^meditateinnwwashington\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.meditateinnwwashington\.org$
+RewriteRule ^/?$ "http\:\/\/meditateinseattle\.org\/weekly\-classes\/branch\-classes\-in\-your\-area\/mount\-vernon" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^nkt\-kmc\-washington\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.nkt\-kmc\-washington\.org$
+RewriteRule ^/?$ "http\:\/\/meditateinseattle\.org" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^vajralama\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.vajralama\.org$
+RewriteRule ^/?$ "http\:\/\/meditateinseattle\.org" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^nkt\-kmc\-washington\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.nkt\-kmc\-washington\.org$
+RewriteRule ^classes\/bellevue\/?(.*)$ "http\:\/\/meditateinseattle\.org\/weekly\-classes\/branch\-classes\-in\-your\-area\/bellevue" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^nkt\-kmc\-washington\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.nkt\-kmc\-washington\.org$
+RewriteRule ^classes\/anchorage\/?(.*)$ "http\:\/\/meditateinseattle\.org\/weekly\-classes\/branch\-classes\-in\-your\-area\/anchorage\-ak" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^nkt\-kmc\-washington\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.nkt\-kmc\-washington\.org$
+RewriteRule ^classes$ "http\:\/\/meditateinseattle\.org\/weekly\-classes" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^nkt\-kmc\-washington\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.nkt\-kmc\-washington\.org$
+RewriteRule ^classes\/$ "http\:\/\/meditateinseattle\.org\/weekly\-classes" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^nkt\-kmc\-washington\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.nkt\-kmc\-washington\.org$
+RewriteRule ^classes\/anacortes\/?(.*)$ "http\:\/\/meditateinseattle\.org\/weekly\-classes\/branch\-classes\-in\-your\-area\/mount\-vernon" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^nkt\-kmc\-washington\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.nkt\-kmc\-washington\.org$
+RewriteRule ^classes\/capitol\-hill\/?(.*)$ "http\:\/\/meditateinseattle\.org\/weekly\-classes\/branch\-classes\-in\-your\-area\/capitol\-hill" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^nkt\-kmc\-washington\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.nkt\-kmc\-washington\.org$
+RewriteRule ^classes\/classes\-in\-your\-area$ "http\:\/\/meditateinseattle\.org\/weekly\-classes\/branch\-classes\-in\-your\-area" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^nkt\-kmc\-washington\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.nkt\-kmc\-washington\.org$
+RewriteRule ^classes\/west\-seattle\/?(.*)$ "http\:\/\/meditateinseattle\.org\/weekly\-classes\/branch\-classes\-in\-your\-area\/west\-seattle" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^nkt\-kmc\-washington\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.nkt\-kmc\-washington\.org$
+RewriteRule ^classes\/morning\-meditation\/?(.*)$ "http\:\/\/meditateinseattle\.org\/weekly\-classes\/classes\-at\-temple\-in\-ballard\/wednesday\-morning\-meditation" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^nkt\-kmc\-washington\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.nkt\-kmc\-washington\.org$
+RewriteRule ^classes\/prayers\-for\-world\-peace\/?(.*)$ "http\:\/\/meditateinseattle\.org\/weekly\-classes\/classes\-at\-temple\-in\-ballard\/sunday\-morning\-prayers\-for\-world\-peace" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^nkt\-kmc\-washington\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.nkt\-kmc\-washington\.org$
+RewriteRule ^classes\/whidbey\-island\/?(.*)$ "http\:\/\/meditateinseattle\.org\/weekly\-classes\/branch\-classes\-in\-your\-area\/whidbey\-island" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^nkt\-kmc\-washington\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.nkt\-kmc\-washington\.org$
+RewriteRule ^retreats$ "http\:\/\/meditateinseattle\.org\/events\-and\-retreats\/retreats" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^nkt\-kmc\-washington\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.nkt\-kmc\-washington\.org$
+RewriteRule ^retreats\/$ "http\:\/\/meditateinseattle\.org\/events\-and\-retreats\/retreats" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^nkt\-kmc\-washington\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.nkt\-kmc\-washington\.org$
+RewriteRule ^temple\/$ "http\:\/\/meditateinseattle\.org\/contact" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^nkt\-kmc\-washington\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.nkt\-kmc\-washington\.org$
+RewriteRule ^classes\/saturday\-morning\-retreat\/?(.*)$ "http\:\/\/meditateinseattle\.org\/events\-and\-retreats\/retreats\/saturday\-morning\-retreat" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^nkt\-kmc\-washington\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.nkt\-kmc\-washington\.org$
+RewriteRule ^courses\/calendar\/$ "http\:\/\/meditateinseattle\.org\/calendar" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^nkt\-kmc\-washington\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.nkt\-kmc\-washington\.org$
+RewriteRule ^images\/calendar\/KMCWA\-Calendar\.pdf$ "http\:\/\/meditateinseattle\.org\/calendar" [R=301,L]
+
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /~nktkmc5/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /~nktkmc5/index.php [L]
+</IfModule>
+
+# END WordPress
+
