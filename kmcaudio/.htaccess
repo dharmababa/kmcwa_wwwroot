@@ -1,0 +1,3 @@
+ErrorDocument 401 /errors/401.php
+Options +Indexes
+IndexOptions -FancyIndexing
