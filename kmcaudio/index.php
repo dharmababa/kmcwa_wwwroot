@@ -50,7 +50,7 @@
 					<li><a href="/audio_files/fpcorres_jpogf/index.php">Foundation Program Correspondence - Joyful Path of Good Fortune</a></li>	
 					<!-- <li><a href="/audio_files/ttp/index.php">Teacher Training Program (TTP)</a></li>	
 					<li><a href="/audio_files/ttpcorres/index.php">Teacher Training Program Correspondence - GDL Part II</a></li> -->	
-					<a href="/audio_files/ttpcorres2/index.php">Teacher Training Program Correspondence - MT Part I</a></li> 	
+					<a href="/audio_files/ttpcorres2/index.php">Teacher Training Program Correspondence - Mahamudra Tantra</a></li> 	
 					<li><a href="/audio_files/ttpcorres_meaningful_to_behold_01/index.php">Teacher Training Program Correspondence - Meaningful to Behold</a></li>	
 				</ul>
 				

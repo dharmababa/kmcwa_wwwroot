@@ -946,7 +946,7 @@ position:absolute;
 /*----------------------------*/
 #menu-main-nav {list-style:none;margin:0;margin-top:40px;padding:0;list-style:none;float:right;}
 #menu-main-nav a {outline: none;display:block;}
-#menu-main-nav li {float:left;padding:5px 31px 12px 13px;position:relative;vertical-align:top;height:1%;margin-right: 2px;}
+#menu-main-nav li {float:left;padding:5px 29px 12px 13px;position:relative;vertical-align:top;height:1%;margin-right: 2px;}
 #menu-main-nav ul li {background: none !important;}
 #menu-main-nav li.parent:hover {position:relative;}
 #menu-main-nav li.parent li.parent:hover {background:none !important;}
