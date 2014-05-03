@@ -62,7 +62,10 @@ or
 
 == Changelog ==
 
-= 1.4.4 =
+= 1.4.4 = 
+* Fix for error if no content found
+
+= 1.4.3 =
 * Moved init into plugins_loaded
 * WordPresss 3.8 testing and icon
 

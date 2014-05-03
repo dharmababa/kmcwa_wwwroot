@@ -5,7 +5,7 @@ Plugin URI: http://halgatewood.com/text-blocks
 Description: Blocks of content that can be used throughout the site in theme templates and widgets.
 Author: Hal Gatewood
 Author URI: http://www.halgatewood.com
-Version: 1.4.3
+Version: 1.4.4
 */
 
 /*
@@ -262,6 +262,8 @@ function show_text_block($id, $plain = false)
 		$page = get_page_by_path( $id, null, 'text-blocks' );
 		$id = $page->ID;
 	}
+
+	if( !$id ) return false;
 
 	if($plain)
 	{
