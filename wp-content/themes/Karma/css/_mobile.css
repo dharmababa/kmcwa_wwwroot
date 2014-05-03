@@ -183,7 +183,7 @@ margin:0 0 10px;
 /* main navigation styles start */
 #main .main-area{
 width:auto;
-padding:43px 0px 5px;
+padding:43px 15px 5px;
 }
 .main-holder{
 width:100%;
@@ -1541,7 +1541,7 @@ letter-spacing:-1px;
 padding: 0 5px;
 }
 .jquery-pager {
-    margin-top: -190px;
+    margin-top: -220px;
 }
 
 .callout-wrap {
@@ -1565,14 +1565,9 @@ padding: 0 5px;
 #wrapper #header {overflow: hidden;}
 #main .home-bnr-jquery,
 .home-bnr-jquery .home-banner-sub-full{
-width: 100%;
+width: 260px;
 /* margin-bottom: 250px; */
 }
-
-.home-bnr-image {
-    border-radius: 0px;
-}
-
 .uds-pricing-table{
 display:block;
 overflow:auto;
@@ -1612,7 +1607,7 @@ width:269px;
 height:179px !important;	
 }
 .home-banner-wrap,
-#main .home-bnr-jquery {height: 100%;}
+#main .home-bnr-jquery {height: 96px;}
 #main .home-banner-wrap ul,
 #main .home-banner-wrap ul li,
 #main .home-bnr-jquery ul,
