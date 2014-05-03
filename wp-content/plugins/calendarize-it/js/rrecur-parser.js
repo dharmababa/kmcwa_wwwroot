@@ -359,8 +359,9 @@ period_loop:
             } else if ( in_array(this.rrule_freq,["WEEKLY", "MONTHLY", "YEARLY"]) ) {
                 switch (this.rrule_freq) {
                     case "WEEKLY":
-                        var period_begin = Date.fromWeek(week_no, y, this.rrule_wkst == "MO" ? 1 : 0);
-                        var until = Date.fromWeek(week_no + 1, y, this.rrule_wkst == "MO" ? 1 : 0);
+						var _y = week_no==1 && m==12 ? parseInt(y+1) : y ;
+                        var period_begin = Date.fromWeek(week_no, _y, this.rrule_wkst == "MO" ? 1 : 0);
+                        var until = Date.fromWeek(week_no + 1, _y, this.rrule_wkst == "MO" ? 1 : 0);
                         break;
                     case "MONTHLY":
                         period_begin = new Date(y, m - 1, 1)

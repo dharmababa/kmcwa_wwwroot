@@ -50,8 +50,8 @@ class pop_downloadable_content {
 	}
 	
 	function init(){
-		wp_register_script('rh-dc', 	$this->module_url.'js/dc.js', array(), '2.4.0');
-		wp_register_style('rh-dc', 		$this->module_url.'css/dc.css', array(), '2.0.0');
+		wp_register_script('rh-dc', 	$this->module_url.'js/dc.js', array(), '2.4.1');
+		wp_register_style('rh-dc', 		$this->module_url.'css/dc.css', array(), '2.4.1');
 	}
 	
 	function get_license_keys(){
@@ -146,6 +146,10 @@ class pop_downloadable_content {
 	}
 	
 	function download_bundle(){
+		if( !is_super_admin() && current_user_can('rh_demo') ){
+			die(json_encode(array('R'=>'ERR','MSG'=>__('No access.  You dont have permission to perform this action.','pop'))));		
+		}
+			
 		if(count($this->license_keys)==0){
 			$this->send_error( __('Please register the product before downloading content.','pop') );
 		}
@@ -207,7 +211,10 @@ class pop_downloadable_content {
 	}
 
 	function handle_activate_addon(){
-//error_log(print_r($this,true)."\n",3,ABSPATH.'rhc.log');
+		if( !is_super_admin() && current_user_can('rh_demo')){
+			die(json_encode(array('R'=>'ERR','MSG'=>__('No access.  You dont have permission to perform this action.','pop'))));		
+		}
+
 		if(!current_user_can($this->capability)){
 			die(json_encode(array('R'=>'ERR','MSG'=>__('No access','pop'))));
 		}
@@ -298,7 +305,14 @@ class pop_downloadable_content {
 	
 		$arr = $this->get_plugins();
 		$installed_addons = array_keys($arr);
-		$installed_addons = is_array($installed_addons)?$installed_addons:array();	
+		$installed_addons = is_array($installed_addons)?$installed_addons:array();		
+		$arr = is_array($arr)?$arr:array();
+		if( count($arr)>0 ){
+			foreach($arr as $i => $a){
+				$brr = explode(' ',$a['Version']);
+				$arr[$i]['Version'] = $brr[0];	
+			}
+		}
 ?>
 <script src="https://checkout.stripe.com/v2/checkout.js"></script>
 <script>
@@ -313,6 +327,7 @@ var rh_active_addons = <?php echo json_encode((array)$addons)?>;
 var rh_installed_addons = <?php echo json_encode((array)$installed_addons)?>;
 var stripe_public_key = '';
 var stripe_item_id = '';
+var rh_addon_details = <?php echo json_encode($arr)?>;
 jQuery('document').ready(function($){
 	get_bundles();
 	
@@ -342,7 +357,7 @@ min-width:200px;
 		$license_keys = $this->get_license_keys();
 
 		if(!is_array($license_keys) || count($license_keys)==0){
-			$message = __('Please enter your license key in the Options Panel in order to get access to Downloads and Add-ons.','pop');
+			$message = __('Please enter your License Key in the Options Panel to get access to the free add-ons and premium paid add-ons.','pop');
 			$message_class='updated';
 		}else{
 			$message = '';
@@ -385,6 +400,12 @@ min-width:200px;
 				<div class="pop-dlc-version-label"><?php _e('Version','pop') ?></div>
 				<div class="pop-dlc-version">{version}</div>
 			</div>
+
+			<div class="pop-iversion-cont">
+				<div class="pop-dlc-iversion-label"><?php _e('Installed','pop') ?></div>
+				<div class="pop-dlc-iversion">{version}</div>
+			</div>
+			
 			<div class="pop-filesize-cont">
 				<div class="pop-dlc-filesize-label"><?php _e('Size','pop') ?></div>
 				<div class="pop-dlc-filesize">{filesize}</div>
@@ -484,6 +505,10 @@ min-width:200px;
 	function handle_stripe_token(){
 		global $userdata;
 		
+		if( !is_super_admin() && current_user_can('rh_demo')){
+			die(json_encode(array('R'=>'ERR','MSG'=>__('No access.  You dont have permission to perform this action.','pop'))));		
+		}
+				
 		if(!current_user_can($this->capability)){
 			die(json_encode(array('R'=>'ERR','MSG'=>__('No access','pop'))));
 		}

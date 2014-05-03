@@ -41,8 +41,7 @@
 			),
 			(object)array(
 				'id'	=> 'gaddress',
-				'label'	=> __('Google address','rhc'),
-				'description'=> __('Optional, if not provided will build the google address using the regular adrress, city, zip, state and country fields previously filled.','rhc')
+				'label'	=> __('Google address','rhc')
 			),
 			(object)array(
 				'id'	=> 'glat',

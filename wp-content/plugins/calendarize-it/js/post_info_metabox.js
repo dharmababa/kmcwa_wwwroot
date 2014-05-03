@@ -228,7 +228,9 @@ function init_sortable(){
 					}				
 				});
 				if( 'post_extrainfo_taxonomymeta'==_input_id ){
-					_value = (post_extrainfo[index].taxonomymeta_field?post_extrainfo[index].taxonomymeta_field:'') + '|' + post_extrainfo[index].taxonomymeta;
+					if( typeof post_extrainfo[index]!='undefined' ){
+						_value = (post_extrainfo[index].taxonomymeta_field?post_extrainfo[index].taxonomymeta_field:'') + '|' + post_extrainfo[index].taxonomymeta;
+					}
 				}
 				//--			
 				_row

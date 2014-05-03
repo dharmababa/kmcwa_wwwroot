@@ -35,8 +35,18 @@
 	/*top: -142px;*/
 }
 
+.gm-style div img {
+	box-shadow:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+}
+
 .rhc.fe-extrainfo-container {
 	margin-bottom: 35px;
+}
+
+.rhc.fe-extrainfo-container.venue-box {
+	margin-bottom:40px;
 }
 
 div.rhc.fe-extrainfo-container + br {
@@ -180,35 +190,33 @@ div.rhc.fe-extrainfo-container + br {
 .rhcalendar .ui-dialog.rhc-icalendar-holder {
 	width: 50%;
 	left: 0;
-	margin: auto;
+	/*margin: auto;*/
 	line-height: 130%;
 	z-index:99999;
 }
 
 .rhcalendar .rhc-icalendar-holder .rhc-icalendar-url {
-	width: 97%;
+	width: 91%;
 }
 .rhcalendar .rhc-icalendar-holder a {
 	float: right;
-	border-color: #298CBA;
+	border-color: transparent;
 	color: #ffffff;
 	text-decoration: none;
 	font-size: 12px;
 	line-height: 13px;
-	padding: 3px 8px;
+	padding: 10px 15px;
 	cursor: pointer;
-	border-width: 1px;
+	border-width: 0px;
 	border-style: solid;
-	-webkit-border-radius: 11px;
-	border-radius: 11px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
 	-moz-box-sizing: content-box;
 	-webkit-box-sizing: content-box;
 	box-sizing: content-box;
 	text-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0;
-	background-color: #298CBA;
-	background: -moz-linear-gradient(top,#298CBA, #21759B);
-	background: -webkit-gradient(linear, left top, left bottom, from(#298CBA), to(#21759B));
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#298CBA', EndColorStr='#21759B');
+	background-color: #3498db;
+	margin: 10px;
 }
 
 .rhcalendar .rhc-icalendar-holder a:hover {
@@ -217,6 +225,40 @@ div.rhc.fe-extrainfo-container + br {
 	background: -webkit-gradient(linear, left top, left bottom, from(#21759B), to(#298CBA));
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#21759B', EndColorStr='#298CBA');
 }
+
+
+.rhc-icalendar-holder .rhc-icalendar-description {
+	padding: 10px;
+}
+
+.rhc-icalendar-holder .ui-dialog-titlebar button.ui-button.ui-widget {
+    background-image: none;
+    border:none;
+    background-color:#ecf0f1;
+}
+
+.rhc-icalendar-holder .ui-dialog-titlebar button.ui-button.ui-widget:hover {
+	background-color:#bdc3c7;
+}
+
+.rhc-icalendar-holder .ui-dialog-titlebar button.ui-button.ui-widget .ui-button-icon-primary {
+    background-image: none;
+    text-indent: 0;
+    margin: -12px 0px 0 -8px;
+    height: 18px;
+}
+
+.rhc-icalendar-holder .ui-dialog-titlebar button.ui-button.ui-widget .ui-button-icon-primary:before {
+    font-family: 'Flat-UI-Icons';
+    content: "\e00b";
+    font-size: 13px;
+    color:#bdc3c7;
+}
+
+.rhc-icalendar-holder .ui-dialog-titlebar button.ui-button.ui-widget:hover .ui-button-icon-primary:before {
+	color:#7f8c8d;
+}
+
 
 @media only screen and (max-width: 767px) {
 	.fe-image-holder,

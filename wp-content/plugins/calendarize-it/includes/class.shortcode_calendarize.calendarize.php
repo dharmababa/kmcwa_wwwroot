@@ -90,6 +90,7 @@ if('shortcode_calendarize'==get_class($this)):
 			'tooltip_enddate'	=> __('ddd MMMM d, yyyy h:mm TT','rhc'),
 			'tooltip_enddate_allday'	=> __('ddd MMMM d, yyyy','rhc'),
 			'tooltip_disable_title_link'	=> '0',
+			'tooltip_enable_custom'	=> '1',
 			'isrtl'	=> '',
 			'firstday' => '1',
 			'monthnames'		=> $month_names,
@@ -158,7 +159,11 @@ if('shortcode_calendarize'==get_class($this)):
 			'tax_filter_skip'				=> '',
 			'sidelist_template'				=> 'sidelist_item.php',
 			'sidelist_link_target'			=> '_blank',
-			'hiddendays'					=> ''//fc 1.64
+			'hiddendays'					=> '',//fc 1.64
+			'skipmonths'					=> '',//customization.
+			'matchbackground'				=> '0',
+			'shrink'						=> '1',
+			'month_event_image'				=> '0'
 		), $atts));
 			
 		$sidelist_link_target = $rhc_plugin->get_option('sidelist_link_target',$sidelist_link_target,true);
@@ -267,9 +272,9 @@ if('shortcode_calendarize'==get_class($this)):
 		}else{
 			if($feed!='0'){
 				if(!empty($calendar)){
-					$json_feed = apply_filters('rhc_json_feed',false,RHC_CALENDAR,$calendar);	
+					$json_feed = apply_filters('rhc_json_feed',false,RHC_CALENDAR,$calendar,$author,$author_name);	
 				}else{
-					$json_feed = apply_filters('rhc_json_feed',false,$taxonomy,$terms);	
+					$json_feed = apply_filters('rhc_json_feed',false,$taxonomy,$terms,$author,$author_name);	
 				}	
 			}
 		}
@@ -333,6 +338,17 @@ if('shortcode_calendarize'==get_class($this)):
 			}			
 		}
 		
+		if($skipmonths==''){
+			$skipmonths=array();
+		}else{
+			$skipmonths = explode(',',str_replace(' ','',$skipmonths));		
+			if(is_array($skipmonths) && count($skipmonths)>0){
+				foreach($skipmonths as $j => $hd){
+					$skipmonths[$j]=intval($hd);
+				}
+			}			
+		}		
+		
 		$options = (object)array(
 			'editable'		=> ($editable && current_user_can($this->capabilities['calendarize_author'])),
 			'mode'			=> $mode,
@@ -377,7 +393,8 @@ if('shortcode_calendarize'==get_class($this)):
 							'endDate'			=> $tooltip_enddate,
 							'endDateAllDay'		=> $tooltip_enddate_allday,
 							'target'			=> $tooltip_target,
-							'disableTitleLink' 	=> $tooltip_disable_title_link
+							'disableTitleLink' 	=> $tooltip_disable_title_link,
+							'enableCustom'		=> $tooltip_enable_custom
 						),
 						'axisFormat' => $axisformat,
 						'isRTL'				=> $this->get_bool($isrtl),
@@ -476,7 +493,11 @@ if('shortcode_calendarize'==get_class($this)):
 									'tab'	=> __('Event list','rhc')
 								)
 						),
-						'hiddenDays'	=> $hiddendays
+						'hiddenDays'	=> $hiddendays,
+						'skipMonths'	=> $skipmonths,
+						'matchBackground' => $matchbackground,
+						'shrink'		=> $shrink,
+						'month_event_image'	=> $month_event_image
 					)	
 				)			
 			),

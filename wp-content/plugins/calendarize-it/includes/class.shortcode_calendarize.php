@@ -54,7 +54,8 @@ class shortcode_calendarize {
 			'auto'				=> 0,
 			'calendar_url'		=> '',
 			'taxonomy'			=> false,
-			'terms'				=> false
+			'terms'				=> false,
+			'premiere'			=> '0'
 		);
 		
 		foreach($fields as $field => $default){
@@ -104,6 +105,15 @@ class shortcode_calendarize {
 	
 	function calendarize($atts,$content=null,$code=""){
 		require 'class.shortcode_calendarize.calendarize.php';
+
+		if(isset($taxonomy) && isset($terms) && RHC_VENUE==$taxonomy){
+			if( $t=get_term_by('slug',$terms,$taxonomy) ){
+				if( $t->count==0 ){
+					return '';
+				}			
+			}
+		}
+
 		return sprintf('<div id="%s" class="rhcalendar %s rhc_holder" data-rhc_ui_theme="%s" data-rhc_options="%s"><div class="fullCalendar"></div>%s%s<div style="clear:both"></div></div>',
 			$id,
 			$class,
@@ -116,7 +126,16 @@ class shortcode_calendarize {
 	
 	function replace_att_with_posted($atts){
 		if(isset($atts['ignoreposted'])&&$atts['ignoreposted']==1)return $atts;
-		foreach(array('defaultview','gotodate') as $field){
+		global $rhc_plugin;
+		$str = $rhc_plugin->get_option('postable_args','',true);
+		$str = str_replace("\n","",trim($str));
+		$str = str_replace("\r","",trim($str));
+		$arr = explode(',',$str);
+		$arr = is_array($arr)?$arr:array();
+		$arr[]='defaultview';
+		$arr[]='gotodate';
+		
+		foreach($arr as $field){
 			if(isset($_REQUEST[$field])){
 				$atts[$field]=$_REQUEST[$field];
 			}
@@ -284,7 +303,9 @@ class shortcode_calendarize {
 <div class="ical-tooltip-template" title="<?php echo $icalendar_title?>" style='display:none;width:<?php echo $width?>px;' data-button_text="<?php echo $icalendar_button ?>">
 	<div class="ical-tooltip-holder">
 		<div class="fbd-main-holder">
-			<div class="fbd-head">&nbsp;</div>
+			<div class="fbd-head">
+				<div class="rhc-close-icon"><a class="ical-close" href="javascript:void(0);"></a></div>				
+			</div>
 			<div class="fbd-body">
 				<div class="fbd-dialog-content">
 					<label class="fbd-label"><?php _e('iCal feed URL','rhc')?></label>
@@ -293,7 +314,7 @@ class shortcode_calendarize {
 					<div class="fbd-buttons">
 						<a class="ical-clip fbd-button-secondary" href="#"><?php _e('Copy feed url to clipboard','rhc')?></a>
 						<a class="ical-ics fbd-button-primary" href="#"><?php _e('Download ICS file','rhc')?></a>
-						<a class="ical-close fbd-button-primary" href="javascript:void(0);"><?php _e('Close','rhc')?></a>
+						
 					</div>
 				</div>
 		
@@ -340,13 +361,27 @@ class shortcode_calendarize {
 		//------
 		ob_start();
 ?>
-<span class="rhcalendar"> 
-<span id="<?php echo $id ?>" data-title="<?php echo $icalendar_title?>" data-theme="<?php echo $theme?>" class="rhc-ical-feed-cont" title="<?php echo $icalendar_title?>" style='display:none;width:<?php echo $width?>px;' data-icalendar_button="<?php echo $icalendar_button ?>">
-	<textarea class="rhc-icalendar-url"><?php echo $feed?></textarea>
-	<span class="rhc-icalendar-description"><?php echo $icalendar_description?></span>
-	<a href="<?php echo urlencode($ics_download)?>"><?php _e('Download ICS','rhc')?></a>
-</span>
-</span>
+
+<div class="rhcalendar">
+	<div id="<?php echo $id ?>" data-width="<?php echo $icalendar_width?>" data-title="<?php echo $icalendar_title?>" data-theme="<?php echo $theme?>" class="rhc-ical-feed-cont ical-tooltip ical-tooltip-holder" title="<?php echo $icalendar_title?>" style='display:none;' data-icalendar_button="<?php echo $icalendar_button ?>">
+		<div class="fbd-main-holder">
+			<div class="fbd-head">
+				<div class="rhc-close-icon"><a class="ical-close" href="javascript:void(0);"></a></div>				
+			</div>
+			<div class="fbd-body">
+				<div class="fbd-dialog-content">
+					<label class="fbd-label"><?php _e('iCal feed URL','rhc')?></label>
+					<textarea class="ical-url"><?php echo $feed?></textarea>
+					<p class="rhc-icalendar-description"><?php echo $icalendar_description?></p>			
+					<div class="fbd-buttons">
+						<a class="ical-ics fbd-button-primary" href="<?php echo ($ics_download)?>"><?php _e('Download ICS file','rhc')?></a>						
+					</div>
+				</div>
+		
+			</div>	
+		</div>
+	</div>
+</div>
 <?php	
 		$content = ob_get_contents();
 		ob_end_clean();

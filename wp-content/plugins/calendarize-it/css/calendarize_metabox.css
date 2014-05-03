@@ -81,6 +81,12 @@
 .fc-dg-repeat-remove{
 	float:right;
 }
+
+.button-secondary.fc-dg-cancel,
+.button-secondary.fc-dg-exclude {
+    margin-right: 3px;
+}
+
 .fc-form-field {
 	vertical-align:middle;
 	position:relative;
@@ -90,7 +96,7 @@
 	height:25px;
 }
 .fc-form-field label.left-label {
-	width: 70px;
+	width: 72px;
 	display:block;
 	float:left;
 	line-height:25px;
@@ -184,10 +190,10 @@
 	background:rgba(0,0,0,0.2);
 }
 .admin-color-fresh .fc-arrow {
-	border-color: transparent #F5F5F5 transparent transparent;
+	border-color: transparent #FFFFFF transparent transparent;
 }
 .admin-color-fresh .fc-arrow-border {
-    border-color: transparent #CCCCCC transparent transparent;
+    border-color: transparent #ECECEC transparent transparent;
 }
 
 .admin-color-classic .fc-arrow {

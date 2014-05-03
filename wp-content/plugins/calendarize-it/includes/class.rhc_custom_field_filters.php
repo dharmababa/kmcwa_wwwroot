@@ -39,7 +39,10 @@ class rhc_custom_field_filters {
 			$url = "http://maps.google.com/?q=".urlencode($value);
 			$value = sprintf('<a href="%s" target="_BLANK">%s</a>',$url,$o->label);			
 		}	
-			
+		if($o->type=='postmeta' && $o->postmeta=='fc_allday'){
+			$value = intval($value) ? __('Yes','rhc') : __('No','rhc') ;
+			$value = sprintf('<span class="fc-allday-custom-field">%s</span>',$value);
+		}	
 		return $value;
 	}
 }

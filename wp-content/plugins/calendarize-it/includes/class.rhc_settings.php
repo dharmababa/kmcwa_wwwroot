@@ -445,6 +445,30 @@ class rhc_settings {
 				(object)array(
 					'type'=>'clear'
 				),
+				
+				(object)array(
+					'type'=>'subtitle',
+					'label'=>__('Events ajax','rhc')
+				),				
+				
+				(object)array(
+					'id'		=> 'cal_shrink',
+					'label'		=> __('Enable ajax data shrink','rhc'),
+					'type'		=> 'yesno',
+					'description'=> sprintf('<p>%s</p>',
+						__('Ajax data shrink is a new feature introduced on version 2.7.4, it reduces the ajax data size.  Choose no if you want to disable this feature.','rhc')
+					),
+					'default'	=> '1',
+					'el_properties'	=> array(),
+					'save_option'=>true,
+					'load_option'=>true
+				),	
+				
+				(object)array(
+					'type'=>'clear'
+				),
+				
+				
 				(object)array(
 					'type' 			=> 'subtitle',
 					'label'			=> __('jQuery UI','rhc')

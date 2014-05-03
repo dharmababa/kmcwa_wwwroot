@@ -103,14 +103,19 @@ class rhc_post_info_metabox {
 	}
 	
 	function metaboxes($t=array()){
+		
+		if( false === apply_filters('event_venue_detail_metabox', true) ){
+			return $t;
+		}
+		
 		$i = count($t);
 		//------------------------------
 		$i++;
 		$t[$i]=(object)array();
 		$t[$i]->id 			= 'rhc-post-info'; 
-		$t[$i]->label 		= __('Event & Venue Details Box Layout','rhc');
-		$t[$i]->right_label	= __('Event & Venue Details Box Layout','rhc');
-		$t[$i]->page_title	= __('Event & Venue Details Box Layout','rhc');
+		$t[$i]->label 		= __('Event, Venue & Tooltip Details Box Layout','rhc');
+		$t[$i]->right_label	= __('Event, Venue & Tooltip Details Box Layout','rhc');
+		$t[$i]->page_title	= __('Event, Venue & Tooltip Details Box Layout','rhc');
 		$t[$i]->theme_option = true;
 		$t[$i]->plugin_option = true;
 		$t[$i]->options = array(

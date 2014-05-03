@@ -25,10 +25,12 @@ class rhc_event_image_metaboxes {
 			'metabox_meta_fields' =>  'image_meta_fields',
 			'pluginpath'=>RHC_PATH
 		));
-		$this->post_meta_boxes->save_fields = apply_filters( 'rhc_images', array('rhc_top_image','rhc_dbox_image','rhc_tooltip_image') );
+		
+		$this->post_meta_boxes->save_fields = apply_filters( 'rhc_images', array('rhc_top_image','rhc_dbox_image','rhc_tooltip_image','rhc_month_image') );
 	}
 	
 	function metaboxes($t=array()){
+		global $rhc_plugin;
 		$i = count($t);
 		//------------------------------		
 		$i++;
@@ -105,6 +107,34 @@ class rhc_event_image_metaboxes {
 				'type'=>'clear'
 			)
 		);		
+		
+		//------------------------------
+		if('1'==$rhc_plugin->get_option('cal_month_event_image_metabox','0',true)){
+			$i++;
+			$t[$i]=(object)array();
+			$t[$i]->id 			= 'rhc_month_image'; 
+			$t[$i]->label 		= __('Month view image','rhc');
+			$t[$i]->theme_option = true;
+			$t[$i]->plugin_option = true;
+			$t[$i]->context = 'side';
+			$t[$i]->priority = 'low';
+			$t[$i]->options = array(
+				(object)array(
+					'id'			=> 'rhc_month_image',
+					'type'			=> 'wp_uploader',
+					'name'			=> 'rhc_month_image',
+					'set_label'		=>  __('Set Month View Image','rhc'),
+					'unset_label'	=>  __('Remove Month View Image','rhc'),
+					'modal_title'	=> __('Set Month View Image','rhc'),
+					'modal_button'	=> __('Set Month View Image','rhc'),
+					'save_option'	=> true,
+					'load_option'	=> true
+				),		
+				(object)array(
+					'type'=>'clear'
+				)
+			);	
+		}
 		
 		$t = apply_filters('rhc_images_metaboxes', $t);	
 		//----- 

@@ -548,9 +548,25 @@ function Calendar(element, options, eventSources) {
 			unselect();
 			clearEvents();
 		}
-
+		
 		freezeContentHeight();
 		currentView.render(date, inc || 0); // the view's render method ONLY renders the skeleton, nothing else
+
+		//RHC MOD skipMonths
+		if( t.options.skipMonths && -1 != $.inArray( date.getMonth(), t.options.skipMonths ) ){
+			increase = inc||1;//always increase or decrease.
+			var a=0;
+			while(a++<366){//max loop a whole year.
+				if( -1 == $.inArray( date.getMonth(), t.options.skipMonths ) ){
+					currentView.render(date, 0);//increase is zero. 
+					break;
+				}else{
+					date.setDate( date.getDate()+increase );
+				}
+			}
+		}
+		//RHC MOD END
+
 		setSize();
 		unfreezeContentHeight();
 		(currentView.afterRender || noop)();

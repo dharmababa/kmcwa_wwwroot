@@ -5,12 +5,10 @@
 ?>
 <div class="fc-filters-dialog-holder">
 	<div class="fc-filters-dialog">
-		<div class="fbd-arrow-holder">
-			<div class="fbd-arrow"></div>
-			<div class="fbd-arrow-border"></div>
-		</div>
 		<div class="fbd-main-holder">
-			<div class="fbd-head">&nbsp;</div>
+			<div class="fbd-head">
+				<div class="fbd-close-tooltip rhc-close-icon"><a href="javascript:void(0);"></a></div>			
+			</div>
 			<div class="fbd-body">
 				<div class="fbd-dialog-content">
 <?php echo $this->calendars_form_tabs($post_type);?>			

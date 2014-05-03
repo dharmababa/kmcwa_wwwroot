@@ -11,7 +11,13 @@ class calendar_ajax {
 	var $skip_duplicates = true;
 	var $done_ids = array();
 	var $request_md5=false;
+	var $month_event_image=false;
 	function calendar_ajax(){
+		global $rhc_plugin;
+		if( '1'==$rhc_plugin->get_option('cal_month_event_image','',true) || '1'==$rhc_plugin->get_option('cal_month_event_image_metabox','',true)){
+			$this->month_event_image = true;	
+		}
+	
 		add_action('wp_loaded', array(&$this,'init'));
 		$this->fc_intervals = array(
 					''			=> __('Never(Not a recurring event)','rhc'),
@@ -138,12 +144,106 @@ class calendar_ajax {
 	
 	function get_calendar_events(){
 		if(isset($_REQUEST['uew']))return $this->get_upcoming_events_widget();
+		$map=array();
+		$terms=array();
 		$r = array(
 			'R'			=> 'OK',
 			'MSG'		=> '',
-			'EVENTS' 	=> $this->_get_calendar_items()
-		);		
+			'EVENTS' 	=> $this->shrink_events( $this->_get_calendar_items(), $map, $terms ),
+			'TERMS'		=> $terms,
+			'MAP'		=> $map
+		);	
+
+		if(isset($_REQUEST['rhc_debug'])){
+			echo "<pre>";
+			print_r($r);
+			echo "</pre>";			
+		}
+	
 		$this->send_response($r);
+	}
+
+	function shrink_events($r, &$map, &$terms, $skip_empty=true){
+
+		$shrink_level = isset($_REQUEST['rhc_shrink']) ? intval($_REQUEST['rhc_shrink']) : 0 ;
+		if( $shrink_level > 0 ){
+			if(count($r)>0){
+				$new_set = array();
+				$map=array();
+				foreach($r as $ev){
+					$new_ev = array();
+					//$ev_arr = ;
+					foreach( (array)$ev as $field => $value ){
+						$new_field = $this->get_shrinked_field_name( $field, $map );
+						$map[$field]=$new_field;
+						if($skip_empty && empty($value))continue;
+						$new_ev[$new_field]=$value;
+					}
+
+					//shrink terms
+					if( isset($ev['terms']) && count($ev['terms'])>0 ){
+						$new_terms = array();
+						foreach( $ev['terms'] as $term ){
+							$new_term = array();
+							foreach( (array)$term as $field => $value ){
+								$new_field = $this->get_shrinked_field_name( $field, $map );
+								$map[$field]=$new_field;
+								if($skip_empty && empty($value))continue;
+								$new_term[$new_field]=$value;
+							}	
+							$new_terms[]=(object)$new_term;
+						}
+						$new_ev[ $map['terms'] ] = $new_terms;
+					}
+					
+					//pack terms
+					
+					if( isset($map['term_id']) && isset($ev['terms']) && count($ev['terms'])>0 ){
+						$new_terms = array();
+						$term_id_index = $map['term_id'];
+						foreach($new_ev[ $map['terms'] ] as $term){
+							$t = (array)$term;
+							$id = $t[$term_id_index];
+							
+							$terms[$id]=$term;
+							$new_terms[]=$id;
+						}				
+						$new_ev[ $map['terms'] ] = $new_terms;
+						
+					}
+
+
+					$new_set[]=(object)$new_ev;
+				}
+				//--ready map for client side.
+				$new_map=array();
+				foreach($map as $field => $value){
+					$new_map[]=array($value,$field);
+				}
+				$map = $new_map;
+				//--ready terms for client side
+				/*
+				if(is_array($terms)&&count($terms)>0){
+					$new_terms=array();
+					foreach($terms as $term){
+						$new_terms[]=$term;//remove associative keys. so that js parses it as array and not object.
+					}	
+					$terms = $new_terms;
+				}
+				*/
+				
+				return $new_set;
+			}
+		}
+		return $r;
+	}
+	
+	function get_shrinked_field_name( $field, $map ){
+		if(isset($map[$field])){
+			return $map[$field];
+		}else{
+			return count($map);
+		}
 	}
 	
 	function get_upcoming_events_widget(){
@@ -398,6 +498,16 @@ class calendar_ajax {
 					'terms'			=> array(),
 					'fc_click_link' => 'view'
 				);
+				//-- month view image
+				if($this->month_event_image){			
+					$attachment_id = get_post_meta($post->ID,'rhc_month_image',true);					
+					$size = $this->get_image_size('rhc_media_size');
+					$image = wp_get_attachment_image_src( $attachment_id, $size );				
+					if(false!==$image){
+						$tmp['month_image']=$image;
+					}
+				}		
+				
 				//----handle duplicates
 				if($this->skip_duplicates){
 					if(in_array($tmp['id'],$this->done_ids)){
@@ -462,7 +572,7 @@ class calendar_ajax {
 		}
 		return $r;
 	}
-
+	
 	function events_in_fc_range($r,$parameters){
 		extract($parameters);
 		$args = array(
@@ -692,15 +802,30 @@ class calendar_ajax {
 	
 	function get_end_from_post_id($post_ID){
 		$date = get_post_meta($post_ID,'fc_end',true);
-		$time = get_post_meta($post_ID,'fc_end_time',true);
+		if( get_post_meta($post_ID,'fc_allday',true) ){
+			$time = '23:59:59';
+		}else{
+			$time = get_post_meta($post_ID,'fc_end_time',true);
+		}
 		return $this->event_date($date,$time);
 	}
 	
 	function event_date($date,$time,$default=null){
+		$time = $this->parseTime($time);
 		$time = ''==trim($time)?'00:00:00':$time;
 		if(''==trim($date))return $default;
 		return date('Y-m-d H:i:s',strtotime(sprintf("%s %s", trim($date), trim($time) )));
 	}
+	
+	function parseTime($timeString) {    
+	    if ($timeString == '') return null;
+	    if(preg_match("/(\d+)(:(\d\d))?\s*(p|a?)/i",$timeString,$time)){
+			$str = $time[1].':'.str_pad($time[3],2,'0',STR_PAD_LEFT).' '.(strlen($time[4])>0?$time[4].'m':'');
+			return date('H:i:s',strtotime($str));
+		}else{
+			return null;
+		}  
+	}	
 	
 	function apply_parameters($args,$parameters){			
 		foreach(array('taxonomy','tax','calendar','venue','organizer','tax_by_id') as $field){
@@ -782,11 +907,9 @@ class calendar_ajax {
 		return $args;
 	}
 	
-	function get_image_size(){
+	function get_image_size($option='rhc_media_size'){
 		global $rhc_plugin;
-		return $rhc_plugin->get_option('rhc_media_size','thumbnail',true);
-		//other options
-		return array('175','175');
+		return $rhc_plugin->get_option($option,'thumbnail',true);
 	}
 	
 	function extended_details(){
@@ -807,6 +930,14 @@ class calendar_ajax {
 		}
 		$output.= '</div>';
 //sleep(3);		
+		die($output);
+	}
+	
+	function rhc_tooltip_detail(){
+		global $post;	
+		$arr = explode('-',$_REQUEST['id']);
+		$post = get_post($arr[0]);
+		$output = do_shortcode('[post_info id="tooltipbox"]');
 		die($output);
 	}
 }

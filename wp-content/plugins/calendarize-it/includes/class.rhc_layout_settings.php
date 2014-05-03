@@ -24,6 +24,26 @@ class rhc_layout_settings {
 		update_option('rhc_flush_rewrite_rules',true);
 	}
 	
+	function list_of_pages_with_shortcode(){
+		global $wpdb;
+		$sql = "SELECT ID, post_title FROM $wpdb->posts WHERE post_status=\"publish\" AND post_content LIKE \"%[calendarizeit%\" LIMIT 100";
+		$ids = $wpdb->query($sql);
+		$out = '';
+		if($wpdb->num_rows>0){
+			$out .= '<ul>';
+			foreach($wpdb->last_result as $p){
+				$out.= sprintf('<li><a href="%s">%s</a></li>',
+					get_permalink( $p->ID ),
+					$p->post_title
+				);
+			}
+			$out .= '</ul>';
+		}else{
+			
+		}
+		return $out;
+	}
+	
 	function options($t){
 	
 		$pages = $this->get_pages_for_dropdown();	
@@ -38,6 +58,14 @@ class rhc_layout_settings {
 		$t[$i]->theme_option = true;
 		$t[$i]->plugin_option = true;
 		$t[$i]->options = array(
+			(object)array(
+				'type' 			=> 'subtitle',
+				'label'			=> __('Current pages using the shortcode','rhc')
+			),		
+			(object)array(
+				'type' 			=> 'callback',
+				'callback'		=> array(&$this,'list_of_pages_with_shortcode')
+			),		
 			(object)array(
 				'type' 			=> 'subtitle',
 				'label'			=> __('Template Integration','rhc'),
@@ -225,7 +253,7 @@ class rhc_layout_settings {
 				'id'		=> 'rhc_media_size',
 				'label'		=> __('Event list/tooltip image size','rhc'),
 				'type'		=> 'select',
-				'default'	=> 'thumbnail',
+				'default'	=> 'medium',
 				'options'	=> array(
 					'thumbnail'	=> __('Thumbnail','rhc'),
 					'medium'	=> __('Medium','rhc'),
@@ -380,6 +408,18 @@ class rhc_layout_settings {
 				'save_option'=>true,
 				'load_option'=>true
 			);		
+
+		$t[$i]->options[]=(object)array(
+				'id'			=> 'postable_args',
+				'type' 			=> 'textarea',
+				'label'			=> __('Postable arguments','rhc'),
+				'description'	=> sprintf('<p>%s</p>',
+					__('Write comma separated shortcode arguments that you would like to make available for overwritting through the URL query.','rhc')
+				),
+				'el_properties' => array('rows'=>'3','cols'=>'50'),
+				'save_option'=>true,
+				'load_option'=>true
+			);
 				
 		$t[$i]->options[]=(object)array(
 				'type'=>'clear'
@@ -479,6 +519,48 @@ class rhc_layout_settings {
 		);	
 
 		//$t[$i]->options[]=;
+
+		$t[$i]->options[]=(object)array(
+				'type' 			=> 'subtitle',
+				'label'			=> __('Disable months','rhc')
+			);
+		
+		//the values are meant for javascript so jan is 0 while december is 11.
+		$months = array(
+					'0'	=> __('January','rhc'),
+					'1'	=> __('February','rhc'),
+					'2'	=> __('March','rhc'),
+					'3'	=> __('April','rhc'),
+					'4' => __('May','rhc'),
+					'5'	=> __('June','rhc'),
+					'6'	=> __('July','rhc'),
+					'7'	=> __('August','rhc'),
+					'8'	=> __('September','rhc'),
+					'9'	=> __('October','rhc'),
+					'10'=> __('November','rhc'),
+					'11'=> __('December','rhc')
+				);		
+		$j = 0;	
+		foreach($months as $value => $label){
+			$tmp=(object)array(
+				'id'	=> 'skipmonths_'.$value,
+				'name'	=> 'cal_skipmonths[]',
+				'type'	=> 'checkbox',
+				'option_value'=>$value,
+				'default'	=> '',
+				'label'	=> $label,
+				'el_properties' => array(),
+				'save_option'=>true,
+				'load_option'=>true
+			);
+			if($j==0){
+				$tmp->description = __("Check months that you do NOT want to show. Pressing prev or next button in calendar will skip to the next available month.",'rhc');
+				$tmp->description_rowspan = count($weekdays);
+			}
+			$t[$i]->options[]=$tmp;
+			$j++;
+		}
+		
 		$weekdays = array(
 					'0'	=> __('Sunday','rhc'),
 					'1'	=> __('Monday','rhc'),
@@ -488,7 +570,7 @@ class rhc_layout_settings {
 					'5'	=> __('Friday','rhc'),
 					'6'	=> __('Saturday','rhc')
 				);
-
+			
 		$t[$i]->options[]=(object)array(
 				'type' 			=> 'subtitle',
 				'label'			=> __('Hide days from view','rhc')
@@ -737,6 +819,40 @@ class rhc_layout_settings {
 				'save_option'=>true,
 				'load_option'=>true
 			);
+			
+		$t[$i]->options[]=(object)array(
+				'id'		=> 'cal_matchbackground',
+				'label'		=> __('Background matches event color','rhc'),
+				'type'		=> 'yesno',
+				'default'	=> '0',
+				'description' => __('Choose yes if you want the day cell match the background color of the event.','rhc'),
+				'el_properties'	=> array(),
+				'save_option'=>true,
+				'load_option'=>true
+			);
+			
+		$t[$i]->options[]=(object)array(
+				'id'		=> 'cal_month_event_image',
+				'label'		=> __('Month view image','rhc'),
+				'type'		=> 'yesno',
+				'default'	=> '0',
+				'description' => __('Choose yes to enable inserting the "Month view image" in events that has this image set.  Then "Month view image" is set in a metabox when editing an event.  The metabox has to be enabled separately on the next option.','rhc'),
+				'el_properties'	=> array(),
+				'save_option'=>true,
+				'load_option'=>true
+			);
+			
+		$t[$i]->options[]=(object)array(
+				'id'		=> 'cal_month_event_image_metabox',
+				'label'		=> __('Month view image metabox','rhc'),
+				'type'		=> 'yesno',
+				'default'	=> '0',
+				'description' => __('Choose yes to enable the "Month view image" metabox.','rhc'),
+				'el_properties'	=> array(),
+				'save_option'=>true,
+				'load_option'=>true
+			);
+						
 		$t[$i]->options[]=(object)array(
 				'type' 			=> 'clear'
 			)	;
@@ -915,6 +1031,17 @@ class rhc_layout_settings {
 				'save_option'=>true,
 				'load_option'=>true
 			);
+			
+		$t[$i]->options[]=(object)array(
+				'id'			=> 'cal_tooltip_enable_custom',
+				'type' 			=> 'yesno',
+				'label'			=> __('Enable custom details layout','rhc'),
+				'description'	=> __('Choose no if you dont want to use the custom layout that can be set on the event edit page.','rhc'),
+				'default'		=> '1',
+				'save_option'=>true,
+				'load_option'=>true
+			);			
+			
 		$t[$i]->options[]=(object)array(
 				'type' 			=> 'clear'
 			);

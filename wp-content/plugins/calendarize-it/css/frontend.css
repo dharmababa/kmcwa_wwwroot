@@ -2245,7 +2245,7 @@ div.rhc.fe-extrainfo-container + br {
 .rhcalendar .ui-dialog.rhc-icalendar-holder {
 	width: 50%;
 	left: 0;
-	margin: auto;
+	/*margin: auto;*/
 	line-height: 130%;
 	z-index:99999;
 }

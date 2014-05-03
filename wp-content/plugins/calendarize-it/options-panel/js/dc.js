@@ -140,6 +140,12 @@ function add_bundle(bundles){
 				}
 			}					
 			
+			o.iversion = '' ;
+			
+			if( rh_addon_details[ o.addon_path ] && rh_addon_details[ o.addon_path ].Version ){
+				o.iversion = rh_addon_details[ o.addon_path ].Version;
+			}
+						
 			var retina = typeof window.devicePixelRatio!='undefined' && window.devicePixelRatio > 1;
 			var src = o.image;
 			if(retina){
@@ -157,6 +163,7 @@ function add_bundle(bundles){
 				.addClass( (o.recent=='1'?'dlc-recent':'dlc-not-recent') )
 				.find('.pop-dlc-name').html(o.name).end()
 				.find('.pop-dlc-version').html(o.version).end()
+				.find('.pop-dlc-iversion').html(o.iversion).end()
 				.find('.pop-dlc-price').html(o.price_str).end()
 				.find('.pop-dlc-description').html(o.description).end()
 				.find('.pop-dlc-filesize').html(readablizeBytes(o.filesize)).end()

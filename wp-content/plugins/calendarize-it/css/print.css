@@ -1,25 +1,13 @@
 @media print {
 
 body *{
-	background-color:#ffffff;
+	backround-color:#ffffff;
 	background-image: none;
 }
 
-.edit-page-button,
 .site-header,
-#header,
-.tools,
-.fc-header-left,
-.fc-header-right,
-#footer,
-#footer_bottom,
-#event-legend-outerwrap,
 footer[role="contentinfo"] {
-	display:none!important;
-}
-
-.fc-header-title h2 {
-    line-height: normal!important;
+	display:none;
 }
 
 td.fc-header-left,

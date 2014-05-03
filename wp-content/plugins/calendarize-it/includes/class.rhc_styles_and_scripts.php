@@ -84,10 +84,10 @@ class rhc_styles_and_scripts {
 				
 		wp_register_script( 'jquery-easing', RHC_URL.'js/jquery.easing.1.3.js', array('jquery'),'1.3.0',$this->in_footer);
 		
-		wp_register_script( 'rrecur-parser', RHC_URL.'js/rrecur-parser.js', array('jquery'),'1.1.0.2',$this->in_footer);	
-		wp_register_script( 'fullcalendar', RHC_URL.'fullcalendar/fullcalendar/fullcalendar.custom.js', array('jquery','rrecur-parser'),'1.6.1.2',$this->in_footer);	
+		wp_register_script( 'rrecur-parser', RHC_URL.'js/rrecur-parser.js', array('jquery'),'1.1.0.3',$this->in_footer);	
+		wp_register_script( 'fullcalendar', RHC_URL.'fullcalendar/fullcalendar/fullcalendar.custom.js', array('jquery','rrecur-parser'),'1.6.4.2',$this->in_footer);	
 		wp_register_script( 'fullcalendar-gcal', RHC_URL.'fullcalendar/fullcalendar/gcal.js', array('fullcalendar'),'1.6.1.1',$this->in_footer);	
-		wp_register_script( 'calendarize-fcviews', RHC_URL.'js/fullcalendar_custom_views.js', array('fullcalendar-gcal'),'1.1.3.8',$this->in_footer);	
+		wp_register_script( 'calendarize-fcviews', RHC_URL.'js/fullcalendar_custom_views.js', array('fullcalendar-gcal'),'1.1.5.1',$this->in_footer);	
 				
 		wp_register_script( 'fechahora', RHC_URL.'js/fechahora.js', array('jquery'),'1.0.0',$this->in_footer);//are this used?
 		wp_register_script( 'fc_dateformat_helper', RHC_URL.'js/fc_dateformat_helper.js', array('fullcalendar'),'1.0.0',$this->in_footer);//are this used?
@@ -97,7 +97,7 @@ class rhc_styles_and_scripts {
 			$dependency[]=$this->jquery_ui;
 		}
 	
-		wp_register_script( 'calendarize', RHC_URL.'js/calendarize.js', $dependency,'2.5.0.2',$this->in_footer);
+		wp_register_script( 'calendarize', RHC_URL.'js/calendarize.js', $dependency,'2.6.6.3',$this->in_footer);
 		wp_localize_script( 'calendarize', 'RHC', array( 
 			'ajaxurl' => site_url('/'),
 			'mobile_width' => $rhc_plugin->get_option('mobile_width','480',true)
@@ -115,6 +115,8 @@ class rhc_styles_and_scripts {
 		}
 
 		wp_register_script( 'rhc_gmap3', RHC_URL.'js/rhc_gmap3.js', array('google-api3'), '1.0.1',$this->in_footer );//do we use this in the backend?
+		wp_register_script( 'rhc_setup', RHC_URL.'js/setup_and_notices.js', array('jquery'),'1.0.0',$this->in_footer);	
+		
 		return true;
 	}
 		
@@ -142,14 +144,14 @@ class rhc_styles_and_scripts {
 		}else{
 			wp_enqueue_style( 'calendarizeit', RHC_URL.'css/frontend.min.css', array(),'2.5.4.1');
 		}	
-		wp_enqueue_style( 'rhc-last-minue', RHC_URL.'css/last_minute_fixes.css', array(),'1.0.0');		
+		wp_enqueue_style( 'rhc-last-minue', RHC_URL.'css/last_minute_fixes.css', array(),'1.0.5');		
 		wp_enqueue_script('calendarize');
 		do_action('rhc_scripts_frontend');
 	}
 	
 	function admin_only_scripts(){
 		wp_enqueue_style( 'fullcalendar-theme', RHC_URL.'ui-themes/default/style.css', array(),'1.8.18');
-		wp_enqueue_style( 'calendarize', RHC_URL.'style.css', array(),'2.4.4.1');		
+		wp_enqueue_style( 'calendarize', RHC_URL.'style.css', array(),'2.4.4.2');		
 		wp_register_style( 'post-meta-boxes', RHC_URL.'css/post_meta_boxes.css', array(),'1.0.0');
 		wp_register_style( 'rhc-admin', RHC_URL.'css/admin_rhc.css', array(),'1.0.0');
 		//wp_register_style( 'rhc-jquery-ui', RHC_URL.'ui-themes/default/style.css', array(),'1.8.14');

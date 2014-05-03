@@ -65,6 +65,7 @@ display:none;
 
 .pop-price-cont .pop-dlc-price-label,
 .pop-version-cont .pop-dlc-version-label,
+.pop-iversion-cont .pop-dlc-iversion-label,
 .pop-filesize-cont .pop-dlc-filesize-label {
 	display:inline;
 	font-weight:bold;
@@ -72,6 +73,7 @@ display:none;
 
 .pop-price-cont .pop-dlc-price,
 .pop-version-cont .pop-dlc-version,
+.pop-iversion-cont .pop-dlc-iversion,
 .pop-filesize-cont .pop-dlc-filesize {
 	display:inline-block;
 	width:auto;
@@ -90,7 +92,8 @@ display:none;
 
 .pop-dlc-price,
 .pop-dlc-filesize,
-.pop-dlc-version {
+.pop-dlc-version,
+.pop-dlc-iversion {
 	float:right;
 }
 

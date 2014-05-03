@@ -38,7 +38,7 @@ class rhc_template_frontend {
 
 	function theme_meta_fields($value, $object_id, $meta_key, $single){
 		global $post;
-		if($single=='mix'){
+		if($single==='mix'){
 			return $value;
 		}else if( is_object($post) && property_exists($post,'rhc_template_id') && $object_id!=$post->rhc_template_id ){
 			if( empty($meta_key)){
@@ -203,12 +203,15 @@ class rhc_template_frontend {
 		$template_page_id = $this->get_taxonomy_template_page_id($term_id,$taxonomy);
 		if($template_page_id){
 			global $wp_filter;	
-			if(isset($wp_filter['pre_get_posts'])){
-				$bak = $wp_filter['pre_get_posts'];
-				unset($wp_filter['pre_get_posts']);				
-			}else{
-				$bak = false;
-			}	
+			//---wpml fix part 1	
+			$backup_filters = array();
+			foreach(array('posts_join','posts_where','pre_get_posts') as $hook_name){
+				if(isset($wp_filter[$hook_name])){
+					$backup_filters[$hook_name] = $wp_filter[$hook_name];
+					unset($wp_filter[$hook_name]);				
+				}
+			}
+			//---	
 					
 			$wp_query = new WP_Query('page_id='.$template_page_id);
 			$o = $wp_query->get_queried_object();
@@ -217,11 +220,14 @@ class rhc_template_frontend {
 			$post = $o;
 			//------------
 			$template = get_page_template();
-
-			if(false!==$bak){
-				$wp_filter['pre_get_posts'] = $bak;
+			//---wpml fix part 2
+			if(!empty($backup_filters)){
+				foreach($backup_filters as $hook_name => $backup_filter){
+					$wp_filter[$hook_name] = $backup_filter;				
+				}
+				unset($backup_filters);
 			}
-			
+			//---
 			$post_content = $this->get_taxonomy_content($term_id,$taxonomy,$o->post_content);
 /*
 			$post_content = str_replace("\n","",$post_content);//autop adds p tags

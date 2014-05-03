@@ -3,10 +3,108 @@ Author: Alberto Lau (RightHere LLC)
 Author URL: http://plugins.righthere.com/calendarize-it/
 Tags: WordPress, Calendar, Event, Recurring Events, Arbitrary Recurring Events, Venues, Organizers, jQuery
 Requires at least: 3.1
-Tested up to: 3.8
-Stable tag: 2.6.1 rev43717
+Tested up to: 3.9
+Stable tag: 2.7.9 rev49917
 
 == CHANGELOG ==
+Version 2.7.9 rev49917 - April 21, 2014
+* Bug Fixed: Missing new lines breaking some application import features
+* Bug Fixed: Match Background color feature is ending too early for very long spanning events.
+
+Version 2.7.8 rev48814 - April 13, 2014
+* Compatibility Fix: When NextGEN gallery is active images can not be uploaded
+* Compatibility Fix: When clicking the NextGEN insert icon, a php error is shown in the dialog
+* New Feature: Option to enable shortcode argument so that they can be passed through the page URL.
+
+Version 2.7.7 rev48793 - April 10, 2014
+* Compatibility Fix: Prevent WPML or other plugins using pre_get_posts from breaking Venue Page
+* Bug Fixed: Prevent Month View image overlapping
+* Bug Fixed: Month View Image not showing when switching views
+
+Version 2.7.6 rev48786 - April 10, 2014
+* New Feature: Support for featured image in Month View (enable feature in Options > Calendarize Shortcode and Month View)
+* New Feature: Added separate option to enable Month View Image metabox
+* Update: When either the Month View metabox or image option for Month View is set enable the image on the event Ajax data.
+* Bug Fixed: Javascript error on Event List View after previous update. Increased version no. of Javascript to force non-cached file.
+
+Version 2.7.5 rev48751 - April 10, 2014
+* Update: New optimization feature Ajax data shrink for faster loading of Events (can be disabled in Options > Troubleshoot)
+* Bug Fixed: When using the Match Events color feature, applying a filter does not reset the background color
+
+Version 2.7.4 rev48555 - April 3, 2014
+* Bug Fixed: Post info metabox was not showing on some Custom Post Types where it was enabled.
+* Update: Increase Options Panel version no.
+* Bug Fixed: Prevent php warning in Options Panel
+* Bug Fixed: Super Admin in WordPress Multisite are getting Demo Mode error message
+* Bug Fixed: Super Admin in WordPress Multisite can not save settings in Options.
+
+Version 2.7.3 rev48332 - March 31, 2014
+* Bug Fixed: Prevent some javascript error when post extra info goes into a bad state
+* Bug Fixed: Remove empty space in dynamic tooltip when custom fields data is not entered
+* Update: Change line height in new Calendar Widget.
+
+Version 2.7.2 rev48275 - March 28, 2014
+* Update: Added support for the new FLAT UI inspired Calendar Widget (free download).
+* Bug Fixed: FLAT UI widget not translating month and day name
+* Bug Fixed: iCal button space showing under FLAT UI Calendar widget
+
+Version 2.7.1 rev48158 - March 26, 2014
+* New Feature: Added buttons to restore specific default layouts individually (Event Details Box, Venue Details Box, Tooltip Details Box).
+
+Version 2.7.0 rev47975 - March 25, 2014
+* New Feature: Added a Upcoming Events Widget template with date range
+* New Feature: Added a Skip Months feature in Calendar view.
+* New Feature: Option to match the month view day cell background color with the event background color
+* New Feature: Added support for dynamic Tooltip content (build your own layout)
+* New Feature: Option to replace all events Custom Fields with the default template
+* Bug Fixed: jQuery conflict fixed causing Sidelist on Events Map View add-on not to show
+* Bug Fixed: Can not delete own events in draft status
+* Bug Fixed: Improved styling for Social Network buttons in mobile view
+* Bug Fixed: Super Admin on WordPress Multisite can not save Options in Calendarize it! 
+
+Version 2.6.7 rev47746 - March 3, 2014
+* Update: Changing spacing in custom buttons in wp-admin
+* Update: Changed line height on navigation buttons
+
+Version 2.6.6 rev47499 - February 24, 2014
+* Bug Fixed: When clicking on the image in tooltip, not getting the correct recurring event instance.
+* New Feature: Show version no. of latest installed add-on and available add-on version
+* New Feature: Added support for displaying banner ads by category (requires Events Map View add-on and Advertising Options add-on)
+* Update: Colors updated on ON and OFF switch in wp-admin to match new colors
+* Update: Color for default event updated to match the new default color scheme for Calendarize it!
+* Update: Updated Options Panel to version 2.6.0
+
+Version 2.6.5 rev47386 - February 17, 2014
+* Update: Added icon fonts for Calendar navigation
+* New Feature: Added some arguments so that the External Event Sources (add-on) can be filtered by Author
+* Update: If inserting Custom Field with post meta data fc_allday, replace the value with Yes or No.
+* Update: Improved navigation for mobile devices when in month view.
+
+Version 2.6.4 rev47073 — February 12, 2014
+* New Feature: Added a settings link in the plugin list
+* New Feature: Redirect to Option on plugin activation (this is done in order to get customers to enter the license key and download the Help)
+* New Feature: Redirect to License tab on Activation
+* New Feature: Message will be displayed in Options Panel if the Help is not installed and allow the user to dismiss the message permanently
+* New Feature: Message will be displayed in Options Panel if the Initial Setup has not been performed: Create Event and Venue templates and create Calendar page with [calendarizeit] shortcode.
+* New Feature: Show list of pages that uses Calendarize it! shortcode (Options Panel)
+* New Feature: Updated default theme for Calendarize it! buttons (FLAT UI)
+* Update: Add close icon to iCal dialog
+* Update: Adjust color of close icon on Calendar filter dialog
+* Update: Change Calendar filter tabs 
+* Bug Fixed: iCal feed download fixed on individual events.
+* Update: Changed iCal Feed dialog,  that appear when you click the button in the Event Details Box, to be the same as when you click the iCal button in the Month View.
+
+Version 2.6.3 rev44259 - January 9, 2014
+* Update: Map View Optimization (improved load speed for Map View add-on)
+* Update: Added a comment for changing the post info shortcode
+* Update: Adjust CSS for Auto Publish add-on
+* Bug Fixed: Adjust Featured Event Image in pop-up
+* Bug Fixed: Premiere parameter was not applied to the rhc_upcoming_events shortcode
+
+Version 2.6.2 rev43952 - January 1, 2014
+* Compatibility Update: Added code to compensate for undetermined situation where the “no upcoming events” message is also shown when events are appearing.
+* Bug Fix: Weekly recurring events were not showing on December 29, 30, 31 or January 1.
+
 Version 2.6.1 rev43717 - December 23, 2013
 * Update: Change Calendarize it! event default color
 * Bug Fixed: Title alignment off

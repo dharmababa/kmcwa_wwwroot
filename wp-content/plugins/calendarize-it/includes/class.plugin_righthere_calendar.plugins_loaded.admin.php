@@ -94,36 +94,6 @@ if('plugin_righthere_calendar'==get_class($this)):
 			if(class_exists('PluginOptionsPanelModule'))new PluginOptionsPanelModule($settings);
 
 			//--------
-			//require_once RHC_PATH.'includes/class.rhc_calendar_metabox.php';
-// this contains a filter needed by ce in the frontend. moving this to the fortnend until the required code is moved to a separate hook/file.
-/*
-			require_once RHC_PATH.'includes/class.rhc_calendar_metabox_rrule.php';
-			new rhc_calendar_metabox(RHC_EVENTS,$this->debug_menu);
-			$post_types = $this->get_option('post_types',array());
-			$post_types = is_array($post_types)?$post_types:array();
-			$post_types = apply_filters('rhc_calendar_metabox_post_types',$post_types);
-			if(is_array($post_types)&&count($post_types)>0){
-				foreach($post_types as $post_type){
-					new rhc_calendar_metabox($post_type,$this->debug_menu);
-				}
-			}
-*/			
-			//---	
-			require_once RHC_PATH.'includes/class.rhc_post_info_metabox.php';
-			new rhc_post_info_metabox(RHC_EVENTS,'edit_'.RHC_CAPABILITY_TYPE);	
-			//--- enable post info for other post types.
-			$post_types = $this->get_option('dbox_post_types',array());
-			$post_types = is_array($post_types)?$post_types:array();
-			$post_types = apply_filters('rhc_dbox_metabox_post_types',$post_types);
-			if(is_array($post_types)&&count($post_types)>0){
-				foreach($post_types as $post_type){
-					$pt = get_post_type_object( $post_type );
-					new rhc_post_info_metabox( $post_type, $pt->cap->edit_post );
-				}
-			}			
-			//--
-
-			
 			if($this->debug_menu){
 				require_once RHC_PATH.'includes/class.debug_calendarize.php';
 				new debug_calendarize('edit.php?post_type='.RHC_EVENTS);
@@ -132,8 +102,6 @@ if('plugin_righthere_calendar'==get_class($this)):
 			//--adds metabox for choosing template. not supported yet.
 			//require_once RHC_PATH.'includes/class.rhc_event_template_metabox.php';
 			//new rhc_event_template_metabox(RHC_EVENTS,$this->debug_menu);
-	
-			require_once RHC_PATH.'includes/class.rhc_event_image_metaboxes.php';
-			new rhc_event_image_metaboxes();
+
 endif;
 ?>

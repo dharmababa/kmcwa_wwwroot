@@ -22,7 +22,7 @@ class plugin_righthere_calendar {
 			'options_capability'=> 'manage_options',
 			'license_capability'=> 'manage_options',
 			'resources_path'	=> 'calendarize-it',
-			'options_panel_version'	=> '2.5.3',
+			'options_panel_version'	=> '2.6.3',
 			'post_info_shortcode'=> 'post_info',
 			'debug_menu'		=> false,
 			'autoupdate'		=> true,
@@ -68,9 +68,193 @@ class plugin_righthere_calendar {
 		}
 		require_once RHC_PATH.'includes/compat.php';	
 		//upgrader_post_install hook for post upgrade procedures: rebuild permalink after 3.7 and check fc range meta data.
+
+		add_filter("plugin_action_links_".RHC_SLUG, array(&$this,'rhc_plugin_settings_link') );
+		add_action("admin_init",array(&$this,'admin_init'));
+		add_action( 'wp_ajax_rhc_dismiss_notice', array(&$this,'rhc_dismiss_notice') );
+		add_action( 'wp_ajax_confirm_rhc_setup', array(&$this,'confirm_rhc_setup') );
+		add_action( 'wp_ajax_dismiss_rhc_setup', array(&$this,'dismiss_rhc_setup') );
+		add_action( 'init', array(&$this,'init_rhc_metaboxes'), 999 );
+	}
+
+	function init_rhc_metaboxes(){
+		if(is_admin()){	
+			//require_once RHC_PATH.'includes/class.rhc_calendar_metabox.php';
+// this contains a filter needed by ce in the frontend. moving this to the fortnend until the required code is moved to a separate hook/file.
+/*
+			require_once RHC_PATH.'includes/class.rhc_calendar_metabox_rrule.php';
+			new rhc_calendar_metabox(RHC_EVENTS,$this->debug_menu);
+			$post_types = $this->get_option('post_types',array());
+			$post_types = is_array($post_types)?$post_types:array();
+			$post_types = apply_filters('rhc_calendar_metabox_post_types',$post_types);
+			if(is_array($post_types)&&count($post_types)>0){
+				foreach($post_types as $post_type){
+					new rhc_calendar_metabox($post_type,$this->debug_menu);
+				}
+			}
+*/				
+			//---	
+			require_once RHC_PATH.'includes/class.rhc_post_info_metabox.php';
+			new rhc_post_info_metabox(RHC_EVENTS,'edit_'.RHC_CAPABILITY_TYPE);	
+			//--- enable post info for other post types.
+			$post_types = $this->get_option('dbox_post_types',array());
+			$post_types = is_array($post_types)?$post_types:array();
+			$post_types = apply_filters('rhc_dbox_metabox_post_types',$post_types);
+			if(is_array($post_types)&&count($post_types)>0){
+				foreach($post_types as $post_type){
+					$pt = get_post_type_object( $post_type );
+					if(is_object($pt)){
+						new rhc_post_info_metabox( $post_type, $pt->cap->edit_post );
+					}				
+				}
+			}			
+			//--
+			require_once RHC_PATH.'includes/class.rhc_event_image_metaboxes.php';
+			new rhc_event_image_metaboxes();			
+		}
 	}
 	
+	function admin_init(){
+		if(current_user_can('rhc_options')){
+			if( get_option('rhc_options_redirect', false)){
+				delete_option('rhc_options_redirect');
+				wp_safe_redirect( admin_url('/edit.php?post_type='.RHC_EVENTS.'&page=rhc&pop_open_tabs=license/#license') );
+				die();
+			}
+				
+			if(!defined('RHCH_PATH')){
+				if( ( isset($_REQUEST['page']) && $_REQUEST['page']=='rhc-dc' ) || get_option( 'rhc_dismiss_help_notice', false ) ){
+				
+				}else{
+					add_action( 'admin_notices', array(&$this,'admin_notice_install_help') );
+				}
+			}	
+			
+			if( get_option('rhc_setup',false) ){
+				if( !$this->is_template_set() || !$this->is_shortcode_set() ){
+					add_action( 'admin_notices', array(&$this,'admin_notice_rhc_setup') );
+				}else{
+					delete_option('rhc_setup');				
+				}			
+			}							
+		}
+	}
+
+	function rhc_dismiss_notice(){
+		update_option('rhc_dismiss_help_notice',true);
+		die(json_encode((object)array('R'=>'OK','MSG'=>'')));
+	}
+	
+	function dismiss_rhc_setup(){
+		delete_option( 'rhc_setup' );
+		die(json_encode((object)array('R'=>'OK','MSG'=>'')));
+	}
+	
+	function confirm_rhc_setup(){
+		global $userdata;
+		if(current_user_can('rhc_options')){
+			if( !$this->is_template_set() ){
+				if( '' == $this->get_option('event_template_page_id','',true) ){
+					$post = array(
+					  'post_title'    	=> __('Events template','rhc'),
+					  'post_content'  	=> '[CONTENT]',
+					  'post_status'   	=> 'publish',
+					  'post_author'   	=> $userdata->ID,
+					  'post_type'		=> 'page'
+					);
+					$post_ID = wp_insert_post( $post, false );	
+					if($post_ID>0){
+						$this->update_option('event_template_page_id', $post_ID); 
+					}
+				}	
+				
+				if( '' == $this->get_option('taxonomy_template_page_id','',true) ){
+					$post = array(
+					  'post_title'    	=> __('Venues template','rhc'),
+					  'post_content'  	=> '[CONTENT]',
+					  'post_status'   	=> 'publish',
+					  'post_author'   	=> $userdata->ID,
+					  'post_type'		=> 'page'
+					);
+					$post_ID = wp_insert_post( $post, false );	
+					if($post_ID>0){
+						$this->update_option('taxonomy_template_page_id', $post_ID); 
+					}
+				}							
+			}
+			
+			if( !$this->is_shortcode_set() ){
+				$post = array(
+				  'post_title'    	=> __('Events Calendar','rhc'),
+				  'post_content'  	=> '[calendarizeit]',
+				  'post_status'   	=> 'publish',
+				  'post_author'   	=> $userdata->ID,
+				  'post_type'		=> 'page'
+				);
+				wp_insert_post( $post, false );			
+			}			
+		}
+
+		die(json_encode((object)array('R'=>'OK','MSG'=>'')));
+	}
+	
+	function admin_notice_rhc_setup(){
+    	add_action('admin_footer',array(&$this,'admin_help_notice_footer'));
+	?>
+    <div class="updated rhc-setup-notice">
+		<h3><?php _e('Calendarize it! Automatic Setup','rhc')?></h3>
+        <?php _e('Click confirm to continue with the automatic setup process:','rhc') ?>
+		<ol>
+		<?php if( !$this->is_template_set() ):?>
+		<li><?php _e('Create Event and Venue templates.','rhc')?></li>
+		<?php endif;?>
+        <?php if( !$this->is_shortcode_set() ):?>
+		<li><?php _e('Create a Calendar page with the Calendarize it! shortcode.','rhc') ?></li>
+		<?php endif;?>
+		</ol>
+		<p>
+			<button id="btn_confirm_rhc_setup" class="button-primary"><?php _e('Confirm','rhc')?></button>
+			<button id="btn_dismiss_rhc_setup" class="button-secondary"><?php _e('No, I will manually setup the plugin','rhc')?></button>
+		</p>
+    </div>
+    <?php
+	}
+	
+	function admin_notice_install_help(){
+    	add_action('admin_footer',array(&$this,'admin_help_notice_footer'));
+	?>
+    <div class="updated rhc-help-notice">
+		<h3>Calendarize it!</h3>
+        <p><?php echo sprintf('%s<a href="%s">%s</a>',
+			__( 'You have not installed the English Help for Calendarize it! Please go to ', 'rhc' ),
+			admin_url('/edit.php?post_type='.RHC_EVENTS.'&page=rhc-dc'),
+			__( 'downloads.', 'rhc' )
+		); ?></p>
+		<p><button id="btn_dismiss_help_notice" class="button-primary"><?php _e('Do not show this message again','rhc')?></button></p>
+    </div>
+    <?php
+	}
+	
+	function admin_help_notice_footer(){
+		wp_print_scripts('rhc_setup');
+	}
+	
+	function rhc_plugin_settings_link($links) { 
+		$settings_link = sprintf('<a href="%s">%s</a>',
+			admin_url('/edit.php?post_type='.RHC_EVENTS.'&page=rhc'),
+			__('Settings','rhc')
+		); 
+		array_unshift($links, $settings_link); 
+		return $links; 
+	}
+
 	function handle_addons_load(){
+		//-- nexgt gen gallery compat fix.
+
+		if( defined('NGG_PLUGIN') ){
+			rh_register_php('options-panel',RHC_PATH.'options-panel/class.PluginOptionsPanelModule.php', $this->options_panel_version);
+		}
+		//---
 		$upload_dir = wp_upload_dir();
 		$addons_path = $upload_dir['basedir'].'/'.$this->resources_path.'/';	
 		$addons_url = $upload_dir['baseurl'].'/'.$this->resources_path.'/';	
@@ -191,9 +375,18 @@ class plugin_righthere_calendar {
 		return $value;
 	}	
 	
+	function update_option($name,$value){
+		$options = get_option($this->options_varname);
+		$options[$name]=$value;
+		update_option($this->options_varname, $options);
+		//--update plugin object options
+		$this->options = get_option($this->options_varname);
+		$this->options = is_array($this->options)?$this->options:array();	
+	}
+	
 	function get_intervals(){//deprecated
 		return array(
-					''			=> __('Never(Not a recurring event)','rhc'),
+					''			=> __('Never (Not a recurring event)','rhc'),
 					'1 DAY'		=> __('Every day','rhc'),
 					'1 WEEK'	=> __('Every week','rhc'),
 					'2 WEEK'	=> __('Every 2 weeks','rhc'),
@@ -204,7 +397,7 @@ class plugin_righthere_calendar {
 	
 	function get_rrule_freq(){
 		return apply_filters('get_rrule_freq',array(
-					''							=> __('Never(Not a recurring event)','rhc'),
+					''							=> __('Never (Not a recurring event)','rhc'),
 					/*'FREQ=DAILY;INTERVAL=1;COUNT=1'	=> __('Arbitrary repeat dates','rhc'),*/
 					'FREQ=DAILY;INTERVAL=1'	=> __('Every day','rhc'),
 					'FREQ=WEEKLY;INTERVAL=1'	=> __('Every week','rhc'),
@@ -223,5 +416,24 @@ class plugin_righthere_calendar {
 		$path = RHC_PATH.'settings/default/'.$file;
 		return apply_filters('rhc_settings_path',$path,$file);
 	}
+	
+	function is_template_set(){
+		if( 'version2'==$this->get_option('template_integration','version2',true) ){		
+			if( '' == $this->get_option('event_template_page_id','',true) ){
+				return false;
+			}
+		}	
+		return true;
+	}
+	
+	function is_shortcode_set(){
+		global $wpdb;
+		$sql = "SELECT COALESCE( (SELECT 1 FROM `{$wpdb->posts}` WHERE post_status='publish' AND post_content LIKE \"%[calendarizeit%\" LIMIT 1), 0) ";
+		if( $wpdb->get_var($sql,0,0) ){
+			return true;
+		}else{
+			return false;
+		}
+	}	
 }
 ?>

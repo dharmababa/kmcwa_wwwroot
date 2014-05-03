@@ -31,6 +31,65 @@ class rhc_post_info_settings {
 				}			
 			}
 		}
+		
+		$clear_events_cache = false;
+		if(isset($_POST['pinfo_apply_default'])){
+			$options = get_option($rhc_plugin->options_varname);
+			$options = is_array($options)?$options:array();		
+			$postinfo_boxes = $options['postinfo_boxes'];
+			//---
+			global $wpdb;
+			$sql = "SELECT M.post_id FROM `{$wpdb->postmeta}` M INNER JOIN `{$wpdb->posts}` P ON P.ID=M.post_id WHERE M.meta_key='postinfo_boxes' AND P.post_type='".RHC_EVENTS."';";
+			$post_ids = $wpdb->get_col($sql,0);
+			if(is_array($post_ids) && count($post_ids)>0){
+				foreach($post_ids as $post_ID){
+					update_post_meta($post_ID, 'postinfo_boxes', $postinfo_boxes);
+					$clear_events_cache = true;
+				}
+			}
+		}
+		//--
+		foreach(array('detailbox','venuebox','tooltipbox') as $id){
+			$post_field_name = 'pinfo_apply_default_'.$id;
+			if(isset($_POST[$post_field_name])){
+				$options = get_option($rhc_plugin->options_varname);
+				$options = is_array($options)?$options:array();		
+				$postinfo_boxes = $options['postinfo_boxes'];
+				//---
+				global $wpdb;
+				$sql = "SELECT M.post_id FROM `{$wpdb->postmeta}` M INNER JOIN `{$wpdb->posts}` P ON P.ID=M.post_id WHERE M.meta_key='postinfo_boxes' AND P.post_type='".RHC_EVENTS."';";
+				$post_ids = $wpdb->get_col($sql,0);
+				if(is_array($post_ids) && count($post_ids)>0){
+					foreach($post_ids as $post_ID){
+						$current = get_post_meta($post_ID, 'postinfo_boxes', true);
+						$current = is_array($current)?$current:array();
+						$current[$id] = isset($postinfo_boxes[$id]) ? $postinfo_boxes[$id] : array() ;
+						update_post_meta($post_ID, 'postinfo_boxes', $current);
+						$clear_events_cache = true;
+					}
+				}
+			}			
+		}
+		
+		if( $clear_events_cache ){
+			$this->handle_delete_events_cache();
+		}
+	}
+	
+	function handle_delete_events_cache(){
+		global $rhc_plugin,$wpdb;		
+		if('1'!=$rhc_plugin->get_option('disable_rhc_cache','',true)){
+			//clear cache.
+			$sql = "TRUNCATE `{$wpdb->prefix}rhc_cache`";
+			if($wpdb->query($sql)){
+			
+			}else{
+				$sql = "DELETE FROM `{$wpdb->prefix}rhc_cache` WHERE (1)";
+				if($wpdb->query($sql)){
+			
+				}
+			}
+		}
 	}
 	
 	function options($t){
@@ -100,6 +159,24 @@ class rhc_post_info_settings {
 				'el_properties'	=> array(),
 				'save_option'=>false,
 				'load_option'=>false
+			),			
+			(object)array(
+				'type' 			=> 'subtitle',
+				'label'			=> __('Apply default to all events','rhc'),
+				'description'	=> sprintf('<p>%s</p><p>%s</p><p><b>%s</b></p>',
+					__('This option will apply and overwrite the custom field layout with the default one, on ALL events.','rhc'),
+					__('This operation may take a while to complete.','rhc'),
+					__('This operation cannot be undone. All the events custom field layout will be replaced!','rhc')
+				)
+			),	
+			(object)array(
+				'id'		=> 'pinfo_apply_default',
+				'label'		=> __('Apply Default','rhc'),
+				'type'		=> 'callback',
+				'callback'	=> array(&$this,'render_pinfo_apply_default'),
+				'el_properties'	=> array(),
+				'save_option'=>false,
+				'load_option'=>false
 			)					
 		);
 		
@@ -121,6 +198,14 @@ class rhc_post_info_settings {
 		$postinfo_boxes		= $rhc_plugin->get_option('postinfo_boxes',false,true);
 		$out = sprintf('<input type="submit" name="pinfo_restore" value="%s" class="button-primary" />',htmlspecialchars(__('Restore custom fields','rhc')));
 		$out.= '<div style="display:none;"><textarea>'.json_encode($postinfo_boxes).'</textarea></div>';
+		return $out;
+	}
+	
+	function render_pinfo_apply_default(){
+		$out = sprintf('<p><input type="submit" name="pinfo_apply_default_detailbox" 	    value="%s" class="button-primary" /></p>',htmlspecialchars(__('Apply default Event Detail Box','rhc')));
+		$out.= sprintf('<p><input type="submit" name="pinfo_apply_default_venuebox"   value="%s" class="button-primary" /></p>',htmlspecialchars(__('Apply default Venue Detail Box','rhc')));
+		$out.= sprintf('<p><input type="submit" name="pinfo_apply_default_tooltipbox" value="%s" class="button-primary" /></p>',htmlspecialchars(__('Apply default Dynamic Tooltip','rhc')));
+		$out.= sprintf('<p><input type="submit" name="pinfo_apply_default" value="%s" class="button-primary" /></p>',htmlspecialchars(__('Apply ALL default','rhc')));
 		return $out;
 	}
 }

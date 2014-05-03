@@ -22,7 +22,8 @@ function venue_html_description_input($tab,$i,$o,$r){
 } 
 		//-- Venues --------------------------------------
 		//-- included by class.righthere_calendar.php
-		
+add_action('rhcevents_init','init_venue_taxonomy',20);		
+function init_venue_taxonomy(){		
 		require 'venue_meta_fields.php';    
 		$fields = apply_filters('rhc_venue_meta',$fields);
 		$labels = array(
@@ -58,6 +59,7 @@ function venue_html_description_input($tab,$i,$o,$r){
 			$fields,//defined in venue_meta_fields.php
 			RHC_PATH
 		);
+}
 endif;		
 
 function venue_admin_customization($taxonomy){

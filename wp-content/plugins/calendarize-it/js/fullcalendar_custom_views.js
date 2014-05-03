@@ -146,7 +146,7 @@ function EventView(element, calendar) {
 		//---
 		
 		view_template
-			.appendTo( element.find('.fc-events-holder') )
+			.appendTo( element.find('.fc-events-holder').empty() )
 			.find('.fc-remove').remove();
 					
 		if(_events.length>0){		
@@ -266,11 +266,26 @@ function EventView(element, calendar) {
 					if(''!=options.fcdate_format){
 						str.find('.rhc-widget-date').html( $.fullCalendar.formatDate(e.start,options.fcdate_format,date_options) );
 						str.find('.rhc-widget-end-date').html( $.fullCalendar.formatDate(e.end,options.fcdate_format,date_options) );
+						//-- start end range
+						dstart = $.fullCalendar.formatDate(e.start,'yyyy-MM-dd',date_options);
+						dend = $.fullCalendar.formatDate(e.end,'yyyy-MM-dd',date_options);
+						var diff =  Math.floor(( Date.parse(dend) - Date.parse(dstart) ) / 86400000);
+						if( diff>0 ){
+							tmp = $.fullCalendar.formatDate(e.start,options.fcdate_format,date_options) + ' &#8211; ' + $.fullCalendar.formatDate(e.end,options.fcdate_format,date_options);
+							str.find('.rhc-widget-date-range').html( tmp );
+							str.find('.rhc-day_diff0').hide();
+						}else{
+							str.find('.rhc-widget-date-range').html( $.fullCalendar.formatDate(e.start,options.fcdate_format,date_options) );
+							str.find('.rhc-day_diff1').hide();
+						}
+						//--
 					}
 				
 					if(''!=options.fctime_format && !e.allDay){
 						str.find('.rhc-widget-time').html(  $.fullCalendar.formatDate(e.start,options.fctime_format,date_options) );
 						str.find('.rhc-widget-end-time').html(  $.fullCalendar.formatDate(e.end,options.fctime_format,date_options) );
+					}else{
+						str.find('.rhc-widget-date-time').hide();
 					}
 					
 					if(e.allDay){
@@ -458,7 +473,7 @@ function EventView(element, calendar) {
 							.find('.fc-event-list-description').html(ev.description).end()
 						;
 		
-						if( ''==ev.description.replace(' ','') ){
+						if( ev.description && ''==ev.description.replace(' ','') ){
 							item.find('.fc-event-list-description').addClass('rhc-empty-description');
 						}
 						

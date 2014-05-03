@@ -25,7 +25,13 @@ $postinfo_boxes = array(
 		'enable_default' => '1',
 		'shortcode' => "[venuemeta][venue_gmap canvas_width='500' canvas_height='300' zoom='{gzoom}' address=\"{gaddress}\" glat='{glat}' glon='{glon}' info_windows='{ginfo}'][/venuemeta]",
 		'holder_class' => 'fe-map-holder'
-	)
+	),
+	'tooltipbox' 	=> (object)array(
+		'id'		=> 'tooltipbox',
+		'label'		=> __('Tooltip Details','rhc'),
+		'holder_class' => 'fct-custom-details'
+	)	
+	
 );
 
 ?>

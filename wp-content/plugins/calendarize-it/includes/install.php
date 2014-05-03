@@ -42,6 +42,7 @@ function handle_rhc_install(){
 		'edit_'.RHC_CAPABILITY_TYPE,
 		'read_'.RHC_CAPABILITY_TYPE,
 		'delete_'.RHC_CAPABILITY_TYPE,
+		'delete_'.RHC_CAPABILITY_TYPE.'s',
 		'edit_'.RHC_CAPABILITY_TYPE.'s',
 		'edit_others_'.RHC_CAPABILITY_TYPE.'s',
 		'edit_published_'.RHC_CAPABILITY_TYPE.'s',
@@ -72,7 +73,9 @@ function handle_rhc_install(){
 			update_option($rhc_plugin->options_varname,$options);
 		}
 		//--
-	}		 
+	}		
+	add_option('rhc_options_redirect', true);
+	add_option('rhc_setup', true); 
 }
 
 
@@ -83,6 +86,7 @@ function handle_rhc_uninstall(){
 		'edit_'.RHC_CAPABILITY_TYPE,
 		'read_'.RHC_CAPABILITY_TYPE,
 		'delete_'.RHC_CAPABILITY_TYPE,
+		'delete_'.RHC_CAPABILITY_TYPE.'s',
 		'edit_'.RHC_CAPABILITY_TYPE.'s',
 		'edit_others_'.RHC_CAPABILITY_TYPE.'s',
 		'edit_published_'.RHC_CAPABILITY_TYPE.'s',
@@ -100,6 +104,7 @@ function handle_rhc_uninstall(){
 	}
 	//-----
 	delete_site_transient('update_plugins');
+	delete_option( 'rhc_dismiss_help_notice' );
 }
 
 ?>

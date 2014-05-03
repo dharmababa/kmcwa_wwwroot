@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Agenda Like
+Template Name: Agenda Like (with end time and date range)
 Template Type: widget_upcoming_events
 */
 ?><div class="rhc-widget-upcoming-item rhc-widget-a  featured-[FEATURED]">
@@ -18,8 +18,13 @@ Template Type: widget_upcoming_events
 		<div class="rhc-widget-upcoming">
 			<div class="rhc-widget-upcoming-title">
 				<a class='rhc-title-link' href="[URL]">[TITLE]</a>
-				<div class="rhc-widget-date-time [NODATETIME]"><span class="rhc-widget-time">[TIME]</span><!-- uncomment for ending time &#8211;<span class="rhc-widget-end-time"></span>--></div>
-				
+				<div class="rhc-day_diff1 rhc-widget-date-range"></div>
+				<div class="rhc-day_diff1 rhc-widget-date-time [NODATETIME]"><span class="rhc-widget-time">[TIME]</span> &#8211; <span class="rhc-widget-end-time"></span></div>	
+				<div class="rhc-day_diff0">
+					<span class="rhc-widget-date-range"></span>
+					<span class="rhc-widget-date-time"> &#8211; </span>
+					<span class="rhc-widget-time">[TIME]</span>
+				</div>			
 			</div>
 			<div class="rhc-description">[DESCRIPTION]</div>
 		</div>

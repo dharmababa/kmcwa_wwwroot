@@ -27,13 +27,14 @@ function generate_calendarize_shortcode($params=array()){
 		"buttonicons_next","eventlistdateformat","eventliststartdateformat","eventliststartdateformat_allday","eventlistshowheader","eventlistnoeventstext","eventlistmonthsahead","eventlist_display","eventlistupcoming","eventlistreverse","eventlistoutofrange",
 		"eventlistextendeddetails","eventlistextdateformat","eventlistexttimeformat","eventlistextdatetimeformat",
 		"timeformat_month","timeformat_week","timeformat_day","timeformat_default","axisformat",
-		"tooltip_startdate","tooltip_startdate_allday","tooltip_enddate","tooltip_enddate_allday","tooltip_disable_title_link",
+		"tooltip_startdate","tooltip_startdate_allday","tooltip_enddate","tooltip_enddate_allday","tooltip_disable_title_link","tooltip_enable_custom",
 		"alldayslot","alldaytext","firsthour","slotminutes","mintime","maxtime",
 		"tooltip_target", "icalendar", "icalendar_width", "icalendar_button", "icalendar_title", "icalendar_description","icalendar_align",
 		"monthnames","monthnamesshort","daynames","daynamesshort",
 		"week_mode","loading_overlay",
 		"week_numbers","week_numbers_title",
-		"hiddendays"
+		"hiddendays","skipmonths","matchbackground",
+		"shrink","month_event_image"
 	);
 	foreach($field_option_map as $field){
 		$option = 'cal_'.$field;

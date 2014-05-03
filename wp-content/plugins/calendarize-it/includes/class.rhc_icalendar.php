@@ -37,15 +37,15 @@ class events_to_vcalendar {
 	
 	function get_vcalendar(){	
 		ob_start();
-?>
-BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//RIGHTHERE//CALENDARIZE IT V2.5//EN
-<?php echo $this->get_vtimezone() ?>
-<?php echo $this->get_vcalendar_body() ?>
-END:VCALENDAR
+		echo "BEGIN:VCALENDAR\r\n";
+		echo "VERSION:2.0\r\n";
+		echo "PRODID:-//RIGHTHERE//CALENDARIZE IT V2.5//EN\r\n";
+		
+		echo $this->get_vtimezone();
+		echo $this->get_vcalendar_body() ;
 
-<?php		
+		echo "END:VCALENDAR\r\n";
+
 		$content = ob_get_contents();
 		ob_end_clean();
 		return $content;

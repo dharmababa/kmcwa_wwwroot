@@ -22,6 +22,10 @@
 	position:relative;
 }
 
+.rhcalendar.not-widget.rhc_holder { /* Venue Page */
+	margin-top: 60px;
+}
+
 .tax-venue .rhcalendar {
 	margin-top: 40px;
 }
@@ -29,14 +33,20 @@
 .fc-header-center .fc-header-title {
 	display: block;
 	position: absolute;
-	top: -41px;
+	top: 0px;
 	margin:0 auto;
 	left:0;
 	width:100%;
 }
 
+/* month-year on admin */
+.wp-admin .fc-header-center .fc-header-title {
+	top: -23px;
+}
 
 /* admin post extra info */
+
+
 .post_extrainfo {
 	width:100%;
 	margin:0;
@@ -685,3 +695,105 @@ overflow:hidden;
 	height:11px;
 	background-image:url(images/ajax-loader.gif);
 }
+
+/* Admin on|off buttons for download options */
+.dc-content .dlc-addon-control {
+  position: relative;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  font-size: 0;
+  vertical-align: middle;
+  white-space: nowrap;
+  *margin-left: .3em;
+}
+.dc-content .dlc-addon-control .btn {
+	display: inline-block;
+  *display: inline;
+  *zoom: 1;
+	padding: 6px 12px;
+	margin: 0;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	color: #ffffff;
+	text-shadow: none;
+	background-color: #bdc3c7;
+	background-image:none;
+	border:none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-font-smoothing: subpixel-antialiased;
+   -webkit-transition: border .25s linear, color .25s linear, background-color .25s linear;
+   transition: border .25s linear, color .25s linear, background-color .25s linear;
+}
+.dc-content .dlc-addon-control .btn.enable-addon {
+  margin-left: 0;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  border-top-left-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  border-bottom-left-radius: 4px;
+}
+.dc-content .dlc-addon-control .btn.disable-addon {
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  border-bottom-right-radius: 4px;
+ }
+ 
+.dc-content .dlc-addon-control .btn.enable-addon.active {
+  color:#ffffff;
+  background-image: none;
+  background-color: #51a351;
+  -webkit-box-shadow:none;
+  -moz-box-shadow:none;
+  box-shadow:none;
+}
+
+.dc-content .dlc-addon-control .btn.disable-addon.active {
+  color:#ffffff;
+  background-image: none;
+  background-color: #bd362f;	
+  -webkit-box-shadow:none;
+  -moz-box-shadow:none;
+  box-shadow:none;
+}
+
+.dc-content .rhpop .btn {
+	background-image: none;
+	border: none;
+	text-shadow: none;
+	color: #fff;
+	-webkit-font-smoothing: subpixel-antialiased;
+	-webkit-transition: border .25s linear, color .25s linear, background-color .25s linear;
+	transition: border .25s linear, color .25s linear, background-color .25s linear;
+}
+
+.dc-content .btn.btn-visit-site {
+	background-color: #bdc3c7;
+}
+
+.dc-content .rhpop .btn:hover {
+	color:#fff;
+	opacity:.7;
+}
+
+
+
+.dc-content .rhpop .btn.btn-download.disabled {
+    color: #ffffff;
+	background-color:#bdc3c7;
+	opacity:.5;
+}
+
+/* End on|off buttons for download options */
