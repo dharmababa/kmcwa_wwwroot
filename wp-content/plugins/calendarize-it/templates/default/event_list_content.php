@@ -1,5 +1,5 @@
 <div class="fc-event-list-container">
-	<!-- you can replace with custom content to be displayed before the items -->
+	<!-- you can replace with custom content to be displayed before the items. -->
 	<div class="fc-event-list-holder">
 		<div class="fc-event-list-no-events fc-remove"><div class="fc-no-list-events-message"></div></div>
 		<div class="fc-event-list-date fc-remove"><h3 class="fc-event-list-date-header"></h3></div>
