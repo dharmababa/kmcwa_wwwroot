@@ -213,3 +213,7 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+#Ignore wp-admin and wp-includes
+wp-admin/*
+wp-includes/*
