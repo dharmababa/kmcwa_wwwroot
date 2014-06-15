@@ -217,3 +217,5 @@ pip-log.txt
 #Ignore wp-admin and wp-includes
 wp-admin/*
 wp-includes/*
+wp-config-sample.php
+wp-content/plugins/w3-total-cache/*
