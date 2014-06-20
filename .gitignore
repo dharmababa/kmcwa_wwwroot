@@ -217,5 +217,23 @@ pip-log.txt
 #Ignore wp-admin and wp-includes
 wp-admin/*
 wp-includes/*
+index.php
+license.txt
+readme.html
+wp-activate.php
+wp-blog-header.php
+wp-comments-post.php
+wp-cron.php
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-main.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
 wp-config-sample.php
 wp-content/plugins/w3-total-cache/*
+wp-content/themes/twentytwelve/*
+wp-content/themes/twentythirteen/*
+wp-content/themes/twentyfourteen/*
