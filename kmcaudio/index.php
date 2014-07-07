@@ -56,8 +56,9 @@
 				
 				<h3>Please select the event you attended</h3>
 				<ul>
-					<li><a href="/audio_files/events/2013-nwdc-entire-event/index.php">NWDC Entire Event</a></li>
-					<li><a href="/audio_files/events/2013-nwdc-sat-sun/index.php">NWDC Saturday and Sunday Only</a></li>
+					<li><a href="/audio_files/events/2014-nwdc-entire/index.php">2014 NWDC Entire Event</a></li>
+					<li><a href="/audio_files/events/2014-nwdc-sat-sun/index.php">2014 NWDC Saturday and Sunday Only</a></li>
+					<li><a href="/audio_files/events/2014-nwdc-sat/index.php">2014 NWDC Saturday Only</a></li>
 				</ul>				
 			</div>
 		</div>
