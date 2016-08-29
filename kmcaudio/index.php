@@ -45,9 +45,10 @@
 				<!--	<li><a href="/audio_files/gp/index.php">General Program (GP)</a></li>	
 					<li><a href="/audio_files/evefp/utm/index.php">Evening Foundation Program - Understanding the Mind (FP)</a></li>	
 					<li><a href="/audio_files/fpcorres/index.php">Foundation Program Correspondence</a></li>	
-					<li><a href="/audio_files/fpcorres2/index.php">Foundation Program Correspondence Part 2</a></li>	-->
-					<li><a href="/audio_files/fpcorres_universal_compassion_01/index.php">Foundation Program Correspondence Universal Compassion</a></li>	
-					<li><a href="/audio_files/fpcorres_jpogf/index.php">Foundation Program Correspondence - Joyful Path of Good Fortune</a></li>	
+					<li><a href="/audio_files/fpcorres2/index.php">Foundation Program Correspondence Part 2</a></li>	
+					<li><a href="/audio_files/fpcorres_universal_compassion_01/index.php">Foundation Program Correspondence Universal Compassion</a></li> -->	
+					<li><a href="/audio_files/fpcorres_jpogf/index.php">Foundation Program Correspondence - Joyful Path of Good Fortune</a></li>
+					<li><a href="/audio_files/fpcorres_nhw/index.php">Foundation Program Correspondence - The New Heart of Wisdom</a></li>	
 					<!-- <li><a href="/audio_files/ttp/index.php">Teacher Training Program (TTP)</a></li>	
 					<li><a href="/audio_files/ttpcorres/index.php">Teacher Training Program Correspondence - GDL Part II</a></li> -->	
 					<!-- <a href="/audio_files/ttpcorres2/index.php">Teacher Training Program Correspondence - Mahamudra Tantra</a></li> -->	
@@ -57,9 +58,9 @@
 				
 				<h3>Please select the event you attended</h3>
 				<ul>
-					<li><a href="/audio_files/events/2015-nwdc-entire/index.php">2015 NWDC Entire Event</a></li>
-					<li><a href="/audio_files/events/2015-nwdc-sat-sun/index.php">2015 NWDC Saturday and Sunday Only</a></li>
-					<li><a href="/audio_files/events/2015-nwdc-sat/index.php">2015 NWDC Saturday Only</a></li>
+					<li><a href="/audio_files/events/2016-nwdc-entire/index.php">2016 NWDC Entire Event</a></li>
+					<li><a href="/audio_files/events/2016-nwdc-sat-sun/index.php">2016 NWDC Saturday and Sunday Only</a></li>
+					<li><a href="/audio_files/events/2016-nwdc-sat/index.php">2016 NWDC Saturday Only</a></li>
 				</ul>				
 			</div>
 		</div>
