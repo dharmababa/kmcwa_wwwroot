@@ -61,6 +61,7 @@
 					<li><a href="/audio_files/events/2016-nwdc-entire/index.php">2016 NWDC Entire Event</a></li>
 					<li><a href="/audio_files/events/2016-nwdc-sat-sun/index.php">2016 NWDC Saturday and Sunday Only</a></li>
 					<li><a href="/audio_files/events/2016-nwdc-sat/index.php">2016 NWDC Saturday Only</a></li>
+					<li><a href="/audio_files/events/2016-hyt/index.php">2016 Highest Yoga Tantra Teaching</a></li>
 				</ul>				
 			</div>
 		</div>
