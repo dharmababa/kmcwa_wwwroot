@@ -1,0 +1,844 @@
+/*
+1. Fonts
+  a. Icon Fonts
+2. Styles
+3. Calendar Widget
+4. Event Page boxes
+5. Social media login
+6. Calendar table - fixes for themes with colors on their td, th and tr
+7. iCal Filter
+8. Calendar Navigation
+
+
+== Responsive ==
+*/
+
+/* Fonts */
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato-bol.eot');
+    src: url('../fonts/lato-bol.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato-bol.woff') format('woff'),
+         url('../fonts/lato-bol.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato-lig.eot');
+    src: url('../fonts/lato-lig.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato-lig.woff') format('woff'),
+         url('../fonts/lato-lig.ttf') format('truetype');
+    font-weight:lighter;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato-reg.eot');
+    src: url('../fonts/lato-reg.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato-reg.woff') format('woff'),
+         url('../fonts/lato-reg.ttf') format('truetype');
+    font-weight: normal;
+}
+
+/* ICON Fonts */
+@font-face {
+	font-family: 'Calendarize-it';
+	src: url('../fonts/Calendarize-it.eot');
+}
+@font-face {
+	font-family: 'Calendarize-it';
+	src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg6SAy0AAAC8AAAAYGNtYXAaVcxaAAABHAAAAExnYXNwAAAAEAAAAWgAAAAIZ2x5Zk5MwgYAAAFwAAACrGhlYWQApIspAAAEHAAAADZoaGVhBwMDyQAABFQAAAAkaG10eBIAA1wAAAR4AAAAIGxvY2ECaAG4AAAEmAAAABJtYXhwAAsAPgAABKwAAAAgbmFtZZt1YwQAAATMAAABeHBvc3QAAwAAAAAGRAAAACAAAwQAAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADmAwPA/8D/wAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAACAAAAAwAAABQAAwABAAAAFAAEADgAAAAKAAgAAgACAAEAIOYD//3//wAAAAAAIOYA//3//wAB/+MaBAADAAEAAAAAAAAAAAAAAAEAAf//AA8AAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAgCPABIDQQNuAB0AOwAAAS4BNDY3PgEyFhcBHgEUBgcBDgEiJicuATQ2NwkBIy4BNDY3PgEyFhcBHgEUBgcBDgEiJicuATQ2NwkBAX8FBgYFBQ0NDQUBkQUGBgX+bwUNDQ0FBQYGBQFt/pPwBQYGBQUNDQ0FAZEFBgYF/m8FDQ0NBQUGBgUBbf6TAzwFDQ4NBQUFBQX+awUNDg0F/msFBQUFBQ0ODQUBfAF8BQ0ODQUFBQUF/msFDQ4NBf5rBQUFBQUNDg0FAXwBfAAAAgCPABIDQQNuAB0AOwAAJR4BFAYHDgEiJicBLgE0NjcBPgEyFhceARQGBwkBMx4BFAYHDgEiJicBLgE0NjcBPgEyFhceARQGBwkBAlEFBgYFBQ0NDQX+bwUGBgUBkQUNDQ0FBQYGBf6TAW3wBQYGBQUNDQ0F/m8FBgYFAZEFDQ0NBQUGBgX+kwFtRAUNDg0FBQUFBQGVBQ0ODQUBlQUFBQUFDQ4NBf6E/oQFDQ4NBQUFBQUBlQUNDg0FAZUFBQUFBQ0ODQX+hP6EAAAAAQEfABIC4QNuAB0AACUeARQGBw4BIiYnAS4BNDY3AT4BMhYXHgEUBgcJAQLhBQYGBQUNDQ0F/m8FBgYFAZEFDQ0NBQUGBgX+kwFtRAUNDg0FBQUFBQGVBQ0ODQUBlQUFBQUFDQ4NBf6E/oQAAQEfABIC4QNuAB0AACUOARQWFx4BMjY3AT4BNCYnAS4BIgYHDgEUFhcJAQEfBQYGBQUNDQ0FAZEFBQYF/m8FDQ0NBQUGBgUBbf6TRAUNDg0FBQUFBQGVBQ0ODQUBlQUFBQUFDQ4NBf6E/oQAAQAAAAEAAOCm/FFfDzz1AAsEAAAAAADPIqNfAAAAAM8io18AAAAAA0EDbgAAAAgAAgAAAAAAAAABAAADwP/AAAAEAAAAAAADQQABAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAIAAAAEAACPBAAAjwQAAR8EAAEfAAAAAAAKABQAHgCEAOoBIAFWAAAAAQAAAAgAPAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA4ArgABAAAAAAABABwAAAABAAAAAAACAA4AeAABAAAAAAADABwAMgABAAAAAAAEABwAhgABAAAAAAAFABYAHAABAAAAAAAGAA4ATgABAAAAAAAKACgAogADAAEECQABABwAAAADAAEECQACAA4AeAADAAEECQADABwAMgADAAEECQAEABwAhgADAAEECQAFABYAHAADAAEECQAGABwAXAADAAEECQAKACgAogBDAGEAbABlAG4AZABhAHIAaQB6AGUALQBpAHQAVgBlAHIAcwBpAG8AbgAgADEALgAwAEMAYQBsAGUAbgBkAGEAcgBpAHoAZQAtAGkAdENhbGVuZGFyaXplLWl0AEMAYQBsAGUAbgBkAGEAcgBpAHoAZQAtAGkAdABSAGUAZwB1AGwAYQByAEMAYQBsAGUAbgBkAGEAcgBpAHoAZQAtAGkAdABHAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAEkAYwBvAE0AbwBvAG4AAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==) format('truetype'),
+		 url(data:application/font-woff;charset=utf-8;base64,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) format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-rhc"], [class*=" icon-rhc"], .fc-button.fc-button-prev:before, .fc-button.fc-button-next:before, .fc-button-prevYear:before, .fc-button-nextYear:before {
+	font-family: 'Calendarize-it';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-rhcarrow-right2:before {
+	content: "\e600";
+}
+.icon-rhcarrow-left2:before {
+	content: "\e601";
+}
+.icon-rhcarrow-left:before {
+	content: "\e602";
+}
+.icon-rhcarrow-right:before {
+	content: "\e603";
+}
+
+/* end ICON Fonts */
+
+
+/* Styles */
+.rhcalendar.upcoming-widget.rhc_holder,
+.rhcalendar.upcoming-widget {
+	margin-top:0px;
+}
+
+.upcoming-widget .fc-edit-tools, 
+.upcoming-widget .fc-header, 
+.upcoming-widget .fc-lower-head-tools, 
+.upcoming-widget .fc-head-control, 
+.upcoming-widget .fc-footer {
+	display:none;
+}
+
+/* Calendar Widget */
+.rhcalendar.for-widget.flat-ui-cal {
+	font-family: 'Lato', sans-serif;
+}
+
+.rhcalendar.for-widget.flat-ui-cal .fc-header {
+	font-family: 'Lato', sans-serif;
+	background-color: #3498db;
+	height: 200px;
+	color: #fff;
+	font-weight: 400;
+	border-radius: 8px 8px 0 0;
+	-moz-border-radius: 8px 8px 0 0;
+	-webkit-border-radius: 8px 8px 0 0;
+	-o-border-radius: 8px 8px 0 0;
+	-ms-border-radius: 8px 8px 0 0;
+}
+
+.rhcalendar.for-widget.flat-ui-cal .fc-header-cell.fc-header-left {
+	display: block;
+	float: right;
+	top: -4px;
+	right: 3px;
+}
+
+.rhcalendar.for-widget.flat-ui-cal .for-widget .fc-header-title {
+	margin-top: 0;
+}
+
+.rhcalendar.for-widget.flat-ui-cal .fc-button-prev:before,
+.rhcalendar.for-widget.flat-ui-cal .fc-button-next:before {
+    display: none;
+}
+
+.rhcalendar.for-widget.flat-ui-cal .fc-button-prev,
+.rhcalendar.for-widget.flat-ui-cal .fc-button-next {
+    text-indent: 0;
+}
+
+.rhcalendar.for-widget.flat-ui-cal .fc-button {
+	background-color: transparent;
+	background-image: none;
+	box-shadow: 0 0 0 transparent;
+	color: #Fff;
+	border: 0px;
+	font-size: 33px;
+	font-family: 'Lato', sans-serif;
+	font-weight:lighter;
+	padding: 0 10px;
+}
+
+.rhcalendar.for-widget.flat-ui-cal .fc-header-cell.fc-header-right {
+	float: none;
+	top: 20px;
+	left: 10px;
+	position: absolute;
+}
+
+.rhcalendar.for-widget.flat-ui-cal .fc-header-cell .fuiw-dayname {
+	display: block;
+	text-align: center;
+	font-weight: normal;
+	margin: 0 0 5px;
+	font-size: 16px;
+}
+
+.rhcalendar.for-widget.flat-ui-cal .fc-header-cell .fuiw-month, 
+.rhcalendar.for-widget.flat-ui-cal .fc-header-cell .fuiw-year {
+	font-size: 16px;
+	font-weight: normal;
+	text-align: center;
+	margin-right: 4px;
+	color: #ffffff;
+}
+
+.rhcalendar.for-widget.flat-ui-cal .fc-header-cell .fuiw-day {
+	font-size: 70px;
+	display: block;
+	text-align: center;
+	font-weight: lighter;
+}
+
+/* Not current date */
+.rhcalendar.for-widget.flat-ui-cal.not-current-date .fc-header-cell,
+.rhcalendar.for-widget.flat-ui-cal.not-current-date .fc-header-cell h2{
+    text-align: left !important; 
+}
+
+.rhcalendar.for-widget.flat-ui-cal.not-current-date .fc-header-cell h2 .fuiw-month {
+    font-family:'Lato',sans-serif;
+    font-weight:200;
+    font-size:35px;
+	text-align: left; 
+}
+
+.rhcalendar.for-widget.flat-ui-cal.not-current-date .fc-header-cell h2 .fuiw-year {
+    font-family:'Lato',sans-serif;
+    font-weight:300;
+    font-size:40px;
+    display:block;
+	text-align: left; 
+}
+
+
+.rhcalendar.for-widget.flat-ui-cal .fc-header-title h2 {
+	font-weight: 400;
+}
+
+.rhcalendar.for-widget.flat-ui-cal .fc-lower-head-tools {
+	margin: 0;
+}
+
+.rhcalendar.for-widget.flat-ui-cal .fc-border-separate {
+	border-width: 1px;
+	border-color: transparent #EDEDED #EDEDED #EDEDED;
+	border-style: solid;
+	border-collapse: separate;
+	border-spacing: 0px;
+	border-radius: 0 0 8px 8px;
+	-moz-border-radius: 0 0 8px 8px;
+	-webkit-border-radius: 0 0 8px 8px;
+	-ms-border-radius: 0 0 8px 8px;
+	padding: 0 10px 5px;
+}
+
+.rhcalendar.for-widget.flat-ui-cal .fc-day-header {
+	border: 0px;
+	padding-top: 10px;
+	color: #3498db;
+	padding-bottom: 5px;
+}
+
+.rhcalendar.for-widget.flat-ui-cal .fc-day, 
+.rhcalendar.for-widget.flat-ui-cal .fc-last .fc-day {
+	font-family: 'Lato', sans-serif;
+	border: 0px;
+	background-color: transparent;
+	font-size: 11px;
+	color: #ACB4BE;
+	padding: 2px 0px;
+}
+
+.rhcalendar.for-widget.flat-ui-cal .fc-day-number {
+	text-align: center;
+	float: none;
+	padding: 4px 2px 1px 1px;
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-ms-border-radius: 20px;
+	width: 17px;
+	height: 15px;
+	margin: 0 auto;
+}
+
+.rhcalendar.for-widget.flat-ui-cal .fc-have-event .fc-day-number {
+	background-color: #34495E;
+	color: #fff;
+}
+
+.rhcalendar.for-widget.flat-ui-cal .fc-today .fc-day-number {
+	background-color: #E74C3C;
+	color: #fff;
+}
+
+.rhcalendar.for-widget.flat-ui-cal .fc-day-content {
+	display: none;
+}
+
+.rhcalendar.for-widget.flat-ui-cal .fc-other-month {
+	padding: 0 2px;
+}
+
+
+/* Widget on post */
+.entry-content .fc-header-title h2{
+    margin-top:3px
+}
+.entry-content .fc-header-title h2 .fuiw-dayname,
+.entry-content .fc-header-title h2 .fuiw-month,
+.entry-content .fc-header-title h2 .fuiw-year {
+    line-height:0
+}
+.entry-content .fc-header-title h2 .fuiw-day {
+    line-height: 80%;
+}
+
+.entry-content .rhcalendar.for-widget.flat-ui-cal .fc-day-number {
+    padding: 1px 3px 6px 2px;
+}
+
+.entry-content .rhcalendar.for-widget.flat-ui-cal td.fc-day {
+    width: 14.2%;
+}
+
+.entry-content .not-current-date .fc-header-title h2 {
+	margin-top:-5px;
+}
+
+.entry-content .not-current-date .fc-header-title h2 .fuiw-month,
+.entry-content .not-current-date .fc-header-title h2 .fuiw-year {
+	line-height:100%;
+}
+
+
+/* ================== Event Page boxes =================== */
+.rhc .row-fluid .fe-image-holder[class*=span] {
+	margin: 10px 0;
+}
+
+.rhc .row-fluid .fe-image-holder img {
+	position: relative;
+	right: -14px;
+	float: right;
+}
+
+.rhc .row-fluid .fe-map-holder[class*=span] {
+	text-align:right;
+}
+
+.rhc .row-fluid .fe-map-holder .sws-gmap3-frame {
+	float: right;
+	margin-bottom: 10px;
+	position: relative;
+	right: -4px;
+}
+
+.rhc .gm-style-iw div {
+text-align: left;
+}
+
+/* Social media login */
+.sco-btn {
+	display: inline-block;
+	margin: 0 5px 5px 0;
+}
+
+.sco-wp, .sco_social_login {
+	padding: 10px 15px;
+	font-size: 13px;
+	line-height: 1.077;
+	border-radius: 4px;
+	border: none;
+	-webkit-font-smoothing: subpixel-antialiased;
+	-webkit-transition: 0.25s linear;
+	transition: 0.25s linear;
+	display: inline-block;
+	background-color: #1abc9c;
+	color: #fff;
+}
+
+.sco-wp {
+	color: #ffffff;
+	background-color: #1abc9c;
+	background:#1abc9c;
+}
+
+.sco-wp:hover,
+.sco-wp:focus,
+.sco-wp:active {
+	background-color: #48c9b0;
+	background: #48c9b0;
+}
+
+.sco-wp:hover,
+.sco-wp:focus,
+.sco-wp:active,
+.sco_social_login:hover,
+.sco_social_login:focus,
+.sco_social_login:active {
+	background-image: none;
+	color: #fff;
+	outline: -webkit-focus-ring-color auto 0px;
+	box-shadow: 0 0 0 transparent;
+}
+.sco-pinterest {
+  color: #ffffff;
+  background-color: #cb2028;
+  background: #cb2028;
+}
+.sco-pinterest:hover,
+.sco-pinterest:focus,
+.sco-pinterest:active {
+  background-color: #d54d53;
+  background: #d54d53;
+}
+
+.sco-linkedin {
+  color: #ffffff;
+  background-color: #0072b5;
+  background: #0072b5;
+}
+
+.sco-linkedin:hover,
+.sco-linkedin:focus,
+.sco-linkedin:active {
+  background-color: #338ec4;
+  background: #338ec4;
+}
+
+.sco-stumbleupon {
+  color: #ffffff;
+  background-color: #ed4a13;
+  background: #ed4a13;
+}
+.sco-stumbleupon:hover,
+.sco-stumbleupon:focus,
+.sco-stumbleupon:active {
+  background-color: #f16e42;
+  background: #f16e42;
+}
+
+.sco-googleplus {
+  color: #ffffff;
+  background-color: #c0392b;
+  background: #c0392b;
+}
+.sco-googleplus:hover,
+.sco-googleplus:focus,
+.sco-googleplus:active {
+  background-color: #e74c3c;
+  background: #e74c3c;
+}
+
+.sco-facebook {
+  color: #ffffff;
+  background-color: #2f4b93;
+  background: #2f4b93;
+}
+.sco-facebook:hover,
+.sco-facebook:focus,
+.sco-facebook:active {
+  background-color: #596fa9;
+  background: #596fa9;
+}
+
+.sco-twitter {
+  color: #ffffff;
+  background-color: #00bdef;
+  background: #00bdef;
+}
+
+.sco-twitter:hover,
+.sco-twitter:focus,
+.sco-twitter:active {
+  background-color: #33caf2;
+  background: #33caf2;
+}
+
+
+.sco-microsoft {
+  color: #ffffff;
+  background-color: #2c3e50;
+  background: #2c3e50;
+}
+
+.sco-microsoft:hover,
+.sco-microsoft:focus,
+.sco-microsoft:active {
+  background-color: #415b76;
+  background: #415b76;
+}
+
+.sco_social_login > [class^="icon-"] {
+	margin: 0 1px;
+	position: relative;
+	line-height: 1;
+	top: 1px;
+	color: #fff;
+	font-family: 'Flat-UI-Icons';
+	font-style: normal;
+}
+
+/* Calendar table - fixes for themes with colors on their td, th and tr */
+.fullCalendar table.fc-border-separate {
+	margin: 0;
+}
+
+.fullCalendar table td {
+	background-color: transparent;
+}
+
+.fullCalendar table tr:hover td {
+	background-color: transparent;
+}
+
+.fullCalendar .fc-state-highlight,
+.fullCalendar table tr:hover td.fc-state-highlight {
+	background: #fcf8e3;
+}
+
+.fullCalendar table td, .fullCalendar th {
+	text-shadow: 0 0;
+	color: inherit;
+}
+
+/*  iCal Filter  */
+.fbd-button-primary {
+	color: #ffffff;
+	background-color: #3498db;
+	background-image: none;
+	border: 0;
+	font-size: 15px;
+	font-weight: normal;
+	line-height: 1.4;
+	text-shadow: none;
+	margin: 0 0 20px 0;
+	padding: 6px 15px;
+	-webkit-font-smoothing: subpixel-antialiased;
+	-webkit-transition: 0.25s linear;
+	transition: 0.25s linear;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+.fbd-button-primary:hover,
+.fbd-button-primary:focus,
+.fbd-button-primary:active {
+	background-color: #5dade2;
+	color:#ffffff;
+}
+
+/* Calendar Navigation */
+.fc-button-prev, .fc-button-next, .fc-button-prevYear, .fc-button-nextYear {
+    text-indent: -9999px;
+}
+
+.fc-button-prev:before {
+    content: "\e602";
+}
+
+.fc-button-next:before {
+    content: "\e603";
+}
+
+.fc-button-prevYear:before {
+    content: "\e601";
+}
+
+.fc-button-nextYear:before {
+    content: "\e600";
+}
+
+.fc-button-prev:before,
+.fc-button-next:before,
+.fc-button-prevYear:before,
+.fc-button-nextYear:before {
+    text-indent: 9991px;
+    position: absolute;
+	top: 10px;
+	right: 7px;
+}
+
+
+/* end Calendar Navigation */
+
+
+
+
+@media screen and (max-width: 979px){
+	.sco-btn {
+		display: inline-block;
+		margin: 0 5% 5px 0;
+		width: 45%;
+	}
+	
+	.sco-wp, .sco_social_login {
+		width: 100%;
+	}
+}
+
+.ce-login-form .icon-facebook:before {
+	content: "\e03f";
+}
+.ce-login-form .icon-youtube:before {
+  content: "\e040";
+}
+.ce-login-form .icon-vimeo:before {
+  content: "\e041";
+}
+.ce-login-form .icon-twitter:before {
+  content: "\e042";
+}
+.ce-login-form .icon-stumbleupon:before {
+  content: "\e043";
+}
+.ce-login-form .icon-spotify:before {
+  content: "\e044";
+}
+.ce-login-form .icon-skype:before {
+  content: "\e045";
+}
+.ce-login-form .icon-pinterest:before {
+  content: "\e046";
+}
+.ce-login-form .icon-path:before {
+  content: "\e047";
+}
+.ce-login-form .icon-myspace:before {
+  content: "\e048";
+}
+.ce-login-form .icon-linkedin:before {
+  content: "\e049";
+}
+.ce-login-form .icon-googleplus:before {
+  content: "\e04a";
+}
+.ce-login-form .icon-dribbble:before {
+  content: "\e04c";
+}
+.ce-login-form .icon-blogger:before {
+  content: "\e04d";
+}
+.ce-login-form .icon-behance:before {
+  content: "\e04e";
+}
+
+@media (max-width: 480px) {
+	.sco-btn {
+		display: block;
+		margin: 0 0 5px 0;
+		width: 100%;
+	}
+	
+	.sco-wp, .sco_social_login {
+		width:100%;
+	}
+
+	.fct-tooltip {
+		left: 30px !important;
+        width: 80%;
+	}	
+	
+	.rhc .row-fluid .fe-image-holder[class*=span] {
+		width: 93%;
+		margin: 10px auto;
+	}
+	.rhc .row-fluid .fe-image-holder img {
+		float: none;
+		right: 0;
+		width: 97.2%;
+	}
+	
+	.rhc .row-fluid .fe-map-holder .sws-gmap3-frame {
+		right: 6px;
+	}
+	
+	.fbd-button-primary {
+		padding: 15px 0;
+		display:block;
+		text-align: center;
+	}
+	
+	.fc-header-center .fc-header-title {
+		top: -37px;
+	}
+	
+	a.btn.btn-sm {
+		width: 100%;
+	}
+	
+	.rhcalendar.for-widget.flat-ui-cal .fc-header-cell.fc-header-right {
+		width: auto;
+	}
+	
+	.rhcalendar.for-widget.flat-ui-cal .fc-header-cell.fc-header-left {
+		right: -20px;
+		width: 50%;
+	}	
+	
+	.fc-button.fc-button-prevYear, .fc-button.fc-button-prev, .fc-button.fc-button-next, .fc-button.fc-button-nextYear {
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		min-height: 49px;
+	}
+	
+	.fc-header,
+	.fc-header *,
+	.fc-header *:before,
+	.fc-header *:after {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	
+	.fc-button {
+		height:auto;
+	}
+	
+	.fc-button-prev:before, 
+	.fc-button-next:before, 
+	.fc-button-prevYear:before, 
+	.fc-button-nextYear:before {
+		top: 16px;
+		right: 43px;
+	}
+	
+	.fc-button.fc-button-prevYear:before, 
+	.fc-button.fc-button-prev:before, 
+	.fc-button.fc-button-next:before, 
+	.fc-button.fc-button-nextYear:before,
+	.fc-button.fc-button-prevYear:after, 
+	.fc-button.fc-button-prev:after, 
+	.fc-button.fc-button-next:after, 
+	.fc-button.fc-button-nextYear:after {
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+	}
+	
+	
+	
+	/* calendar mobile view will be determined by the .fc-small class instead of media size */	
+}
+
+	 .fc-small .fullCalendar.fc.fc-ltr {
+        margin-top: 50px;
+    }
+	.widget .fc-small .fullCalendar.fc.fc-ltr {
+        margin-top: 0;
+    }
+	
+    .fc-small .fullCalendar .fc-week-number, 
+	.fc-small .fullCalendar thead th.fc-day-header {
+        display: none;
+    }
+    
+    .fc-small .fullCalendar table td {
+        border:0
+    }
+ 
+    .fc-small .fullCalendar tr td.fc-day {
+        display: block;
+        border-bottom:1px solid #ededed;;
+        padding: 0px;
+		/* height: 50px; no se le puede dar tamaño fijo a la celda */
+    } 
+    
+    .fc-small .fullCalendar tr td.fc-day:hover {
+        background-color:#ededed;
+    }
+
+    .fc-small .fullCalendar .fc-day-number {
+       float:none;    
+	}
+    
+    .fc-small .fullCalendar .fc-day-content {
+       /* position:relative; position need to be static for fullcalendar to calculate correctly. */
+    }
+	
+	.rhcalendar.fc-small .fullCalendar .fc-content .fc-view.fc-view-month table,
+	.rhcalendar.fc-small .fullCalendar .fc-content .fc-view.fc-view-month table tbody,
+	.rhcalendar.fc-small .fullCalendar .fc-content .fc-view.fc-view-month table tbody tr,
+	.rhcalendar.fc-small .fullCalendar .fc-content .fc-view.fc-view-month table tbody tr td {
+		display:block;
+		width:100%;
+		position:static;
+	}
+
+@media screen and (min-width:481px) and (max-width: 768px) {
+	.rhc .row-fluid .fe-image-holder[class*=span] {
+		width: 95.5%;
+		margin: 10px auto;
+	}
+	.rhc .row-fluid .fe-image-holder img {
+		float: none;
+		right: 0;
+		width: 98.2%;
+	}
+	
+	.rhc .sws-gmap3-frame {
+		width: 95.9%;
+	}
+	
+	.fc-header-row {
+		margin-top: 40px;
+	}
+	
+	.fc-header-left {
+		float: none;
+		text-align: center;
+	}
+	
+	.fc-header-right {
+		float: none;
+		text-align: center;
+	}
+	
+	.fc-header-center .fc-header-title {
+		top: -41px;
+	}
+}
+
+@media screen and (min-width:769px) and (max-width: 884px) {
+	.fc-header-center .fc-header-title {
+		top: -41px;
+	}
+}
+
+.rhc-close-icon a {
+text-decoration:none;
+color: #C4C4C4;
+}
+
+.rhc-close-icon a:hover {
+color: #3D3C3A;
+}
+
+.rhc-close-icon {
+text-align: right;
+}
+.fbd-head .rhc-close-icon a:before{
+font-family: 'Flat-UI-Icons';
+content: attr(data-icon);
+speak: none;
+font-weight: normal;
+font-variant: normal;
+text-transform: none;
+-webkit-font-smoothing: antialiased;
+content: "\e00b";
+font-size: 20px;
+text-decoration:none;
+}
+
+/* bug fix flat ui widget showing ical button */
+.rhcalendar.for-widget.flat-ui-cal .fc-button-icalendar {
+display:none;
+height:0px !important;
+}
+
+/* bug fix, space in dynamic tooltip */
+.rhc .fct-tooltip .row-fluid [class*="span"],
+.rhc .fct-tooltip .row-fluid,
+.fct-tooltip .row-fluid,
+.fct-tooltip .row-fluid [class*="span"]
+{
+	min-height:0 !important;
+}
+
+/* new feature image on month view */
+.has-fc-image .fc-image {
+	height: auto;
+	max-width:100%;
+}

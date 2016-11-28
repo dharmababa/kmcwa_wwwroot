@@ -1,0 +1,79 @@
+/*  spinner.css */
+@font-face {
+	font-family: 'rhcspinner';
+	src:url('f.eot');
+	src:url('f.eot?#iefix') format('embedded-opentype'),
+		url('f.woff') format('woff'),
+		url('f.ttf') format('truetype'),
+		url('f.svg#rhcspinner') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icon-xspinner:before, .icon-xspinner-2:before, .icon-xspinner-3:before, .icon-xspinner-4:before, .icon-xspinner-5:before, .icon-xspinner-6, .icon-xspinner-7:before {
+	font-family: 'rhcspinner';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-xspinner:before {
+	content: "\e000";
+}
+.icon-xspinner-2:before {
+	content: "\e001";
+}
+.icon-xspinner-3:before {
+	content: "\e002";
+}
+.icon-xspinner-4:before {
+	content: "\e003";
+}
+.icon-xspinner-5:before {
+	content: "\e004";
+}
+.icon-xspinner-6:before {
+	content: "\e005";
+}
+.icon-xspinner-7:before {
+	content: "\e006";
+}
+
+@keyframes anim-rotate {
+	0% {
+				transform: rotate(0);
+	}
+	100% {
+				transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes anim-rotate{
+	0% {
+		-webkit-transform: rotate(0);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+.xspinner {
+	display: inline-block;
+	font-size:4em;
+	height: 1em;
+	line-height: 1;
+	margin: .5em;
+	-webkit-animation: anim-rotate 2s infinite linear;		
+			animation: anim-rotate 2s infinite linear;
+	color: rgba(50,50,50, .7);
+	text-shadow: 0 0 .25em rgba(255,255,255, .3);
+}
+.xspinner--steps {
+	-webkit-animation: anim-rotate 1s infinite steps(8);
+			animation: anim-rotate 1s infinite steps(8);
+}
+.xspinner--steps2 {
+	-webkit-animation: anim-rotate 1s infinite steps(12);
+			animation: anim-rotate 1s infinite steps(12);
+}
