@@ -22,6 +22,7 @@ if(isset($_GET['icon']))
 // End block
 
 // Start configs
+date_default_timezone_set('America/Los_Angeles');
 $sitename='Audio Files';
 $date='M-d-y'; // date format
 $ignore=array('.','..','.htaccess','index.php','icon.php','Thumbs.db'); // ignore these files
@@ -41,13 +42,14 @@ closedir($h);
 $current_dir_name = basename($dir);
 $up_dir=dirname($dir);
 $up_url=($up_dir!=''&&$up_dir!='.')?'index.php?dir='.rawurlencode($up_dir):'index.php';
+
 // END PHP ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=iso-8859-1" />
 <title><?=$current_dir_name==''?'Directory list':$current_dir_name?></title>
-	<link rel="stylesheet" type="text/css" media="all" href="http://kadampadownloads.org/assets/directory.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="http://audio.nkt-kmc-washington.org/assets/directory.css" />
 
 <script type="text/javascript">
 <!--
@@ -107,8 +109,6 @@ window.onload=function()
 <body>
 			
 	<p>Audio downloads will be kept for a period of 60 days. After this time they may be removed in order to conserve disk space. Please stay up to date by downloading them shortly after they are posted.</p>
-	<p><strong>Have you missed a class?</strong> Download the summary sheet <a href="http://meditateinseattle.kadampadownloads.org/StudyProgramSummary2009.pdf">here</a>.</p>						
-
 			
 							
 	<div id="idx"><!-- do not remove --></div>
@@ -116,7 +116,7 @@ window.onload=function()
 	
 	<div id="help"><p><strong>How do I save files to my computer?</strong><br /><br />
 		Right click the file name, select "<em>Save Link As...</em>" or "<em>Save Target As...</em>" then choose the location and press <strong>Save</strong></p></div>
-	<div id="footer"><script src="http://kadampadownloads.org/assets/study-footer.js" type="text/javascript" ></script></div>
+	<div id="footer"><script src="http://audio.nkt-kmc-washington.org/assets/study-footer.js" type="text/javascript" ></script></div>
 </body>
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
