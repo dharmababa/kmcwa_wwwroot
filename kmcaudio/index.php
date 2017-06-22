@@ -58,10 +58,10 @@
 				
 				<h3>Please select the event you attended</h3>
 				<ul>
-					<li><a href="/audio_files/events/2016-nwdc-entire/index.php">2016 NWDC Entire Event</a></li>
-					<li><a href="/audio_files/events/2016-nwdc-sat-sun/index.php">2016 NWDC Saturday and Sunday Only</a></li>
-					<li><a href="/audio_files/events/2016-nwdc-sat/index.php">2016 NWDC Saturday Only</a></li>
-					<li><a href="/audio_files/events/2016-hyt/index.php">2016 Highest Yoga Tantra Teaching</a></li>
+					<li><a href="/audio_files/events/2017-nwdc-entire/index.php">2017 NWDC Entire Event</a></li>
+					<li><a href="/audio_files/events/2017-nwdc-fri-sat/index.php">2017 NWDC Friday and Saturday</a></li>
+					<li><a href="/audio_files/events/2017-nwdc-sat-sun/index.php">2017 NWDC Saturday and Sunday Only</a></li>
+					<li><a href="/audio_files/events/2017-nwdc-sat/index.php">2017 NWDC Saturday Only</a></li>
 				</ul>				
 			</div>
 		</div>
