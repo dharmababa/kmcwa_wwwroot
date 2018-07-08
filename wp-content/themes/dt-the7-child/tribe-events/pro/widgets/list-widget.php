@@ -73,7 +73,7 @@ if ( isset( $posts ) && $posts ) :
 
 		// Get the dates - either multiday range  or single date with time range
 		$date_format = 'l, M j'; // Monday, Jan 1
-		$time_format = 'g:ia'; // 3:00 pm
+		$time_format = 'g:ia'; // 3:00pm
 		$event_id = get_the_ID();
 		$date_range = '';
 
