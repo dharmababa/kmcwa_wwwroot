@@ -46,15 +46,52 @@ if ( isset( $posts ) && $posts ) :
 		do_action( 'tribe_events_widget_list_inside_before_loop' );
 		
 		// Retrieve the post properties
-		$event_title = the_title('', '', false);
+		$event_title = html_entity_decode(the_title('', '', false), ENT_QUOTES, 'UTF-8');
+		$event_main_title = '';
+		$event_sub_title = '&nbsp;';
 		$event_website_url = tribe_get_event_website_url();
 
+		// Split the title into main title and subtitle using the hyphen
+		$hyphen_pos = strpos($event_title, ' - ');
+		if ($hyphen_pos === false) { // if not found, try emdash
+			$hyphen_pos = strpos($event_title, ' – ');
+		}
+		
+		if ($hyphen_pos !== false) {
+			$event_main_title = substr($event_title, 0, $hyphen_pos);
+			$event_sub_title = substr($event_title, $hyphen_pos + 5);
+
+		} else {
+			$event_main_title = $event_title;
+		}
+		
 		//	 Fire an action before the list widget featured image
 		do_action( 'tribe_events_list_widget_before_the_event_image' );
-
 		
 		// Get the thumbnail of  the featured image for the event
 		$post_thumbnail = get_the_post_thumbnail( null, 'thumbnail', array('alt' => trim(strip_tags( $post->post_title ))));
+
+		// Get the dates - either multiday range  or single date with time range
+		$date_format = 'l, M j'; // Monday, Jan 1
+		$time_format = 'g:ia'; // 3:00 pm
+		$event_id = get_the_ID();
+		$date_range = '';
+
+
+		if ( tribe_event_is_multiday( $event_id ) ) { // multi-date event, so just show: [start-date] - [end-date]
+			$date_range .= tribe_get_start_date( $event_id, true, $date_format );
+			$date_range .= ' - ';
+			$date_range .= tribe_get_end_date( $event_id, true, $date_format );
+		}
+		else { // single-day event, so show: [date] | [start-time] - [end-time]
+			$date_range .= tribe_get_start_date( $event_id, true, $date_format );			
+			if ( tribe_get_start_date( $event, false, 'g:i A' ) !== tribe_get_end_date( $event, false, 'g:i A' ) ) { // Start/end time not the same
+				$date_range .= ' | ';
+				$date_range .= tribe_get_start_date( $event_id, true, $time_format );
+				$date_range .= '-';
+				$date_range .= tribe_get_end_date( $event_id, true, $time_format );				
+			}
+		}
 ?>
 		<!-- Event -->
 		<div class="wpb_column vc_column_container vc_col-sm-4">
@@ -81,13 +118,14 @@ if ( isset( $posts ) && $posts ) :
 							<div class="wpb_text_column wpb_content_element ">
 								<div class="wpb_wrapper">
 									<?php do_action( 'tribe_events_list_widget_before_the_event_title' ); ?>
-									<h4 style="text-align: center;"><?php echo $event_title ?></h4>
+									<a href="<?php echo $event_website_url; ?>" target="_blank" style="text-decoration:none">
+										<h4 class="custom-event-heading"><?php echo $event_main_title ?></h4>
+									</a>
 									<?php do_action( 'tribe_events_list_widget_after_the_event_title' ); ?>
-									<p>&nbsp;</p>
 									<p style="text-align: center;">
-										<strong>Saturday, July 7 – Sunday, July 8</strong>
+										<strong><?php echo $date_range; ?></strong>
 									</p>
-									<p style="text-align: center;">24-Hour Tara Chanting Retreat</p>
+									<p style="text-align: center;"><?php echo $event_sub_title ?></p>
 
 								</div>
 							</div>
