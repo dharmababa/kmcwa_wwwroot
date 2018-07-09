@@ -12,50 +12,16 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
-
 ?>
-<div class="tribe-this-week-widget-wrapper tribe-this-week-widget-<?php echo esc_attr( $this_week_template_vars['layout'] ); ?> <?php echo esc_attr( tribe_this_week_widget_class( $this_week_query_vars['tax_query'] ) ); ?>" <?php echo apply_filters( 'tribe_events_this_week_header_attributes', $this_week_data_attrs ); ?> >
-	<!-- This Week Title -->
-	<?php do_action( 'tribe_events_before_this_week_title' ) ?>
-		<h2 class="tribe-events-page-title"><?php echo esc_html( tribe_events_get_this_week_title( $this_week_template_vars['start_date'] ) ); ?></h2>
-	<?php do_action( 'tribe_events_after_this_week_title' ) ?>
-
-	<!-- This Week Header Navigation -->
-	<?php tribe_get_template_part( 'pro/widgets/this-week/nav', 'header', array( 'start_date' => $this_week_template_vars['start_date'], 'end_date' => $this_week_template_vars['end_date'] ) ); ?>
-
-	<!-- This Week Grid -->
-	<div class="tribe-this-week-widget-weekday-wrapper <?php echo esc_html( 'true' === $this_week_template_vars['hide_weekends'] ? 'tribe-this-week-widget-hide-weekends' : '' );  ?>" >
-
-		<?php foreach ( $week_days as $day ) : ?>
-
-			<!-- This Week Day -->
-			<?php tribe_get_template_part( 'pro/widgets/this-week/loop-grid-day', 'grid-dau', array( 'day' => $day, 'this_week_template_vars' => $this_week_template_vars ) ); ?>
-
-		<?php endforeach; ?>
-
+<div class="vc_tta-container" data-vc-action="collapseAll">
+    <div class="vc_general vc_tta vc_tta-accordion vc_tta-color-grey vc_tta-style-flat vc_tta-shape-square vc_tta-spacing-5 vc_tta-controls-align-left vc_tta-o-no-fill vc_tta-o-all-clickable">
+        <div class="vc_tta-panels-container">
+			<div class="vc_tta-panels">
+<?php 
+foreach ( $week_days as $day )
+	tribe_get_template_part( 'pro/widgets/this-week/loop-grid-day', 'grid-day', array( 'day' => $day, 'this_week_template_vars' => $this_week_template_vars ) );
+?>
+			</div>
+		</div>
 	</div>
-
 </div>
-
-<?php
-if ( ( isset( $args['widget_id'] ) || isset( $instance['widget_id'] ) ) && ( isset( $instance['highlight_color'] ) && $instance['highlight_color'] != '' ) ) {
-
-	//Set Highlight Color for Widget or For Shortcode based on ID from Respective System
-	$wrap_id = isset( $args['widget_id'] ) ? $args['widget_id'] : '';
-    if ( is_numeric( $wrap_id ) ) {
-        $wrap_id = isset( $instance['widget_id'] ) ? 'tribe-this-week-events-widget-100' . $instance['widget_id'] : $wrap_id;
-    }
-?>
-
-	<style>
-		#<?php echo esc_attr( $wrap_id );  ?> .tribe-this-week-event {
-			border-color : <?php echo esc_attr( $instance['highlight_color'] ); ?>;
-		}
-
-		#<?php echo esc_attr( $wrap_id );  ?> .this-week-today .tribe-this-week-widget-header-date {
-			background-color : <?php echo esc_attr( $instance['highlight_color'] ); ?>;
-		}
-	</style>
-
-<?php
-}
