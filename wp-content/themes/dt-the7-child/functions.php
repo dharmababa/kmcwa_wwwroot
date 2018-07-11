@@ -1,5 +1,4 @@
 <?php
-
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 function my_theme_enqueue_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
@@ -24,5 +23,24 @@ function tribe_add_start_time_to_event_title ( $post_title, $post_id ) {
     return $post_title;
 }
 add_filter( 'the_title', 'tribe_add_start_time_to_event_title', 100, 2 );
+
+/* Sort Events in ascending start date. */
+add_filter( 'posts_clauses', function( $pass, $query ) {
+    if (is_admin() && !is_customize_preview()) {
+        $screen = get_current_screen();
+
+        if (
+            ! $screen
+            || Tribe__Main::instance()->doing_ajax()
+            || 'edit' !== $screen->base
+            || 'tribe_events' !== $screen->post_type
+        ) {
+            return;
+        }
+
+        $query->set( 'order', 'ASC' );
+        return $pass;
+    }
+}, 10, 2 );
 
 ?>
