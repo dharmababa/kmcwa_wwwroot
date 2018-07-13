@@ -26,6 +26,7 @@ add_filter( 'the_title', 'tribe_add_start_time_to_event_title', 100, 2 );
 
 /* Sort Events in ascending start date. */
 
+/* 
 add_filter( 'posts_clauses', function( $pass, $query ) {
     if (is_admin() && !is_customize_preview()) {
         $screen = get_current_screen();
@@ -44,5 +45,6 @@ add_filter( 'posts_clauses', function( $pass, $query ) {
     }
     return $pass;
 }, 10, 2 );
+*/
 
 ?>
