@@ -98,7 +98,7 @@ if ( isset( $posts ) && $posts ) :
 			<div class="vc_column-inner vc_custom_1530050919953">
 				<div class="wpb_wrapper">
 					<div class="ult-content-box-container">
-						<div class="ult-content-box" style="background-color: rgb(255, 255, 255); box-shadow: rgb(183, 183, 183) 2px 2px 5px 0px; border-style: solid; border-width: 20px; border-radius: 10px; border-color: rgb(255, 255, 255); transition: all 700ms ease; margin: 0px;"
+						<div class="ult-content-box" style="background-color: rgb(255, 255, 255); box-shadow: rgb(183, 183, 183) 2px 2px 5px 0px; border-style: solid; border-width: 20px; border-radius: 10px; border-color: rgb(255, 255, 255); transition: all 700ms ease; margin: 0px 0px 20px 0px;"
 							data-hover_box_shadow="none" data-bg="#ffffff" data-border_color="#ffffff" data-normal_margins="margin-left:0px;margin-right:0px;margin-top:0px;margin-bottom:0px;">
 							<div class="shortcode-single-image-wrap alignnone fadeIn animate-element  animation-triggered start-animation"
 								style="margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; width:234px;">
@@ -130,7 +130,7 @@ if ( isset( $posts ) && $posts ) :
 								</div>
 							</div>
 							<div class="vc_btn3-container  button-accent vc_btn3-center">
-								<a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-rounded vc_btn3-style-outline vc_btn3-icon-left vc_btn3-color-green"
+								<a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-rounded vc_btn3-style-outline vc_btn3-icon-left vc_btn3-color-sky"
 									href="<?php echo $event_website_url; ?>" target="_blank">
 									<i class="vc_btn3-icon fa fa-info-circle"></i> Info &amp; Booking</a>
 							</div>
