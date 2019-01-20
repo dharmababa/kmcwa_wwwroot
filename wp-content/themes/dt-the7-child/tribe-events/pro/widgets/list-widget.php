@@ -132,7 +132,7 @@ if ( isset( $posts ) && $posts ) :
 							<div class="vc_btn3-container  button-accent vc_btn3-center">
 								<a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-rounded vc_btn3-style-outline vc_btn3-icon-left vc_btn3-color-sky"
 									href="<?php echo $event_website_url; ?>" target="_blank">
-									<i class="vc_btn3-icon fa fa-info-circle"></i> Info &amp; Booking</a>
+									<i class="vc_btn3-icon fa fa-info-circle"></i> Info &amp; Tickets</a>
 							</div>
 						</div>
 					</div>
