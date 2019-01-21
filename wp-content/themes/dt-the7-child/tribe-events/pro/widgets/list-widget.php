@@ -40,6 +40,7 @@ $link_to_all = tribe_events_get_list_widget_view_all_link( $instance );
 
 // Check if any posts were found.
 if ( isset( $posts ) && $posts ) :
+	$i = 0;
 
 	foreach ( $posts as $post ) :
 		setup_postdata( $post );
@@ -92,6 +93,20 @@ if ( isset( $posts ) && $posts ) :
 				$date_range .= tribe_get_end_date( $event_id, true, $time_format );				
 			}
 		}
+
+		// Start the row if first item.
+		if ($i == 0) {
+?>
+		<div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1546931444464">
+<?php
+		}		
+		// If we have just completed a row of 3, then create a new row.
+		elseif ($i % 3 == 0) {
+?>
+		</div><div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1546931444464">
+<?php 
+		}
+		$i++;
 ?>
 		<!-- Event -->
 		<div class="wpb_column vc_column_container vc_col-sm-4">
@@ -125,7 +140,7 @@ if ( isset( $posts ) && $posts ) :
 									<p style="text-align: center;">
 										<strong><?php echo $date_range; ?></strong>
 									</p>
-									<p style="text-align: center;"><?php echo $event_sub_title ?></p>
+									<p style="text-align: center; min-height: 52.8px;"><?php echo $event_sub_title ?></p>
 
 								</div>
 							</div>
@@ -142,7 +157,7 @@ if ( isset( $posts ) && $posts ) :
 		<?php do_action( 'tribe_events_widget_list_inside_after_loop' ) ?>
 
 	<?php endforeach ?>
-
+	</div>
 <?php
 // No Events were found.
 else:
