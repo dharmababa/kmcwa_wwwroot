@@ -31,8 +31,11 @@ $link     = empty(tribe_get_event_website_url($post)) ? '#' : tribe_get_event_we
 
 $title    = get_the_title( $post );
 
-// Remove the subtitle if there is one
-$hyphen_pos = strpos($title, ' &#8211;', $hyphen_pos + 8);
+// Remove the subtitle if there is one - if there is a start time, offset by 8 characters
+if ((strpos($title, ":") == 1) || (strpos($title, ":") == 2))
+	$hyphen_pos = strpos($title, ' &#8211;', $hyphen_pos + 8);
+else 
+	$hyphen_pos = strpos($title, ' &#8211;', $hyphen_pos);
 
 if ($hyphen_pos !== false) 
 	$title = substr($title, 0, $hyphen_pos);
